@@ -1,14 +1,19 @@
-// Layout.jsx
 import { Outlet } from "react-router-dom";
+import NavBar from "../components/navBar/NavBar";
 import Footer from "../components/footer/Footer";
 
-function Layout() {
+export default function Layout() {
   return (
     <>
-      <Outlet />
+      <header>
+        <NavBar variant="default" />
+      </header>
+
+      <main>
+        <Outlet />
+      </main>
+
       <Footer />
     </>
   );
 }
-
-export default Layout;

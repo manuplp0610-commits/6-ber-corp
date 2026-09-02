@@ -2,35 +2,47 @@ import { createBrowserRouter } from "react-router-dom";
 
 import Home from "../pages/home/Home";
 import Layout from "../layout/Layout";
-import Bar from "../pages/bar/Bar";
-import Computer from "../pages/computer/Computer";
-import Console from "../pages/console/Console";
-import Event from "../pages/events/Event";
-import NoFound from "../pages/noFound/NoFound";
 import Shop from "../pages/shop/Shop";
+import Bar from "../pages/bar/Bar";
+import Console from "../pages/console/Console";
+import Computer from "../pages/computer/Computer";
+import Event from "../pages/events/Event";
 
-const router = createBrowserRouter(
-  [
-    {
-      path: "/",
-      element: <Layout />,
-      errorElement: <NoFound />,
-      children: [
-        { index: true, element: <Home /> },
-        { path: "shop", element: <Shop /> },
-        { path: "computer", element: <Computer /> },
-        { path: "console", element: <Console /> },
-        { path: "bar", element: <Bar /> },
-        { path: "event", element: <Event /> },
-        { path: "*", element: <NoFound /> },
-      ],
-    },
-  ],
+const router = createBrowserRouter([
   {
-    future: {
-      v7_startTransition: true,
-    },
+    path: "/",
+    element: <Home />,
   },
-);
+
+  {
+    element: <Layout />,
+    children: [
+      {
+        path: "/shop",
+        element: <Shop />,
+      },
+      {
+        path: "/bar",
+        element: <Bar />,
+      },
+      {
+        path: "/console",
+        element: <Console />,
+      },
+      {
+        path: "/computer",
+        element: <Computer />,
+      },
+      {
+        path: "/event",
+        element: <Event />,
+      },
+      {
+        path: "/console",
+        element: <Console />,
+      },
+    ],
+  },
+]);
 
 export default router;

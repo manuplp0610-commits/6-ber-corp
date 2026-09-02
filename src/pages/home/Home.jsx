@@ -1,9 +1,14 @@
 import Hero from "../../components/hero/Hero";
+import Footer from "../../components/footer/Footer";
 
 export default function Home() {
   return (
-    <main>
-      <Hero />
-    </main>
+    <>
+      <header>
+        <Hero />
+      </header>
+      <main></main>
+      <Footer />
+    </>
   );
 }
