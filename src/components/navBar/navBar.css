@@ -1,0 +1,146 @@
+/* =========================================================
+   GENERALE
+=========================================================== */
+
+.navBar {
+  display: flex;
+  z-index: 2;
+  width: 100%;
+  font-size: 20px;
+}
+
+.logo {
+  width: 40px;
+}
+
+.logo:hover {
+  transform: scale(1.05);
+  filter: drop-shadow(0 0 50px rgba(255, 149, 0, 0.7));
+}
+
+.nav-inner {
+  width: 100%;
+}
+
+.nav-links {
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.sind-nav {
+  display: flex;
+  gap: 20px;
+}
+
+/* =========================================================
+   HERO
+=========================================================== */
+
+.navBar--hero {
+  color: white;
+  top: 80px;
+}
+
+.logo-left--hero {
+  display: none;
+}
+
+.logo-center--hero {
+  width: 300px;
+}
+
+.nav-links--hero {
+  justify-content: space-evenly;
+}
+
+/* =========================================================
+   DEFAULT
+=========================================================== */
+
+.logo-left--default {
+  width: 50px;
+}
+
+.logo-center--default {
+  display: none;
+}
+
+.nav-mobile {
+  display: none;
+}
+
+/* =========================================================
+   ANIMATION
+=========================================================== */
+
+.sind-nav a {
+  position: relative;
+}
+
+.sind-nav a::after {
+  content: "";
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: linear-gradient(90deg, #ff9500, #ffcc00);
+  transition: width 0.3s ease;
+}
+
+.sind-nav a:hover {
+  color: #ff9500;
+  text-shadow: 0 0 20px rgba(255, 149, 0, 0.5);
+}
+
+.sind-nav a:hover::after {
+  width: 100%;
+}
+
+/* =========================================================
+   TABLETTE
+=========================================================== */
+
+@media (max-width: 850px) {
+  .nav-links--hero {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+  }
+
+  /* LOGO SUR SA PROPRE LIGNE */
+  .logo-link--center {
+    order: 1;
+    flex: 0 0 100%;
+    display: flex;
+    justify-content: center;
+  }
+
+  .logo-center--hero {
+    width: 250px;
+    margin-bottom: 10px;
+  }
+
+  /* LES DEUX GROUPES SOUS LE LOGO */
+  .sind-nav--left {
+    order: 2;
+  }
+
+  .sind-nav--right {
+    order: 3;
+  }
+
+  .sind-nav {
+    position: static;
+    flex: 0 0 auto;
+    gap: 20px;
+  }
+}
+@media (max-width: 600px) {
+  .sind-nav {
+    display: none;
+  }
+}
