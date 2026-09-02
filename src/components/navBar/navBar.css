@@ -7,6 +7,8 @@
   z-index: 2;
   width: 100%;
   font-size: 20px;
+  position: relative;
+  z-index: 3;
 }
 
 .logo {
@@ -32,7 +34,33 @@
   display: flex;
   gap: 20px;
 }
-
+.nav-toggle {
+  display: none;
+  color: white;
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 4;
+}
+.nav-mobile {
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100dvh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+  z-index: 3;
+}
+.nav-mobile-content ul {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  color: white;
+}
 /* =========================================================
    HERO
 =========================================================== */
@@ -57,16 +85,15 @@
 /* =========================================================
    DEFAULT
 =========================================================== */
-
+.navBar--default {
+  background: blue;
+}
 .logo-left--default {
   width: 50px;
+  margin: 10px;
 }
 
 .logo-center--default {
-  display: none;
-}
-
-.nav-mobile {
   display: none;
 }
 
@@ -142,5 +169,8 @@
 @media (max-width: 600px) {
   .sind-nav {
     display: none;
+  }
+  .nav-toggle {
+    display: block;
   }
 }
