@@ -1,0 +1,97 @@
+.zones {
+  position: relative;
+  background: url("../../assets/images/bg-zone.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  color: white;
+}
+.zones::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.85);
+  z-index: 1;
+  pointer-events: none;
+}
+.section-head {
+  position: relative;
+  z-index: 2;
+  max-width: 600px;
+  margin: 56px auto;
+  text-align: center;
+}
+
+.section-head .hero-eyebrow {
+  color: #ff5a2c;
+}
+
+.section-head h2 {
+  font-size: clamp(28px, 4vw, 42px);
+  margin: 12px 0 14px;
+}
+
+.section-head p {
+  color: #a9a8b8;
+  font-size: 15px;
+}
+
+.zone-grid {
+  position: relative;
+  z-index: 2;
+  padding: 0 56px 30px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 28px;
+}
+/* ============================================
+   RESPONSIVE TABLETTE
+============================================ */
+
+@media (max-width: 900px) {
+  .section-head {
+    margin-bottom: 40px;
+  }
+
+  .section-head h2 {
+    font-size: clamp(28px, 5vw, 38px);
+  }
+}
+
+/* ============================================
+   RESPONSIVE SMARTPHONE
+============================================ */
+
+@media (max-width: 600px) {
+  .section-head {
+    margin-bottom: 32px;
+  }
+
+  .section-head h2 {
+    font-size: 30px;
+    line-height: 1.2;
+  }
+
+  .section-head p {
+    font-size: 14px;
+    line-height: 1.5;
+  }
+  .zone-grid {
+    padding: 0 36px 30px;
+    gap: 28px;
+  }
+}
+
+/* ============================================
+   PETIT SMARTPHONE
+============================================ */
+
+@media (max-width: 380px) {
+  .section-head h2 {
+    font-size: 26px;
+  }
+
+  .section-head p {
+    font-size: 13px;
+  }
+}

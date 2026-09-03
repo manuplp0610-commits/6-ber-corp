@@ -1,0 +1,200 @@
+.zone-card {
+  position: relative;
+
+  background: #20222f;
+  border: 1px solid #33364a;
+  border-radius: 4px;
+
+  overflow: hidden;
+
+  display: flex;
+  flex-direction: column;
+
+  transition:
+    border-color 0.2s,
+    transform 0.2s;
+}
+
+.zone-card:hover {
+  border-color: #ff5a2c;
+  transform: translateY(-4px);
+}
+
+.zone-media {
+  position: relative;
+
+  height: 190px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.zone-media .tag {
+  position: absolute;
+  top: 14px;
+  left: 14px;
+
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+
+  background: rgba(18, 19, 28, 0.75);
+
+  padding: 5px 10px;
+  border-radius: 20px;
+}
+
+.zone-media.boutique {
+  background: url("../../assets/images/fond-boutique.jpeg");
+  background-position: center;
+  background-size: cover;
+}
+
+.zone-media.bar {
+  background: url("../../assets/images/fond-bar.jpeg");
+  background-position: center;
+  background-size: cover;
+}
+
+.zone-media.ps {
+  background: url("../../assets/images/fond-consoles.jpeg");
+  background-position: center;
+  background-size: cover;
+}
+
+.zone-media.pc {
+  background: url("../../assets/images/fond-pc.jpeg");
+  background-position: center;
+  background-size: cover;
+}
+
+.zone-media.events {
+  background: url("../../assets/images/fond-tounois.png");
+  background-position: center;
+  background-size: cover;
+}
+
+.zone-body {
+  padding: 22px 24px 26px;
+
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+
+  flex: 1;
+}
+
+.zone-body h3 {
+  font-size: 19px;
+}
+
+.zone-body p {
+  color: #a9a8b8;
+  font-size: 14px;
+  flex: 1;
+}
+
+.zone-body .btn {
+  align-self: flex-start;
+  padding: 10px 20px;
+  font-size: 12px;
+}
+
+.zone-card.wide {
+  grid-column: 1 / -1;
+}
+
+.zone-card.wide .zone-media {
+  height: 150px;
+}
+/* ============================================
+   TABLETTE
+============================================ */
+
+@media (max-width: 900px) {
+  .zone-grid {
+    gap: 20px;
+  }
+
+  .zone-media {
+    height: 170px;
+  }
+
+  .zone-card.wide .zone-media {
+    height: 140px;
+  }
+
+  .zone-body {
+    padding: 20px;
+  }
+
+  .zone-body h3 {
+    font-size: 18px;
+  }
+}
+
+/* ============================================
+   SMARTPHONE
+============================================ */
+
+@media (max-width: 600px) {
+  .zone-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .zone-card.wide {
+    grid-column: auto;
+  }
+
+  .zone-media,
+  .zone-card.wide .zone-media {
+    height: 180px;
+  }
+
+  .zone-body {
+    padding: 20px;
+    gap: 10px;
+  }
+
+  .zone-body h3 {
+    font-size: 18px;
+  }
+
+  .zone-body p {
+    font-size: 14px;
+  }
+
+  .zone-body .btn {
+    width: 100%;
+
+    align-self: stretch;
+
+    padding: 12px 18px;
+  }
+}
+
+/* ============================================
+   PETIT SMARTPHONE
+============================================ */
+
+@media (max-width: 380px) {
+  .zone-media,
+  .zone-card.wide .zone-media {
+    height: 160px;
+  }
+
+  .zone-body {
+    padding: 18px;
+  }
+
+  .zone-body h3 {
+    font-size: 17px;
+  }
+
+  .zone-body p {
+    font-size: 13px;
+  }
+}

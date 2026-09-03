@@ -22,9 +22,9 @@ export default function Hero() {
             Découvrir la boutique
           </Link>
 
-          <a href="#events" className="btn btn-ghost">
+          <Link to="/event" className="btn btn-ghost">
             Voir les prochains tournois
-          </a>
+          </Link>
         </div>
       </div>
     </section>

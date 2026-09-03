@@ -1,5 +1,6 @@
 import Hero from "../../components/hero/Hero";
 import Footer from "../../components/footer/Footer";
+import Zone from "../../components/zone/Zone";
 
 export default function Home() {
   return (
@@ -7,7 +8,9 @@ export default function Home() {
       <header>
         <Hero />
       </header>
-      <main></main>
+      <main>
+        <Zone />
+      </main>
       <Footer />
     </>
   );

@@ -1,0 +1,43 @@
+[
+  {
+    "id": "shop",
+    "tag": "Boutique",
+    "imageClass":"boutique",
+    "title": "La Boutique",
+    "description": "Pokémon, Yu-Gi-Oh!, One Piece, ... cartes à collectionner et figurines d'univers manga. Boosters, decks et pièces rares.",
+    "button": "Explorer la boutique"
+  },
+  {
+    "id": "bar",
+    "tag": "Bar",
+    "imageClass":"bar",
+    "title": "Le Bar",
+    "description": "Boissons et snacks entre deux parties. 1 boisson offerte par session gaming !",
+    "button": "Voir la carte"
+  },
+  {
+    "id": "console",
+    "tag": "Consoles",
+    "imageClass":"ps",
+    "title": "Zone Console",
+    "description": "Setups console dernière génération, jeux en solo ou en groupe, écrans grand format.",
+    "button": "Réserver un poste"
+  },
+  {
+    "id": "computer",
+    "tag": "PC Gaming",
+    "imageClass":"pc",
+    "title": "Zone PC",
+    "description": "Postes PC gaming haute performance pour esport, jeux compétitifs et sessions LAN.",
+    "button": "Réserver un poste"
+  },
+  {
+    "id": "event",
+    "tag": "Événements",
+    "imageClass":"events",
+    "title": "Événements & tournois",
+    "description": "Tournois PC et console, soirées à thème, avant-premières. Inscris-toi à la newsletter pour ne rien manquer.",
+    "button": "Voir le calendrier",
+    "wide": true
+  }
+]

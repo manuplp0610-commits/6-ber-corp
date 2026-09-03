@@ -1,0 +1,74 @@
+.shop {
+  position: relative;
+  min-height: 100vh;
+  padding: 80px 32px;
+  color: white;
+  background:
+    linear-gradient(rgba(10, 11, 18, 0.85)),
+    url("../../assets/images/bg-zone.jpg");
+
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.shop-head {
+  max-width: 650px;
+  margin: 0 auto 60px;
+  text-align: center;
+}
+
+.shop-head .hero-eyebrow {
+  display: block;
+  margin-bottom: 12px;
+  color: #ff5a2c;
+}
+
+.shop-head h1 {
+  margin-bottom: 15px;
+  font-size: clamp(32px, 5vw, 52px);
+  color: #ff5a2c;
+}
+
+.shop-head p {
+  color: #a9a8b8;
+  font-size: 15px;
+  line-height: 1.7;
+}
+
+/* GRILLE DES ARTICLES */
+
+.article-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+}
+
+/* TABLETTE */
+
+@media (max-width: 1000px) {
+  .shop {
+    padding: 70px 25px;
+  }
+
+  .article-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* MOBILE */
+
+@media (max-width: 600px) {
+  .shop {
+    padding: 60px 20px;
+  }
+
+  .shop-head {
+    margin-bottom: 40px;
+  }
+
+  .article-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+}

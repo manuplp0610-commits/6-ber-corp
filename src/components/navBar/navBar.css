@@ -57,8 +57,10 @@
 }
 .nav-mobile-content ul {
   display: flex;
+  font-size: 30px;
   flex-direction: column;
-  gap: 10px;
+  align-items: center;
+  gap: 30px;
   color: white;
 }
 /* =========================================================
@@ -67,7 +69,6 @@
 
 .navBar--hero {
   color: white;
-  top: 80px;
 }
 
 .logo-left--hero {

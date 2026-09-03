@@ -1,0 +1,56 @@
+[
+  {
+    "id": "pokemon-booster",
+    "category": "Cartes",
+    "title": "Booster Pokémon",
+    "description": "Booster Pokémon avec cartes à collectionner. Tente de découvrir une carte rare et complète ta collection.",
+    "price": "5,99 €",
+    "image": "https://images.pokemontcg.io/base1/4_hires.png",
+    "badge": "Nouveau"
+  },
+  {
+    "id": "pokemon-etb",
+    "category": "Cartes",
+    "title": "Elite Trainer Box Pokémon",
+    "description": "Une Elite Trainer Box complète pour les collectionneurs et les joueurs Pokémon.",
+    "price": "59,99 €",
+    "image": "https://images.pokemontcg.io/base1/4_hires.png",
+    "badge": "Populaire"
+  },
+  {
+    "id": "yugioh-booster",
+    "category": "Cartes",
+    "title": "Booster Yu-Gi-Oh!",
+    "description": "Pars à la recherche de nouvelles cartes pour compléter ton deck ou ta collection.",
+    "price": "4,99 €",
+    "image": "https://images.ygoprodeck.com/images/cards/89631139.jpg",
+    "badge": ""
+  },
+  {
+    "id": "one-piece-booster",
+    "category": "Cartes",
+    "title": "Booster One Piece",
+    "description": "Retrouve les personnages de One Piece dans le jeu de cartes à collectionner.",
+    "price": "5,99 €",
+    "image": "https://en.onepiece-cardgame.com/images/cardlist/card/OP01-001.png",
+    "badge": "Nouveau"
+  },
+  {
+    "id": "figurine-luffy",
+    "category": "Figurines",
+    "title": "Figurine Monkey D. Luffy",
+    "description": "Une figurine de Luffy pour compléter ta collection One Piece.",
+    "price": "34,99 €",
+    "image": "https://images.unsplash.com/photo-1608889825103-eb5ed706fc64",
+    "badge": "Collector"
+  },
+  {
+    "id": "figurine-goku",
+    "category": "Figurines",
+    "title": "Figurine Son Goku",
+    "description": "Figurine Son Goku inspirée de l'univers Dragon Ball.",
+    "price": "29,99 €",
+    "image": "https://images.unsplash.com/photo-1618336753974-aae8e04506aa",
+    "badge": "Collector"
+  }
+]
