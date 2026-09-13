@@ -259,9 +259,6 @@
 ================================ */
 
 @media (max-width: 1100px) {
-  .shop-header {
-    padding: 15px 20px;
-  }
   .header-actions {
     gap: 6px;
   }
@@ -302,10 +299,6 @@
 ================================ */
 
 @media (max-width: 600px) {
-  .shop-header {
-    padding: 15px;
-  }
-
   .shop-header .logo img {
     width: 100px;
   }

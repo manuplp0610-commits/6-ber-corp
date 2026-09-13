@@ -1,0 +1,100 @@
+[
+    {
+        "id":"1",
+        "name":"Coca-Cola",
+        "price":"2.50",
+        "description":"Canette 33 cl",
+        "category":"drink"
+    },
+    {
+        "id":"2",
+        "name":"Coca-Cola Zero",
+        "price":"2.50",
+        "description":"Canette 33 cl",
+        "category":"drink"
+    },
+    {
+        "id":"3",
+        "name":"Fanta Orange",
+        "price":"2.50",
+        "description":"Canette 33 cl",
+        "category":"drink"
+    },
+    {
+        "id":"4",
+        "name":"Sprite",
+        "price":"2.50",
+        "description":"Canette 33 cl",
+        "category":"drink"
+    },
+    {
+        "id":"5",
+        "name":"Red Bull",
+        "price":"3.50",
+        "description":"Canette 25 cl",
+        "category":"drink"
+    },
+    {
+        "id":"6",
+        "name":"Eau",
+        "price":"1.50",
+        "description":"Bouteille 50 cl",
+        "category":"drink"
+    },
+    {
+        "id":"7",
+        "name":"Café",
+        "price":"2",
+        "description":"Café fraîchement préparé",
+        "category":"drink"
+    },
+    {
+        "id":"8",
+        "name":"Thé",
+        "price":"2",
+        "description":"Plusieurs parfums disponibles",
+        "category":"drink"
+    },
+    {
+        "id":"9",
+        "name":"Chips",
+        "price":"2",
+        "description":"Sachet individuel",
+        "category":"food"
+    },
+    {
+        "id":"11",
+        "name":"Barre chocolatée",
+        "price":"2",
+        "description":"Snickers, Mars ou Twix",
+        "category":"food"
+    },
+    {
+        "id":"12",
+        "name":"Cookies",
+        "price":"2.50",
+        "description":"Cookie aux pépites de chocolat",
+        "category":"food"
+    },
+    {
+        "id":"13",
+        "name":"Hot-Dog",
+        "price":"5",
+        "description":"Saucisse, pain et sauce au choix",
+        "category":"food"
+    },
+    {
+        "id":"14",
+        "name":"Croque-Monsieur",
+        "price":"5.50",
+        "description":"Jambon et fromage",
+        "category":"food"
+    },
+    {
+        "id":"15",
+        "name":"Nuggets",
+        "price":"5",
+        "description":"Portion de 6 nuggets avec sauce",
+        "category":"food"
+    }
+]
