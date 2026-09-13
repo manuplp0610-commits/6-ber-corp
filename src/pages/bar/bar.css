@@ -131,10 +131,6 @@
     margin-bottom: 50px;
   }
 
-  .bar-header h1 {
-    font-size: 2.5rem;
-  }
-
   .bar-grid {
     grid-template-columns: 1fr;
   }
@@ -143,10 +139,6 @@
 /* MOBILE */
 
 @media (max-width: 500px) {
-  .bar-header h1 {
-    font-size: 2.2rem;
-  }
-
   .bar-header p {
     font-size: 0.95rem;
   }

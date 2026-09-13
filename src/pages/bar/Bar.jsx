@@ -39,7 +39,7 @@ export default function Bar() {
         <div className="bar-grid">
           {food.map((article) => {
             return (
-              <article className="bar-card">
+              <article key={article.id} className="bar-card">
                 <div>
                   <h3>{article.name}</h3>
                   <p>{article.description}</p>

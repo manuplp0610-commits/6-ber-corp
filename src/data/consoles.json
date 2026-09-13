@@ -1,0 +1,87 @@
+[
+    {
+      "name": "PlayStation 5",
+      "price": "8,00 €",
+      "description": "Profitez de la dernière génération PlayStation.",
+      "games": [
+        {
+          "name": "EA Sports FC 26",
+          "image":
+            "https://media.s-bol.com/38JrrnxoGqAA/xGLyDME/550x670.jpg"
+        },
+        {
+          "name": "Dragon Ball: Sparking! ZERO",
+          "image":
+            "https://m.media-amazon.com/images/I/81zR124u-cL._AC_UF1000,1000_QL80_.jpg"
+        },
+        {
+          "name": "Tekken 8",
+          "image":
+            "https://gamecenter.site/wp-content/uploads/2024/02/tekken8.jpg.webp"
+        }
+      ]
+    },
+    {
+      "name": "Xbox Series X",
+      "price": "8,00 €",
+      "description": "La puissance Xbox pour vos sessions gaming.",
+      "games": [
+        {
+          "name": "Forza Horizon 5",
+          "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSpG4JGJOT9LL5x4sYguW9B866TJC1RXp3y_yhUOGUC8Q&s=10"
+        },
+        {
+          "name": "EA Sports FC 26",
+          "image": "https://m.media-amazon.com/images/I/81o8jWB2dcL.jpg"
+        },
+        {
+          "name": "Mortal Kombat 1",
+          "image":
+            "https://m.media-amazon.com/images/I/815PetZEPGL.jpg"
+        }
+      ]
+    },
+    {
+      "name": "Nintendo Switch",
+      "price": "6,00 €",
+      "description": "Retrouvez vos jeux Nintendo préférés entre amis.",
+      "games": [
+        {
+          "name": "Mario Kart 8 Deluxe",
+          "image":
+            "https://m.media-amazon.com/images/I/81jfG2ujARL.jpg"
+        },
+        {
+          "name": "Super Smash Bros. Ultimate",
+          "image":
+            "https://static.fnac-static.com/multimedia/Images/FR/NR/bf/f5/8d/9303487/1507-1/tsp20260627144726/Super-Smash-Bros-Ultimate-Nintendo-Switch.jpg"
+        },
+        {
+          "name": "Mario Party Superstars",
+          "image":
+            "https://m.media-amazon.com/images/I/910wNKXbn6L.jpg"
+        }
+      ]
+    },
+    {
+      "name": "PlayStation 4",
+      "price": "6,00 €",
+      "description": "Une sélection de grands classiques PlayStation.",
+      "games": [
+        {
+          "name": "Dragon Ball FighterZ",
+          "image":
+            "https://m.media-amazon.com/images/I/71us5dOt2QL._AC_UF1000,1000_QL80_.jpg"
+        },
+        {
+          "name": "One Piece: Pirate Warriors 4",
+          "image":
+            "https://m.media-amazon.com/images/I/81n2uiEtuML._AC_UF1000,1000_QL80_.jpg"
+        },
+        {
+          "name": "Tekken 7",
+          "image": "https://m.media-amazon.com/images/I/81tk896p+VL.jpg"
+        }
+      ]
+    }
+  ]

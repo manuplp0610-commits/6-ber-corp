@@ -44,7 +44,7 @@ export default function Shop() {
   return (
     <div className="shop-container">
       <section className="shop-header">
-        <h1 className="shop-title">Boutique</h1>
+        <h1 className="shop-title"> La Boutique</h1>
       </section>
       <section className="shop-main">
         <div className="filters-section">
