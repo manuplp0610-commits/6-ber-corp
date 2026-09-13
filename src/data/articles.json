@@ -1,56 +1,178 @@
 [
   {
-    "id": "pokemon-booster",
-    "category": "Cartes",
-    "title": "Booster Pokémon",
-    "description": "Booster Pokémon avec cartes à collectionner. Tente de découvrir une carte rare et complète ta collection.",
-    "price": "5,99 €",
-    "image": "https://images.pokemontcg.io/base1/4_hires.png",
-    "badge": "Nouveau"
-  },
-  {
-    "id": "pokemon-etb",
-    "category": "Cartes",
-    "title": "Elite Trainer Box Pokémon",
-    "description": "Une Elite Trainer Box complète pour les collectionneurs et les joueurs Pokémon.",
-    "price": "59,99 €",
-    "image": "https://images.pokemontcg.io/base1/4_hires.png",
-    "badge": "Populaire"
-  },
-  {
-    "id": "yugioh-booster",
-    "category": "Cartes",
-    "title": "Booster Yu-Gi-Oh!",
-    "description": "Pars à la recherche de nouvelles cartes pour compléter ton deck ou ta collection.",
-    "price": "4,99 €",
-    "image": "https://images.ygoprodeck.com/images/cards/89631139.jpg",
-    "badge": ""
-  },
-  {
-    "id": "one-piece-booster",
-    "category": "Cartes",
-    "title": "Booster One Piece",
-    "description": "Retrouve les personnages de One Piece dans le jeu de cartes à collectionner.",
-    "price": "5,99 €",
-    "image": "https://en.onepiece-cardgame.com/images/cardlist/card/OP01-001.png",
-    "badge": "Nouveau"
-  },
-  {
-    "id": "figurine-luffy",
+    "id": 1,
+    "name": "Figurine Son Goku - Super Saiyan",
+    "price": 59.99,
+    "image": "https://storage.googleapis.com/lcdn-products/3/2/5/5/8/6/325586-large_default.webp",
+    "rating": 5,
     "category": "Figurines",
-    "title": "Figurine Monkey D. Luffy",
-    "description": "Une figurine de Luffy pour compléter ta collection One Piece.",
-    "price": "34,99 €",
-    "image": "https://images.unsplash.com/photo-1608889825103-eb5ed706fc64",
-    "badge": "Collector"
+    "univers": "dragonball",
+    "description": "Figurine détaillée de Son Goku en Super Saiyan, idéale pour les collectionneurs et fans de Dragon Ball.",
+    "stock": 12
   },
   {
-    "id": "figurine-goku",
+    "id": 2,
+    "name": "Booster Pack Pokémon - L'Éveil des Étoiles",
+    "price": 6.99,
+    "image": "https://card-binder.com/cdn/shop/files/Pokemon-Sword-and-Shield-Brilliant-Stars-Booster-Pack-3.webp?v=1726227960&width=1500",
+    "rating": 4,
+    "category": "Cartes",
+    "univers": "pokemon",
+    "description": "Booster Pokémon contenant plusieurs cartes à collectionner pour compléter votre collection et découvrir de nouvelles cartes.",
+    "stock": 84
+  },
+  {
+    "id": 3,
+    "name": "Vitrine en Verre avec Éclairage LED",
+    "price": 89.99,
+    "image": "https://medias.maisonsdumonde.com/images/ar_1:1,c_pad,f_auto,q_auto,w_1000/v1/mkp/M26187685_6/vitrine-en-verre-avec-led-et-4-portes-80x35x165-cm-noire.jpg",
+    "rating": 4,
+    "category": "Accessoires",
+    "univers": "",
+    "description": "Grande vitrine en verre avec éclairage LED, parfaite pour exposer et protéger vos figurines et objets de collection.",
+    "stock": 6
+  },
+  {
+    "id": 4,
+    "name": "Statue en Résine - Dragon Blanc aux Yeux Bleus",
+    "price": 149.99,
+    "image": "https://sw6.elbenwald.de/media/e4/e9/bc/1698968946/E1074992_5.jpg",
+    "rating": 5,
     "category": "Figurines",
-    "title": "Figurine Son Goku",
-    "description": "Figurine Son Goku inspirée de l'univers Dragon Ball.",
-    "price": "29,99 €",
-    "image": "https://images.unsplash.com/photo-1618336753974-aae8e04506aa",
-    "badge": "Collector"
+    "univers": "yugiho",
+    "description": "Statue en résine haut de gamme représentant le célèbre Dragon Blanc aux Yeux Bleus, idéale pour les collectionneurs Yu-Gi-Oh!",
+    "stock": 3
+  },
+  {
+    "id": 5,
+    "name": "Boîte de Rangement Premium pour Cartes",
+    "price": 34.99,
+    "image": "https://boutique-magic-effect.com/wp-content/uploads/2020/09/Bo%C3%AEte-%C3%A0-compartiments-en-bois-pour-jeux-de-cartes.jpg",
+    "rating": 4,
+    "category": "Accessoires",
+    "univers": "",
+    "description": "Boîte de rangement avec plusieurs compartiments pour organiser et protéger vos cartes à collectionner.",
+    "stock": 18
+  },
+  {
+    "id": 6,
+    "name": "100 Protège-Cartes Standard",
+    "price": 9.99,
+    "image": "https://embedded.parkage.com/files/img/products/accessoires/ultra_pro/ultra-pro-card-sleeve-graded-resealable-100ct-1258126_00.jpg",
+    "rating": 3,
+    "category": "Accessoires",
+    "univers": "",
+    "description": "Lot de 100 protège-cartes transparents pour protéger vos cartes de collection contre les rayures et l'usure.",
+    "stock": 75
+  },
+  {
+    "id": 7,
+    "name": "Figurine Mewtwo - Pokémon",
+    "price": 24.99,
+    "image": "https://www.foxchip-collector.com/161375-large_default/figurine-pokemon-mewtwo-super-articulated-15-cm.jpg",
+    "rating": 4,
+    "category": "Figurines",
+    "univers": "pokemon",
+    "description": "Figurine de Mewtwo représentant le célèbre Pokémon légendaire, parfaite pour compléter une collection Pokémon.",
+    "stock": 9
+  },
+  {
+    "id": 8,
+    "name": "Carte Son Goku - Guerrier Suprême",
+    "price": 199.99,
+    "image": "https://static.dbscards.fr/cards/fr/bt16/image-cartes-a-collectionner-dragon-ball-super-card-game-tcg-dbscards-bt16-001-uc-son-goku-guerrier-supreme-back.webp",
+    "rating": 5,
+    "category": "Cartes",
+    "univers": "dragonball",
+    "description": "Carte de collection Dragon Ball mettant en scène Son Goku, destinée aux collectionneurs et joueurs confirmés.",
+    "stock": 2
+  },
+  {
+    "id": 9,
+    "name": "Booster Pack Yu-Gi-Oh! - Héritage de la Destruction",
+    "price": 5.99,
+    "image": "https://namur.ludotrotter.be/wp-content/uploads/2024/04/Yu-Gi-Oh-%E2%80%93-Heritage-de-la-destruction-Booster-fr.jpg",
+    "rating": 4,
+    "category": "Cartes",
+    "univers": "yugiho",
+    "description": "Booster Yu-Gi-Oh! permettant de découvrir de nouvelles cartes et d'enrichir votre collection.",
+    "stock": 46
+  },
+  {
+    "id": 10,
+    "name": "Les 7 Boules de Cristal - Dragon Ball",
+    "price": 39.99,
+    "image": "https://www.clubotaku.fr/wp-content/uploads/2021/09/accessoire-dragon-ball-7-boules-de-cristal-75-cm-1.jpg",
+    "rating": 5,
+    "category": "Accessoires",
+    "univers": "dragonball",
+    "description": "Set décoratif représentant les sept boules de cristal de Dragon Ball, parfait pour décorer votre espace gaming ou collection.",
+    "stock": 7
+  },
+  {
+    "id": 11,
+    "name": "Manette Sans Fil Pikachu & Ectoplasma",
+    "price": 49.99,
+    "image": "https://alertetgo.com/wp-content/uploads/2025/02/Manette-sans-fil-Nintendo-SWITCH-Pikachu-vs.-Ectoplasma-PowerA.webp",
+    "rating": 4,
+    "category": "Accessoires",
+    "univers": "pokemon",
+    "description": "Manette sans fil au design Pokémon Pikachu et Ectoplasma, parfaite pour les sessions de jeu entre amis.",
+    "stock": 5
+  },
+  {
+    "id": 12,
+    "name": "Chapeau de Paille de Luffy",
+    "price": 29.99,
+    "image": "https://fanssite.be/cdn/shop/files/one-piece-luffy-strohoed-kindermaataccessoire-9679272.jpg?v=1780658717",
+    "rating": 4,
+    "category": "Accessoires",
+    "univers": "onePiece",
+    "description": "Réplique du célèbre chapeau de paille porté par Luffy, un accessoire incontournable pour les fans de One Piece.",
+    "stock": 11
+  },
+  {
+    "id": 13,
+    "name": "Figurine Luffy - One Piece",
+    "price": 44.99,
+    "image": "https://www.toysplanets.be/media/catalog/product/cache/2f19ab1f328091eb566bac9b34255e23/x/_/x_meho716430-1_f.jpg",
+    "rating": 5,
+    "category": "Figurines",
+    "univers": "onePiece",
+    "description": "Figurine de Monkey D. Luffy représentant le capitaine de l'équipage au Chapeau de Paille.",
+    "stock": 8
+  },
+  {
+    "id": 14,
+    "name": "Carte Gol D. Roger - One Piece",
+    "price": 79.99,
+    "image": "https://images.squarespace-cdn.com/content/v1/6401cbfe07235f5709e9bd10/ad7559ba-a477-436d-91f1-b9f79a5933f6/OP09-118+SEC.jpeg?format=1000w",
+    "rating": 5,
+    "category": "Cartes",
+    "univers": "onePiece",
+    "description": "Carte de collection représentant Gol D. Roger, le légendaire Roi des Pirates de l'univers One Piece.",
+    "stock": 4
+  },
+  {
+    "id": 15,
+    "name": "Collier Puzzle du Millénium - Yu-Gi-Oh!",
+    "price": 19.99,
+    "image": "https://ledragonargente.com/cdn/shop/files/yugi-oh-millennium-puzzle-pendant-le-dragon-argente-1832036.png?v=1775252889&width=1946",
+    "rating": 4,
+    "category": "Accessoires",
+    "univers": "yugiho",
+    "description": "Collier inspiré du Puzzle du Millénium de Yu-Gi-Oh!, idéal pour les fans de la série et les collectionneurs.",
+    "stock": 14
+  },
+  {
+    "id": 16,
+    "name": "Figurine Vegeta - Dragon Ball",
+    "price": 46.33,
+    "image": "https://m.media-amazon.com/images/I/51ZuUI-LaZL._AC_UF350,350_QL80_AIweblab1381794,T1_.jpg",
+    "rating": 4,
+    "category": "Figurines",
+    "univers": "dragonball",
+    "description": "Figurine de Vegeta inspirée de l'univers Dragon Ball, parfaite pour accompagner votre collection de figurines Saiyans.",
+    "stock": 6
   }
 ]
