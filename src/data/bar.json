@@ -96,5 +96,19 @@
         "price":"5",
         "description":"Portion de 6 nuggets avec sauce",
         "category":"food"
+    },
+    {
+        "id":"16",
+        "name":"Bierre",
+        "price":"2.50",
+        "description":"Jupiler 33cl",
+        "category":"drink"
+    },
+    {
+        "id":"17",
+        "name":"Burger",
+        "price":"5",
+        "description":"Pain bagnat, steak de boeuf, salade, sauce au choix",
+        "category":"food"
     }
 ]

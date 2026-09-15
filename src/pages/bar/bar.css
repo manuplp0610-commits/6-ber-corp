@@ -1,32 +1,36 @@
+/* ================================
+   BAR - 6 BER-CORP
+================================ */
+
 .bar-page {
   position: relative;
   width: 100%;
   min-height: 100vh;
   padding: 80px 20px;
-  background: url("../../assets/images/bg-zone.jpg");
-  background-position: center;
-  background-size: cover;
-  background-repeat: no-repeat;
+  background: url("../../assets/images/bg-zone.jpg") center / cover no-repeat;
   color: #ffffff;
 }
 
-/* Overlay sur l'image de fond */
+/* OVERLAY */
 
 .bar-page::before {
   content: "";
   position: absolute;
   inset: 0;
-  background: rgba(0, 0, 0, 0.8);
+  background: rgba(0, 0, 0, 0.82);
   z-index: 0;
 }
 
-/* Tout le contenu passe au-dessus de l'overlay */
+/* CONTENU */
 
 .bar-page > * {
   position: relative;
   z-index: 1;
 }
-/* HEADER */
+
+/* ================================
+   HEADER
+================================ */
 
 .bar-header {
   max-width: 800px;
@@ -35,20 +39,58 @@
 }
 
 .bar-header h1 {
-  text-align: center;
+  margin: 50px 0 30px;
   font-size: 40px;
   color: #ff9500;
-  margin: 30px 0;
 }
 
-.bar-header p {
+.bar-header > p {
   margin: 0;
-  color: #bdbdbd;
+  color: #ffffff;
   font-size: 1.05rem;
   line-height: 1.7;
 }
 
-/* SECTIONS */
+/* INFO */
+
+.bar-info {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  max-width: 600px;
+  margin: 30px auto 0;
+  padding: 18px 22px;
+  text-align: left;
+  background: rgba(255, 149, 0, 0.08);
+  border: 1px solid rgba(255, 149, 0, 0.4);
+  border-left: 4px solid #ff9500;
+  border-radius: 10px;
+}
+
+.bar-info-icon {
+  font-size: 28px;
+}
+
+.bar-info strong {
+  display: block;
+  margin-bottom: 5px;
+  color: #ffffff;
+  font-size: 15px;
+}
+
+.info {
+  margin: 10px 0;
+  color: #aaaaaa;
+  font-size: 13px;
+  line-height: 1.5;
+}
+.promo {
+  color: #ff9500;
+  font-weight: bold;
+}
+/* ================================
+   SECTIONS
+================================ */
 
 .bar-section {
   max-width: 1200px;
@@ -75,11 +117,13 @@
   transform: translateY(-50%);
 }
 
-/* PRODUCTS */
+/* ================================
+   PRODUCTS
+================================ */
 
 .bar-grid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 20px;
 }
 
@@ -89,7 +133,7 @@
   justify-content: space-between;
   min-height: 95px;
   padding: 22px 25px;
-  background: #1a1c29;
+  background: rgba(26, 28, 41, 0.95);
   border: 1px solid #292929;
   border-radius: 10px;
   transition:
@@ -104,6 +148,10 @@
   box-shadow: 0 8px 25px rgba(0, 0, 0, 0.35);
 }
 
+.bar-card-content {
+  min-width: 0;
+}
+
 .bar-card h3 {
   margin: 0 0 7px;
   color: #ffffff;
@@ -114,17 +162,21 @@
   margin: 0;
   color: #969696;
   font-size: 0.9rem;
+  line-height: 1.5;
 }
 
-.bar-card span {
-  margin-left: 20px;
+.bar-price {
+  flex-shrink: 0;
+  margin-left: 25px;
   color: #ff9500;
   font-size: 1.1rem;
   font-weight: 700;
   white-space: nowrap;
 }
 
-/* TABLET */
+/* ================================
+   TABLET
+================================ */
 
 @media (max-width: 800px) {
   .bar-header {
@@ -136,11 +188,26 @@
   }
 }
 
-/* MOBILE */
+/* ================================
+   MOBILE
+================================ */
 
 @media (max-width: 500px) {
-  .bar-header p {
+  .bar-page {
+    padding: 60px 15px;
+  }
+
+  .bar-header h1 {
+    font-size: 34px;
+    margin: 40px 0 25px;
+  }
+
+  .bar-header > p {
     font-size: 0.95rem;
+  }
+
+  .bar-info {
+    padding: 15px;
   }
 
   .bar-section {
@@ -148,6 +215,7 @@
   }
 
   .bar-section h2 {
+    margin-bottom: 25px;
     font-size: 1.6rem;
   }
 
@@ -163,7 +231,8 @@
     font-size: 0.82rem;
   }
 
-  .bar-card span {
+  .bar-price {
+    margin-left: 15px;
     font-size: 1rem;
   }
 }

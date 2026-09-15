@@ -1,4 +1,5 @@
 import "./bar.css";
+
 import dataBar from "../../data/bar.json";
 
 export default function Bar() {
@@ -9,10 +10,24 @@ export default function Bar() {
     <main className="bar-page">
       <section className="bar-header">
         <h1 className="bar-title">Le Bar</h1>
+
         <p>
           Faites une pause entre deux parties et profitez de nos boissons et
           snacks disponibles au bar.
         </p>
+
+        <div className="bar-info">
+          <span className="bar-info-icon">🍹</span>
+          <div>
+            <strong>Disponible directement au bar</strong>
+            <p className="info">
+              Boissons et snacks à déguster sur place pendant votre session.
+            </p>
+            <p className="promo">
+              Une boisson est offerte pour chaques session de jeux.
+            </p>
+          </div>
+        </div>
       </section>
 
       <section className="bar-section">
@@ -22,11 +37,12 @@ export default function Bar() {
           {drink.map((article) => {
             return (
               <article key={article.id} className="bar-card">
-                <div>
+                <div className="bar-card-content">
                   <h3>{article.name}</h3>
                   <p>{article.description}</p>
                 </div>
-                <span>{article.price} €</span>
+
+                <span className="bar-price">{article.price} €</span>
               </article>
             );
           })}
@@ -40,11 +56,12 @@ export default function Bar() {
           {food.map((article) => {
             return (
               <article key={article.id} className="bar-card">
-                <div>
+                <div className="bar-card-content">
                   <h3>{article.name}</h3>
                   <p>{article.description}</p>
                 </div>
-                <span>{article.price} €</span>
+
+                <span className="bar-price">{article.price} €</span>
               </article>
             );
           })}
