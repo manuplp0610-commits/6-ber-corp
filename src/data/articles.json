@@ -6,7 +6,7 @@
     "image": "https://storage.googleapis.com/lcdn-products/3/2/5/5/8/6/325586-large_default.webp",
     "rating": 5,
     "category": "Figurines",
-    "univers": "dragonball",
+    "univers": "Dragonball",
     "description": "Figurine détaillée de Son Goku en Super Saiyan, idéale pour les collectionneurs et fans de Dragon Ball.",
     "stock": 12
   },
@@ -17,7 +17,7 @@
     "image": "https://card-binder.com/cdn/shop/files/Pokemon-Sword-and-Shield-Brilliant-Stars-Booster-Pack-3.webp?v=1726227960&width=1500",
     "rating": 4,
     "category": "Cartes",
-    "univers": "pokemon",
+    "univers": "Pokemon",
     "description": "Booster Pokémon contenant plusieurs cartes à collectionner pour compléter votre collection et découvrir de nouvelles cartes.",
     "stock": 84
   },
@@ -28,7 +28,7 @@
     "image": "https://medias.maisonsdumonde.com/images/ar_1:1,c_pad,f_auto,q_auto,w_1000/v1/mkp/M26187685_6/vitrine-en-verre-avec-led-et-4-portes-80x35x165-cm-noire.jpg",
     "rating": 4,
     "category": "Accessoires",
-    "univers": "",
+    "univers": "Autre",
     "description": "Grande vitrine en verre avec éclairage LED, parfaite pour exposer et protéger vos figurines et objets de collection.",
     "stock": 6
   },
@@ -39,7 +39,7 @@
     "image": "https://sw6.elbenwald.de/media/e4/e9/bc/1698968946/E1074992_5.jpg",
     "rating": 5,
     "category": "Figurines",
-    "univers": "yugiho",
+    "univers": "Yu-gi-ho",
     "description": "Statue en résine haut de gamme représentant le célèbre Dragon Blanc aux Yeux Bleus, idéale pour les collectionneurs Yu-Gi-Oh!",
     "stock": 3
   },
@@ -50,7 +50,7 @@
     "image": "https://boutique-magic-effect.com/wp-content/uploads/2020/09/Bo%C3%AEte-%C3%A0-compartiments-en-bois-pour-jeux-de-cartes.jpg",
     "rating": 4,
     "category": "Accessoires",
-    "univers": "",
+    "univers": "Autre",
     "description": "Boîte de rangement avec plusieurs compartiments pour organiser et protéger vos cartes à collectionner.",
     "stock": 18
   },
@@ -61,7 +61,7 @@
     "image": "https://embedded.parkage.com/files/img/products/accessoires/ultra_pro/ultra-pro-card-sleeve-graded-resealable-100ct-1258126_00.jpg",
     "rating": 3,
     "category": "Accessoires",
-    "univers": "",
+    "univers": "Autre",
     "description": "Lot de 100 protège-cartes transparents pour protéger vos cartes de collection contre les rayures et l'usure.",
     "stock": 75
   },
@@ -72,7 +72,7 @@
     "image": "https://www.foxchip-collector.com/161375-large_default/figurine-pokemon-mewtwo-super-articulated-15-cm.jpg",
     "rating": 4,
     "category": "Figurines",
-    "univers": "pokemon",
+    "univers": "Pokemon",
     "description": "Figurine de Mewtwo représentant le célèbre Pokémon légendaire, parfaite pour compléter une collection Pokémon.",
     "stock": 9
   },
@@ -83,7 +83,7 @@
     "image": "https://static.dbscards.fr/cards/fr/bt16/image-cartes-a-collectionner-dragon-ball-super-card-game-tcg-dbscards-bt16-001-uc-son-goku-guerrier-supreme-back.webp",
     "rating": 5,
     "category": "Cartes",
-    "univers": "dragonball",
+    "univers": "Dragonball",
     "description": "Carte de collection Dragon Ball mettant en scène Son Goku, destinée aux collectionneurs et joueurs confirmés.",
     "stock": 2
   },
@@ -94,7 +94,7 @@
     "image": "https://namur.ludotrotter.be/wp-content/uploads/2024/04/Yu-Gi-Oh-%E2%80%93-Heritage-de-la-destruction-Booster-fr.jpg",
     "rating": 4,
     "category": "Cartes",
-    "univers": "yugiho",
+    "univers": "Yu-gi-ho",
     "description": "Booster Yu-Gi-Oh! permettant de découvrir de nouvelles cartes et d'enrichir votre collection.",
     "stock": 46
   },
@@ -105,7 +105,7 @@
     "image": "https://www.clubotaku.fr/wp-content/uploads/2021/09/accessoire-dragon-ball-7-boules-de-cristal-75-cm-1.jpg",
     "rating": 5,
     "category": "Accessoires",
-    "univers": "dragonball",
+    "univers": "Dragonball",
     "description": "Set décoratif représentant les sept boules de cristal de Dragon Ball, parfait pour décorer votre espace gaming ou collection.",
     "stock": 7
   },
@@ -116,7 +116,7 @@
     "image": "https://alertetgo.com/wp-content/uploads/2025/02/Manette-sans-fil-Nintendo-SWITCH-Pikachu-vs.-Ectoplasma-PowerA.webp",
     "rating": 4,
     "category": "Accessoires",
-    "univers": "pokemon",
+    "univers": "Pokemon",
     "description": "Manette sans fil au design Pokémon Pikachu et Ectoplasma, parfaite pour les sessions de jeu entre amis.",
     "stock": 5
   },
@@ -160,7 +160,7 @@
     "image": "https://ledragonargente.com/cdn/shop/files/yugi-oh-millennium-puzzle-pendant-le-dragon-argente-1832036.png?v=1775252889&width=1946",
     "rating": 4,
     "category": "Accessoires",
-    "univers": "yugiho",
+    "univers": "Yu-gi-ho",
     "description": "Collier inspiré du Puzzle du Millénium de Yu-Gi-Oh!, idéal pour les fans de la série et les collectionneurs.",
     "stock": 14
   },
@@ -171,7 +171,29 @@
     "image": "https://m.media-amazon.com/images/I/51ZuUI-LaZL._AC_UF350,350_QL80_AIweblab1381794,T1_.jpg",
     "rating": 4,
     "category": "Figurines",
-    "univers": "dragonball",
+    "univers": "Dragonball",
+    "description": "Figurine de Vegeta inspirée de l'univers Dragon Ball, parfaite pour accompagner votre collection de figurines Saiyans.",
+    "stock": 6
+  },
+  {
+    "id": 17,
+    "name": "test",
+    "price": 46.33,
+    "image": "https://www.alucare.fr/wp-content/uploads/2022/05/breadcrumb_img04.png",
+    "rating": 4,
+    "category": "Poster",
+    "univers": "Alucare",
+    "description": "Figurine de Vegeta inspirée de l'univers Dragon Ball, parfaite pour accompagner votre collection de figurines Saiyans.",
+    "stock": 6
+  },
+  {
+    "id": 18,
+    "name": "test",
+    "price": 46.33,
+    "image": "https://yt3.googleusercontent.com/QFCvwHpmgOaHWIKlnbBgXUuajZXi3f5FQ-eUeM7i903cpRDSWo8ysTlYQMWyC3ruuwFn5X8P=s900-c-k-c0x00ffffff-no-rj",
+    "rating": 4,
+    "category": "Poster",
+    "univers": "Alucare",
     "description": "Figurine de Vegeta inspirée de l'univers Dragon Ball, parfaite pour accompagner votre collection de figurines Saiyans.",
     "stock": 6
   }
