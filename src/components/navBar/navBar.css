@@ -1,74 +1,359 @@
 /* =========================================================
-   GENERALE
-=========================================================== */
+   NAVBAR - 6 BER-CORP
+========================================================= */
 
 .navBar {
-  display: flex;
-  z-index: 2;
+  position: relative;
+  z-index: 100;
   width: 100%;
   font-size: 20px;
-  position: relative;
-  z-index: 3;
 }
 
-.logo {
-  width: 40px;
-}
+/* =========================================================
+   NAVBAR DEFAULT
+========================================================= */
 
-.logo:hover {
-  transform: scale(1.05);
-  filter: drop-shadow(0 0 50px rgba(255, 149, 0, 0.7));
-}
-
-.nav-inner {
+.navBar--default {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 75px;
   width: 100%;
+
+  background: rgba(26, 28, 41, 0.97);
+  border: 1px solid #ff9500;
+  border-radius: 0 0 14px 14px;
+
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+
+  box-sizing: border-box;
 }
 
-.nav-links {
+/* =========================================================
+   CONTENEUR
+========================================================= */
+
+.nav-inner--default {
+  position: absolute;
+  top: 0;
   width: 100%;
+  max-width: 1400px;
+  min-height: 80px;
+
+  margin: 0 auto;
+  padding: 0 30px;
+
   display: flex;
   align-items: center;
+  justify-content: space-between;
+
+  box-sizing: border-box;
+}
+
+/* =========================================================
+   LOGO
+========================================================= */
+
+.logo-left--default {
+  position: relative;
+  z-index: 200;
+
+  width: 58px;
+  height: 58px;
+  object-fit: contain;
+  margin: 10px 15px;
+
+  transition: transform 0.25s ease;
+}
+
+.logo-left--default:hover {
+  transform: scale(1.08);
+}
+
+.logo-center--default {
+  display: none;
+}
+
+/* =========================================================
+   NAVIGATION DESKTOP
+========================================================= */
+
+.nav-links--default {
+  width: 100%;
+  transform: translateX(50px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 35px;
+
+  margin-left: auto;
+  padding-right: 125px;
+
+  box-sizing: border-box;
 }
 
 .sind-nav {
   display: flex;
-  gap: 20px;
+  align-items: center;
+  gap: 28px;
 }
-.nav-toggle {
-  display: none;
-  color: white;
-  position: fixed;
-  top: 25px;
-  right: 20px;
-  z-index: 4;
+
+.sind-nav a {
+  position: relative;
+
+  padding: 10px 0;
+
+  color: #f5f5f5;
+
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 0.8px;
+  text-transform: uppercase;
+
+  text-decoration: none;
+
+  transition:
+    color 0.2s ease,
+    transform 0.2s ease;
 }
+
+.sind-nav a::after {
+  content: "";
+
+  position: absolute;
+  left: 0;
+  bottom: 2px;
+
+  width: 0;
+  height: 2px;
+
+  background: #ff9500;
+  border-radius: 2px;
+
+  transition: width 0.2s ease;
+}
+
+.sind-nav a:hover {
+  color: #ff9500;
+  transform: translateY(-2px);
+}
+
+.sind-nav a:hover::after {
+  width: 100%;
+}
+
+/* =========================================================
+   BOUTON ONLINE / CONNEXION
+========================================================= */
+
+.navBar > .btn-login {
+  position: absolute;
+
+  top: 20px;
+  right: 30px;
+
+  z-index: 110;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  min-width: 75px;
+
+  padding: 7px 16px;
+
+  background: transparent;
+  color: #ff9500;
+
+  border: 1px solid #ff9500;
+  border-radius: 6px;
+
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+
+  text-decoration: none;
+
+  transition:
+    background 0.2s ease,
+    color 0.2s ease,
+    box-shadow 0.2s ease,
+    transform 0.2s ease;
+}
+
+.navBar > .btn-login:hover {
+  background: #ff9500;
+  color: #11131c;
+
+  transform: translateY(-1px);
+
+  box-shadow: 0 5px 15px rgba(255, 149, 0, 0.25);
+}
+
+/* =========================================================
+   MENU MOBILE
+========================================================= */
+
 .nav-mobile {
   position: fixed;
-  inset: 0;
+
+  top: 80px;
+  left: 0;
+  right: 0;
+
   width: 100%;
-  height: 100dvh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background: rgba(0, 0, 0, 0.5);
-  backdrop-filter: blur(15px);
-  -webkit-backdrop-filter: blur(15px);
-  z-index: 3;
+  height: calc(100dvh - 80px);
+
+  overflow-y: auto;
+
+  background: rgba(17, 19, 28, 0.98);
+
+  border-top: 1px solid #303030;
+
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.45);
+
+  z-index: 99;
 }
+
+.nav-mobile-content {
+  width: 100%;
+  max-width: 500px;
+
+  margin: 0 auto;
+  padding: 25px 20px 40px;
+
+  box-sizing: border-box;
+}
+
 .nav-mobile-content ul {
   display: flex;
-  font-size: 30px;
   flex-direction: column;
-  align-items: center;
-  gap: 30px;
-  color: white;
+
+  width: 100%;
+
+  gap: 8px;
+
+  padding: 0;
+  margin: 0;
+
+  list-style: none;
 }
+
+/* =========================================================
+   LIENS DU MENU MOBILE
+========================================================= */
+
+.nav-mobile-content li {
+  width: 100%;
+}
+
+.nav-mobile-content li a {
+  display: block;
+
+  width: 100%;
+  box-sizing: border-box;
+
+  padding: 15px 18px;
+
+  background: #1a1c29;
+  color: #f5f5f5;
+
+  border: 1px solid #303030;
+  border-radius: 7px;
+
+  font-size: 15px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+
+  text-align: center;
+  text-decoration: none;
+
+  transition:
+    color 0.2s ease,
+    background 0.2s ease,
+    border-color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.nav-mobile-content li a:hover {
+  background: #202331;
+  color: #ff9500;
+
+  border-color: #ff9500;
+
+  transform: translateY(-1px);
+}
+
+/* =========================================================
+   LOGIN MOBILE
+========================================================= */
+
+.nav-mobile-content li.btn-login {
+  margin-bottom: 12px;
+}
+
+.nav-mobile-content li.btn-login a {
+  background: #ff9500;
+  color: #11131c;
+
+  border-color: #ff9500;
+}
+
+.nav-mobile-content li.btn-login a:hover {
+  background: #ffad33;
+  color: #11131c;
+
+  border-color: #ffad33;
+}
+
+/* =========================================================
+   BOUTON HAMBURGER
+========================================================= */
+
+.nav-toggle {
+  display: none;
+
+  position: fixed;
+
+  top: 19px;
+  right: 20px;
+
+  z-index: 110;
+
+  width: 42px;
+  height: 42px;
+
+  padding: 0;
+
+  background: #1a1c29;
+  color: #ff9500;
+
+  border: 1px solid #303030;
+  border-radius: 7px;
+
+  font-size: 22px;
+  line-height: 1;
+
+  cursor: pointer;
+
+  transition:
+    background 0.2s ease,
+    border-color 0.2s ease,
+    color 0.2s ease;
+}
+
+.nav-toggle:hover {
+  background: #202331;
+  border-color: #ff9500;
+}
+
 /* =========================================================
    HERO
-=========================================================== */
+========================================================= */
 
 .navBar--hero {
-  color: white;
+  color: #ffffff;
 }
 
 .logo-left--hero {
@@ -80,176 +365,48 @@
 }
 
 .nav-links--hero {
+  width: 100%;
+
+  display: flex;
+  align-items: center;
   justify-content: space-evenly;
 }
 
 /* =========================================================
-   DEFAULT
-=========================================================== */
-.navBar--default {
-  width: 100%;
-  background: #1a1c29;
-  border-bottom: 1px solid #3a3a3a;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
-  position: fixed;
-  z-index: 100;
-  border-radius: 20px;
-  border: 1px solid #ff9500;
-}
-
-.nav-inner--default {
-  min-height: 80px;
-  max-width: 1400px;
-  margin: 0 auto;
-  padding: 0 30px;
-
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-
-/* LOGO */
-
-.logo-left--default {
-  width: 58px;
-  height: 58px;
-  object-fit: contain;
-  margin: 10px;
-
-  transition: transform 0.25s ease;
-}
-
-.logo-left--default:hover {
-  transform: scale(1.08);
-}
-
-/* LOGO CENTRAL */
-
-.logo-center--default {
-  display: none;
-}
-
-/* NAVIGATION */
-
-.nav-links--default {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 35px;
-  margin-left: auto;
-}
-
-.nav-links--default a {
-  position: relative;
-
-  color: #f5f5f5;
-  text-decoration: none;
-  font-size: 15px;
-  font-weight: 600;
-  letter-spacing: 1px;
-  text-transform: uppercase;
-
-  padding: 10px 0;
-
-  transition:
-    color 0.25s ease,
-    transform 0.25s ease;
-}
-
-.nav-links--default a::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  bottom: 0;
-
-  width: 0;
-  height: 2px;
-
-  background: #ff9500;
-
-  transition: width 0.25s ease;
-}
-
-.nav-links--default a:hover {
-  color: #ff9500;
-  transform: translateY(-2px);
-}
-
-.nav-links--default a:hover::after {
-  width: 100%;
-}
-
-/* BOUTIQUE */
-
-.nav-links--default .shop-link {
-  padding: 10px 18px;
-
-  border: 1px solid #ff9500;
-  border-radius: 4px;
-
-  color: #ff9500;
-
-  box-shadow: 0 0 10px rgba(0, 229, 255, 0.12);
-
-  transition: all 0.25s ease;
-}
-
-.nav-links--default .shop-link::after {
-  display: none;
-}
-
-.nav-links--default .shop-link:hover {
-  color: #181818;
-  background: #ff9500;
-  box-shadow: 0 0 18px rgba(255, 149, 0, 0.7);
-  transform: translateY(-2px);
-}
-
-/* =========================================================
-   ANIMATION
-=========================================================== */
-
-.sind-nav a {
-  position: relative;
-}
-
-.sind-nav a::after {
-  content: "";
-  position: absolute;
-  bottom: -4px;
-  left: 0;
-  width: 0;
-  height: 2px;
-  background: linear-gradient(90deg, #ff9500, #ffcc00);
-  transition: width 0.3s ease;
-}
-
-.sind-nav a:hover {
-  color: #ff9500;
-  text-shadow: 0 0 20px rgba(255, 149, 0, 0.5);
-}
-
-.sind-nav a:hover::after {
-  width: 100%;
-}
-
-/* =========================================================
    TABLETTE
-=========================================================== */
+========================================================= */
 
 @media (max-width: 850px) {
+  .nav-inner--default {
+    padding: 0 20px;
+  }
+
+  .nav-links--default {
+    gap: 20px;
+    padding-right: 110px;
+  }
+
+  .sind-nav {
+    gap: 18px;
+  }
+
+  .sind-nav a {
+    font-size: 13px;
+  }
+
+  /* HERO */
+
   .nav-links--hero {
-    display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    align-items: center;
     gap: 20px;
   }
 
-  /* LOGO SUR SA PROPRE LIGNE */
   .logo-link--center {
     order: 1;
+
     flex: 0 0 100%;
+
     display: flex;
     justify-content: center;
   }
@@ -259,7 +416,6 @@
     margin-bottom: 10px;
   }
 
-  /* LES DEUX GROUPES SOUS LE LOGO */
   .sind-nav--left {
     order: 2;
   }
@@ -267,18 +423,72 @@
   .sind-nav--right {
     order: 3;
   }
-
-  .sind-nav {
-    position: static;
-    flex: 0 0 auto;
-    gap: 20px;
-  }
 }
-@media (max-width: 600px) {
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 850px) {
+  .navBar--default {
+    border-radius: 0 0 10px 10px;
+  }
+
+  .nav-inner--default {
+    min-height: 80px;
+
+    padding: 0 20px;
+  }
+
+  .logo-left--default {
+    width: 52px;
+    height: 52px;
+  }
+
+  /* Cacher la navigation desktop */
+
+  .nav-links--default {
+    display: none;
+  }
+
   .sind-nav {
     display: none;
   }
+
+  /* Cacher Online desktop */
+
+  .navBar > .btn-login {
+    display: none;
+  }
+
+  /* Afficher hamburger */
+
   .nav-toggle {
-    display: block;
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+  }
+
+  /* Menu mobile */
+
+  .nav-mobile {
+    top: 80px;
+
+    height: calc(100dvh - 80px);
+  }
+
+  .nav-mobile-content {
+    padding: 25px 15px 40px;
+  }
+
+  /* HERO MOBILE */
+
+  .nav-links--hero {
+    display: flex;
+  }
+
+  .logo-center--hero {
+    width: 210px;
   }
 }

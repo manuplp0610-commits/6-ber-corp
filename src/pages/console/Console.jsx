@@ -1,60 +1,73 @@
 import "./console.css";
+import HeaderPages from "../../components/headerPages/HeaderPages";
 import consoles from "../../data/consoles.json";
 
 export default function Console() {
   return (
-    <main className="console-page">
-      <section className="console-header">
-        <h1>Espace Console</h1>
+    <section className="console-page">
+      <HeaderPages
+        title="Espace Console"
+        subTitle="Jouez seul ou entre amis sur nos consoles et profitez d’une sélection de jeux dans un espace dédié."
+      />
 
-        <p>
-          Venez jouer seul ou entre amis sur nos consoles et profitez d'une
-          large sélection de jeux vidéo.
-        </p>
+      <section className="console-intro">
+        <span className="console-intro-icon">🎮</span>
 
-        <div className="console-offer">
-          <span>🎁</span>
-
-          <div>
-            <strong>Une session = une boisson + un snack offert</strong>
-            <p>
-              Chaque joueur bénéficie d'une boisson et d'un snack pendant sa
-              session.
-            </p>
-          </div>
+        <div>
+          <span className="console-kicker">L'expérience 6 Ber-Corp</span>
+          <h2>Votre prochaine partie commence ici</h2>
+          <p>
+            Profitez d’un espace confortable, d’une sélection de consoles et
+            d’un catalogue de jeux pensé pour jouer seul ou entre amis.
+          </p>
         </div>
       </section>
 
       <section className="console-section">
-        <div className="section-title">
-          <h2>Nos consoles</h2>
-          <p>Choisissez votre plateforme et profitez de votre session.</p>
+        <div className="section-heading">
+          <div>
+            <span className="console-kicker">Nos plateformes</span>
+            <h2>Choisissez votre console</h2>
+          </div>
+
+          <p>
+            {consoles.length} plateforme{consoles.length > 1 ? "s" : ""}{" "}
+            disponible
+            {consoles.length > 1 ? "s" : ""}
+          </p>
         </div>
 
         <div className="console-list">
-          {consoles.map((console) => (
-            <article className="console-card" key={console.name}>
-              <div className="console-card-header">
-                <div>
-                  <h3>{console.name}</h3>
-                  <p>{console.description}</p>
+          {consoles.map((consoleItem) => (
+            <article className="console-card" key={consoleItem.name}>
+              <div className="console-card-top">
+                <div className="console-icon">🕹️</div>
+
+                <div className="console-card-title">
+                  <h3>{consoleItem.name}</h3>
+                  <p>{consoleItem.description}</p>
                 </div>
 
                 <div className="console-price">
-                  <strong>{console.price}</strong>
-                  <span>/ heure</span>
+                  <strong>{consoleItem.price} €</strong>
+                  <span>par heure</span>
                 </div>
               </div>
 
+              <div className="console-card-divider"></div>
+
               <div className="games-section">
-                <h4>Jeux disponibles</h4>
+                <div className="games-heading">
+                  <h4>Jeux disponibles</h4>
+                  <span>{consoleItem.games.length} jeux</span>
+                </div>
 
                 <div className="games-grid">
-                  {console.games.map((game) => (
+                  {consoleItem.games.map((game) => (
                     <div className="game-card" key={game.name}>
-                      <img src={game.image} alt={game.name} />
+                      <img src={game.image} alt={game.name} loading="lazy" />
 
-                      <div className="game-name">
+                      <div className="game-overlay">
                         <span>{game.name}</span>
                       </div>
                     </div>
@@ -66,15 +79,53 @@ export default function Console() {
         </div>
       </section>
 
-      <section className="console-info">
-        <h2>Jouez comme vous voulez</h2>
+      <section className="console-how">
+        <div className="section-heading">
+          <div>
+            <span className="console-kicker">Simple et rapide</span>
+            <h2>Comment ça fonctionne ?</h2>
+          </div>
+        </div>
 
-        <p>
-          Seul, entre amis ou en groupe, le tarif est fixé par console et par
-          heure. Le nombre de joueurs n'influence donc pas le prix de la
-          session.
-        </p>
+        <div className="console-steps">
+          <article className="console-step">
+            <span>01</span>
+            <h3>Choisissez</h3>
+            <p>Sélectionnez la console et le jeu de votre choix.</p>
+          </article>
+
+          <article className="console-step">
+            <span>02</span>
+            <h3>Installez-vous</h3>
+            <p>Prenez place dans notre espace gaming.</p>
+          </article>
+
+          <article className="console-step">
+            <span>03</span>
+            <h3>Jouez</h3>
+            <p>Profitez de votre session seul ou entre amis.</p>
+          </article>
+
+          <article className="console-step">
+            <span>04</span>
+            <h3>Savourez</h3>
+            <p>Une boisson est incluse pour chaque session.</p>
+          </article>
+        </div>
       </section>
-    </main>
+
+      <section className="console-info">
+        <div className="console-info-icon">💡</div>
+
+        <div>
+          <h2>Un tarif simple et transparent</h2>
+          <p>
+            Le prix est calculé par console et par heure, quel que soit le
+            nombre de joueurs. Venez seul, en duo ou en équipe : le tarif reste
+            identique.
+          </p>
+        </div>
+      </section>
+    </section>
   );
 }

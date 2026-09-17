@@ -1,0 +1,66 @@
+/* =================================
+   HEADER PAGES - 6 BER-CORP
+================================= */
+
+.headerPages {
+  max-width: 900px;
+  margin: 0 auto 65px;
+  padding: 35px 20px 0;
+  text-align: center;
+}
+
+.headerPagesTitle {
+  position: relative;
+  display: inline-block;
+  margin: 0 0 22px;
+  color: #ffffff;
+  font-size: clamp(2.2rem, 5vw, 3.6rem);
+  font-weight: 800;
+  line-height: 1.1;
+  letter-spacing: -0.03em;
+}
+
+.headerPagesTitle::after {
+  content: "";
+  display: block;
+  width: 58px;
+  height: 4px;
+  margin: 18px auto 0;
+  background: #ff9500;
+  border-radius: 999px;
+  box-shadow: 0 0 18px rgba(255, 149, 0, 0.45);
+}
+
+.headerPages p {
+  max-width: 720px;
+  margin: 0 auto;
+  color: #b8bac4;
+  font-size: 1.05rem;
+  line-height: 1.75;
+}
+
+/* =================================
+   RESPONSIVE
+================================= */
+
+@media (max-width: 600px) {
+  .headerPages {
+    margin-bottom: 48px;
+    padding: 70px 0 0;
+  }
+
+  .headerPagesTitle {
+    font-size: 2.25rem;
+  }
+
+  .headerPagesTitle::after {
+    width: 45px;
+    height: 3px;
+    margin-top: 14px;
+  }
+
+  .headerPages p {
+    font-size: 0.92rem;
+    line-height: 1.65;
+  }
+}

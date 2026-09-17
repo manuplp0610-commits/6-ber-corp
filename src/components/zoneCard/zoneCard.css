@@ -1,200 +1,203 @@
+/* =========================
+   CARTE ZONE
+========================= */
+
 .zone-card {
   position: relative;
-
-  background: #20222f;
-  border: 1px solid #33364a;
-  border-radius: 4px;
-
-  overflow: hidden;
-
   display: flex;
   flex-direction: column;
-
+  min-height: 390px;
+  overflow: hidden;
+  background: #1a1c29;
+  border: 1px solid #30313d;
+  border-radius: 18px;
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.2);
   transition:
-    border-color 0.2s,
-    transform 0.2s;
+    transform 0.3s ease,
+    border-color 0.3s ease,
+    box-shadow 0.3s ease;
 }
 
 .zone-card:hover {
-  border-color: #ff5a2c;
-  transform: translateY(-4px);
+  transform: translateY(-6px);
+  border-color: rgba(255, 149, 0, 0.7);
+  box-shadow: 0 18px 45px rgba(0, 0, 0, 0.35);
 }
+
+/* =========================
+   IMAGE / MEDIA
+========================= */
 
 .zone-media {
   position: relative;
-
-  height: 190px;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.zone-media .tag {
-  position: absolute;
-  top: 14px;
-  left: 14px;
-
-  font-size: 11px;
-  font-weight: 700;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-
-  background: rgba(18, 19, 28, 0.75);
-
-  padding: 5px 10px;
-  border-radius: 20px;
-}
-
-.zone-media.boutique {
-  background: url("../../assets/images/fond-boutique.jpeg");
+  min-height: 220px;
+  overflow: hidden;
+  background-color: #242633;
   background-position: center;
   background-size: cover;
+  background-repeat: no-repeat;
+}
+
+/* Overlay sombre sur les images */
+
+.zone-media::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(0, 0, 0, 0.05) 0%,
+    rgba(0, 0, 0, 0.2) 45%,
+    rgba(0, 0, 0, 0.75) 100%
+  );
+  pointer-events: none;
+}
+
+/* Animation légère de l'image */
+
+.zone-card:hover .zone-media {
+  background-size: 105%;
+}
+
+.zone-media.shop {
+  background-image: url("../../assets/images/fond-boutique.jpeg");
 }
 
 .zone-media.bar {
-  background: url("../../assets/images/fond-bar.jpeg");
-  background-position: center;
-  background-size: cover;
+  background-image: url("../../assets/images/fond-bar.jpeg");
 }
 
-.zone-media.ps {
-  background: url("../../assets/images/fond-consoles.jpeg");
-  background-position: center;
-  background-size: cover;
+.zone-media.console {
+  background-image: url("../../assets/images/fond-consoles.jpeg");
 }
 
-.zone-media.pc {
-  background: url("../../assets/images/fond-pc.jpeg");
-  background-position: center;
-  background-size: cover;
+.zone-media.computer {
+  background-image: url("../../assets/images/fond-pc.jpeg");
 }
-
 .zone-media.events {
-  background: url("../../assets/images/fond-tounois.png");
-  background-position: center;
-  background-size: cover;
+  background-image: url("../../assets/images/fond-tounois.png");
 }
+
+/* =========================
+   TAG
+========================= */
+
+.zone-media .tag {
+  position: absolute;
+  top: 18px;
+  left: 18px;
+  z-index: 2;
+  display: inline-flex;
+  align-items: center;
+  min-height: 30px;
+  padding: 6px 12px;
+  color: #ff9500;
+  background: rgba(17, 19, 28, 0.88);
+  border: 1px solid rgba(255, 149, 0, 0.5);
+  border-radius: 999px;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  backdrop-filter: blur(8px);
+}
+
+/* =========================
+   CONTENU
+========================= */
 
 .zone-body {
-  padding: 22px 24px 26px;
-
   display: flex;
-  flex-direction: column;
-  gap: 12px;
-
   flex: 1;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 25px;
 }
 
 .zone-body h3 {
-  font-size: 19px;
+  margin: 0 0 12px;
+  color: #ffffff;
+  font-size: 1.45rem;
+  font-weight: 750;
+  line-height: 1.2;
 }
 
 .zone-body p {
-  color: #a9a8b8;
-  font-size: 14px;
-  flex: 1;
+  margin: 0 0 24px;
+  color: #a7a9b5;
+  font-size: 0.95rem;
+  line-height: 1.7;
 }
+
+/* =========================
+   BOUTON
+========================= */
 
 .zone-body .btn {
-  align-self: flex-start;
-  padding: 10px 20px;
-  font-size: 12px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 42px;
+  margin-top: auto;
+  padding: 10px 18px;
+  border: 1px solid #ff9500;
+  border-radius: 8px;
+  color: #ff9500;
+  background: transparent;
+  font-size: 0.85rem;
+  font-weight: 700;
+  text-decoration: none;
+  transition:
+    color 0.25s ease,
+    background-color 0.25s ease,
+    transform 0.25s ease;
 }
 
+.zone-body .btn:hover {
+  color: #11131c;
+  background: #ff9500;
+  transform: translateY(-2px);
+}
+
+/* =========================
+   CARTE LARGE
+========================= */
+
 .zone-card.wide {
-  grid-column: 1 / -1;
+  min-height: 330px;
 }
 
 .zone-card.wide .zone-media {
-  height: 150px;
+  min-height: 190px;
 }
-/* ============================================
-   TABLETTE
-============================================ */
 
-@media (max-width: 900px) {
-  .zone-grid {
-    gap: 20px;
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 650px) {
+  .zone-card {
+    min-height: 0;
+    border-radius: 14px;
   }
 
   .zone-media {
-    height: 170px;
-  }
-
-  .zone-card.wide .zone-media {
-    height: 140px;
+    min-height: 190px;
   }
 
   .zone-body {
-    padding: 20px;
+    padding: 22px;
   }
 
   .zone-body h3 {
-    font-size: 18px;
-  }
-}
-
-/* ============================================
-   SMARTPHONE
-============================================ */
-
-@media (max-width: 600px) {
-  .zone-grid {
-    grid-template-columns: 1fr;
-    gap: 20px;
-  }
-
-  .zone-card.wide {
-    grid-column: auto;
-  }
-
-  .zone-media,
-  .zone-card.wide .zone-media {
-    height: 180px;
-  }
-
-  .zone-body {
-    padding: 20px;
-    gap: 10px;
-  }
-
-  .zone-body h3 {
-    font-size: 18px;
+    font-size: 1.3rem;
   }
 
   .zone-body p {
-    font-size: 14px;
+    font-size: 0.9rem;
   }
 
-  .zone-body .btn {
-    width: 100%;
-
-    align-self: stretch;
-
-    padding: 12px 18px;
-  }
-}
-
-/* ============================================
-   PETIT SMARTPHONE
-============================================ */
-
-@media (max-width: 380px) {
-  .zone-media,
   .zone-card.wide .zone-media {
-    height: 160px;
-  }
-
-  .zone-body {
-    padding: 18px;
-  }
-
-  .zone-body h3 {
-    font-size: 17px;
-  }
-
-  .zone-body p {
-    font-size: 13px;
+    min-height: 190px;
   }
 }

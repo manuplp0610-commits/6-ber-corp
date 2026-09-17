@@ -19,6 +19,9 @@ export default function NavBar({ variant = "default" }) {
   return (
     <nav className={`navBar navBar--${variant}`}>
       {/* Bouton mobile */}
+      <Link className="btn-login" to="/login">
+        Offline
+      </Link>
       <button
         onClick={handleClick}
         className="nav-toggle"
@@ -28,6 +31,7 @@ export default function NavBar({ variant = "default" }) {
       >
         ☰
       </button>
+
       {/* Logo gauche - desktop */}
       <Link to="/" className="logo-link logo-link--left">
         <img
@@ -59,7 +63,7 @@ export default function NavBar({ variant = "default" }) {
           <div className={`sind-nav sind-nav--right sind-nav--${variant}`}>
             <Link to="/computer">PC</Link>
             <Link to="/event">Événements</Link>
-            <a href="#footer">Contact</a>
+            <Link to="/contact">Contact</Link>
           </div>
         </div>
       </div>
@@ -69,6 +73,9 @@ export default function NavBar({ variant = "default" }) {
         <div className="nav-mobile" id="nav-mobile">
           <div className="nav-mobile-content">
             <ul>
+              <li className="btn-login">
+                <Link to="/login">Offline</Link>
+              </li>
               <li>
                 <Link to="/shop">Boutique</Link>
               </li>
@@ -85,7 +92,7 @@ export default function NavBar({ variant = "default" }) {
                 <Link to="/event">Événements</Link>
               </li>
               <li>
-                <a href="#footer">Contact</a>
+                <Link to="/contact">Contact</Link>
               </li>
             </ul>
           </div>

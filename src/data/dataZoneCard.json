@@ -2,7 +2,7 @@
   {
     "id": "shop",
     "tag": "Boutique",
-    "imageClass":"boutique",
+    "imageClass":"shop",
     "title": "La Boutique",
     "description": "Pokémon, Yu-Gi-Oh!, One Piece, ... cartes à collectionner et figurines d'univers manga. Boosters, decks et pièces rares.",
     "button": "Explorer la boutique"
@@ -18,18 +18,18 @@
   {
     "id": "console",
     "tag": "Consoles",
-    "imageClass":"ps",
+    "imageClass":"console",
     "title": "Zone Console",
     "description": "Setups console dernière génération, jeux en solo ou en groupe, écrans grand format.",
-    "button": "Réserver un poste"
+    "button": "Consulté nos jeux disponnible"
   },
   {
     "id": "computer",
     "tag": "PC Gaming",
-    "imageClass":"pc",
+    "imageClass":"computer",
     "title": "Zone PC",
     "description": "Postes PC gaming haute performance pour esport, jeux compétitifs et sessions LAN.",
-    "button": "Réserver un poste"
+    "button": "Consulté nos jeux disponnible"
   },
   {
     "id": "event",

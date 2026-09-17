@@ -7,6 +7,9 @@ import Bar from "../pages/bar/Bar";
 import Console from "../pages/console/Console";
 import Computer from "../pages/computer/Computer";
 import Event from "../pages/events/Event";
+import Login from "../pages/login/Login";
+import Dashbord from "../pages/dashbord/Dashbord";
+import Contact from "../pages/contact/Contact";
 
 const router = createBrowserRouter([
   {
@@ -40,6 +43,18 @@ const router = createBrowserRouter([
       {
         path: "/console",
         element: <Console />,
+      },
+      {
+        path: "/login",
+        element: <Login />,
+      },
+      {
+        path: "/dashbord",
+        element: <Dashbord />,
+      },
+      {
+        path: "/contact",
+        element: <Contact />,
       },
     ],
   },

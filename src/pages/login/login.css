@@ -1,0 +1,158 @@
+/* ================================
+   LOGIN - 6 BER-CORP
+================================ */
+
+.login-page {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  padding: 40px 20px;
+  background: url("../../assets/images/bg-zone.jpg") center / cover fixed;
+  color: #f2f2f2;
+}
+
+.login-page::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.86);
+  z-index: 0;
+}
+
+/* ================================
+   CARD
+================================ */
+
+.login-card {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  max-width: 430px;
+  padding: 40px;
+  background: rgba(26, 28, 41, 0.97);
+  border: 1px solid #303030;
+  border-radius: 12px;
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.45);
+  margin-top: 50px;
+}
+
+/* ================================
+   HEADER
+================================ */
+
+.login-header {
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+.login-header h1 {
+  margin: 0 0 10px;
+  color: #ff9500;
+  font-size: 32px;
+  font-weight: 700;
+}
+
+.login-header p {
+  margin: 0;
+  color: #999999;
+  font-size: 0.95rem;
+}
+
+/* ================================
+   FORM
+================================ */
+
+.login-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.login-field {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.login-field label {
+  color: #ffffff;
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+.login-field input {
+  width: 100%;
+  padding: 12px 14px;
+  background: #11131c;
+  color: #ffffff;
+  border: 1px solid #3a3a3a;
+  border-radius: 7px;
+  outline: none;
+  font-size: 0.95rem;
+  box-sizing: border-box;
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.login-field input::placeholder {
+  color: #666666;
+}
+
+.login-field input:hover {
+  border-color: #555555;
+}
+
+.login-field input:focus {
+  border-color: #ff9500;
+  box-shadow: 0 0 0 2px rgba(255, 149, 0, 0.1);
+}
+
+/* ================================
+   BUTTON
+================================ */
+
+.login-button {
+  width: 100%;
+  margin-top: 5px;
+  padding: 12px;
+  background: #ff9500;
+  color: #11131c;
+  border: none;
+  border-radius: 7px;
+  font-size: 0.95rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition:
+    background 0.2s ease,
+    transform 0.2s ease;
+}
+
+.login-button:hover {
+  background: #ffad33;
+  transform: translateY(-1px);
+}
+
+.login-button:active {
+  transform: translateY(0);
+}
+
+/* ================================
+   MOBILE
+================================ */
+
+@media (max-width: 500px) {
+  .login-page {
+    padding: 25px 15px;
+  }
+
+  .login-card {
+    padding: 30px 20px;
+  }
+
+  .login-header h1 {
+    font-size: 28px;
+  }
+}

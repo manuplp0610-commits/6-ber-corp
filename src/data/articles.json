@@ -174,27 +174,5 @@
     "univers": "Dragonball",
     "description": "Figurine de Vegeta inspirée de l'univers Dragon Ball, parfaite pour accompagner votre collection de figurines Saiyans.",
     "stock": 6
-  },
-  {
-    "id": 17,
-    "name": "test",
-    "price": 46.33,
-    "image": "https://www.alucare.fr/wp-content/uploads/2022/05/breadcrumb_img04.png",
-    "rating": 4,
-    "category": "Poster",
-    "univers": "Alucare",
-    "description": "Figurine de Vegeta inspirée de l'univers Dragon Ball, parfaite pour accompagner votre collection de figurines Saiyans.",
-    "stock": 6
-  },
-  {
-    "id": 18,
-    "name": "test",
-    "price": 46.33,
-    "image": "https://yt3.googleusercontent.com/QFCvwHpmgOaHWIKlnbBgXUuajZXi3f5FQ-eUeM7i903cpRDSWo8ysTlYQMWyC3ruuwFn5X8P=s900-c-k-c0x00ffffff-no-rj",
-    "rating": 4,
-    "category": "Poster",
-    "univers": "Alucare",
-    "description": "Figurine de Vegeta inspirée de l'univers Dragon Ball, parfaite pour accompagner votre collection de figurines Saiyans.",
-    "stock": 6
   }
 ]
