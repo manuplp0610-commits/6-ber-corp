@@ -1,8 +1,22 @@
 import "./console.css";
 import HeaderPages from "../../components/headerPages/HeaderPages";
-import consoles from "../../data/consoles.json";
+import { useEffect, useState } from "react";
 
 export default function Console() {
+  const [consoles, setConsoles] = useState([]);
+  useEffect(() => {
+    fetch("/data/consoles.json")
+      .then((reponse) => {
+        return reponse.json();
+      })
+      .then((result) => {
+        setConsoles(result);
+      })
+      .catch((error) => {
+        console.error(error);
+      });
+  }, []);
+
   return (
     <section className="console-page">
       <HeaderPages

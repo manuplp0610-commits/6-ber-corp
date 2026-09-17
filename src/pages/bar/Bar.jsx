@@ -1,8 +1,21 @@
 import "./bar.css";
 import HeaderPages from "../../components/headerPages/HeaderPages";
-import dataBar from "../../data/bar.json";
+import { useEffect, useState } from "react";
 
 export default function Bar() {
+  const [dataBar, setDataBar] = useState([]);
+  useEffect(() => {
+    fetch("/data/bar.json")
+      .then((reponse) => {
+        return reponse.json();
+      })
+      .then((result) => {
+        setDataBar(result);
+      })
+      .catch((error) => {
+        console.error(error);
+      });
+  }, []);
   const drinks = dataBar.filter((item) => item.category === "drink");
   const food = dataBar.filter((item) => item.category === "food");
 

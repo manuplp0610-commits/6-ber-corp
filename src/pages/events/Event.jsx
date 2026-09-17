@@ -1,43 +1,20 @@
 import "./event.css";
 import HeaderPages from "../../components/headerPages/HeaderPages";
-
-const events = [
-  {
-    day: "20",
-    month: "SEP",
-    date: "20 septembre 2026",
-    time: "14h00",
-    type: "Tournoi",
-    icon: "🏆",
-    title: "Tournoi Mario Kart",
-    description:
-      "Venez vous affronter entre amis lors d’un tournoi convivial où seuls les meilleurs pilotes atteindront la première place.",
-  },
-  {
-    day: "27",
-    month: "SEP",
-    date: "27 septembre 2026",
-    time: "19h00",
-    type: "Gaming",
-    icon: "🎮",
-    title: "Soirée Gaming",
-    description:
-      "Une soirée dédiée au jeu vidéo avec plusieurs consoles, des jeux variés et une ambiance parfaite pour jouer entre amis.",
-  },
-  {
-    day: "04",
-    month: "OCT",
-    date: "4 octobre 2026",
-    time: "18h00",
-    type: "Pop culture",
-    icon: "✨",
-    title: "Soirée Pop Culture",
-    description:
-      "Anime, jeux vidéo, cartes, figurines et univers cultes sont à l’honneur lors de cette soirée spéciale 6 Ber-Corp.",
-  },
-];
+import { useEffect, useState } from "react";
 
 export default function Event() {
+  const [dataEvent, setDataEvent] = useState([]);
+
+  useEffect(() => {
+    fetch("/data/events.json")
+      .then((reponse) => {
+        return reponse.json();
+      })
+      .then((result) => {
+        setDataEvent(result);
+      });
+  }, []);
+
   return (
     <section className="event-page">
       <HeaderPages
@@ -65,12 +42,12 @@ export default function Event() {
           </div>
 
           <span className="event-count">
-            {events.length} événements programmés
+            {dataEvent.length} événements programmés
           </span>
         </div>
 
         <div className="event-list">
-          {events.map((event, index) => (
+          {dataEvent.map((event, index) => (
             <article
               className={`event-card ${index === 0 ? "is-next" : ""}`}
               key={`${event.date}-${event.title}`}

@@ -2,16 +2,23 @@ import { useEffect, useMemo, useState } from "react";
 import "./shop.css";
 import HeaderPages from "../../components/headerPages/HeaderPages";
 import Article from "../../components/article/Article";
-import articlesData from "../../data/articles.json";
 
 export default function Shop() {
   const [articles, setArticles] = useState([]);
   const [selectedUniverse, setSelectedUniverse] = useState("tout");
   const [selectedCategory, setSelectedCategory] = useState("tout");
   const [sortPrice, setSortPrice] = useState("pertinence");
-
   useEffect(() => {
-    setArticles(articlesData);
+    fetch("/data/articles.json")
+      .then((response) => {
+        return response.json();
+      })
+      .then((result) => {
+        setArticles(result);
+      })
+      .catch((error) => {
+        console.error(error);
+      });
   }, []);
 
   const universes = useMemo(() => {

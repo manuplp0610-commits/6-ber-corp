@@ -1,53 +1,23 @@
 import "./computer.css";
 import HeaderPages from "../../components/headerPages/HeaderPages";
-
-const pcs = [
-  {
-    name: "PC Gaming",
-    price: "8,00 €",
-    description:
-      "Des machines performantes pour jouer dans les meilleures conditions, seul ou entre amis.",
-    specs: [
-      ["Type", "PC Gaming"],
-      ["Écran", "Haute fréquence"],
-      ["Équipement", "Clavier, souris et casque"],
-    ],
-    games: [
-      {
-        name: "Counter-Strike 2",
-        image:
-          "https://cdn.cloudflare.steamstatic.com/steam/apps/730/header.jpg",
-      },
-      {
-        name: "League of Legends",
-        image:
-          "https://store-images.s-microsoft.com/image/apps.18996.14127010465288187.f9de4a96-0ee4-4da3-bf66-d4132b38c599.caf661a7-e0b3-492d-b91b-63627e47283e",
-      },
-      {
-        name: "Valorant",
-        image:
-          "https://cdn1.epicgames.com/offer/cbd5b3d310a54b12bf3fe8c41994174f/EGS_VALORANT_RiotGames_S2_1200x1600-48e0ba488218436d9b3f32682fa5dbe7",
-      },
-      {
-        name: "Fortnite",
-        image:
-          "https://static.thcdn.com/productimg/1600/1600/11492350-1064494124856985.jpg",
-      },
-      {
-        name: "Minecraft",
-        image:
-          "https://store-images.s-microsoft.com/image/apps.808.14492077886571533.be42f4bd-887b-4430-8ed0-622341b4d2b0.c8274c53-105e-478b-9f4b-41b8088210a3?q=90&w=512&h=768&mode=crop&format=jpg&background=%23FFFFFF",
-      },
-      {
-        name: "EA Sports FC 26",
-        image:
-          "https://store-images.s-microsoft.com/image/apps.39200.13880594673876343.1289e898-a927-48c2-a81c-660602f0234e.67a779b6-d3fa-4ddd-8363-6619dbfe6cf5",
-      },
-    ],
-  },
-];
+import { useEffect, useState } from "react";
 
 export default function Computer() {
+  const [dataComputer, setDataComputer] = useState([]);
+
+  useEffect(() => {
+    fetch("/data/computers.json")
+      .then((reponse) => {
+        return reponse.json();
+      })
+      .then((result) => {
+        setDataComputer(result);
+      })
+      .catch((error) => {
+        console.error(error);
+      });
+  }, []);
+
   return (
     <section className="pc-page">
       <HeaderPages
@@ -82,7 +52,7 @@ export default function Computer() {
         </div>
 
         <div className="pc-list">
-          {pcs.map((pc) => (
+          {dataComputer.map((pc) => (
             <article className="pc-card" key={pc.name}>
               <div className="pc-card-header">
                 <div className="pc-card-title">
