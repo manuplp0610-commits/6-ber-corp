@@ -1,0 +1,224 @@
+/* ================================
+   DASHBOARD - 6 BER-CORP
+================================ */
+
+.dashboard-page {
+  position: relative;
+  margin: 70px auto 0;
+  padding: 50px 20px 80px;
+
+  color: #ffffff;
+
+  background: url("../../assets/images/bg-zone.jpg") center / cover fixed;
+}
+
+.dashboard-page::before {
+  content: "";
+
+  position: absolute;
+  inset: 0;
+
+  background: rgba(10, 11, 16, 0.85);
+
+  z-index: 0;
+}
+
+.dashboard-page > * {
+  position: relative;
+  z-index: 1;
+}
+/* =========================
+   HEADER
+========================= */
+
+.dashboard-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 30px;
+
+  margin-bottom: 35px;
+}
+
+.dashboard-header > div:first-child {
+  max-width: 750px;
+}
+
+.dashboard-eyebrow {
+  display: block;
+  margin-bottom: 8px;
+
+  color: #ff9500;
+  font-size: 13px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+}
+
+.dashboard-header h1 {
+  margin: 0 0 10px;
+
+  font-size: clamp(36px, 5vw, 56px);
+  line-height: 1;
+  font-weight: 700;
+}
+
+.dashboard-header p {
+  margin: 0;
+
+  color: #92949f;
+  font-size: 15px;
+  line-height: 1.7;
+}
+
+/* =========================
+   USER
+========================= */
+
+.dashboard-user {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+
+  padding: 14px 18px;
+
+  background: #11131c;
+  border: 1px solid #30313d;
+  border-radius: 12px;
+}
+
+.dashboard-user-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 44px;
+  height: 44px;
+
+  background: rgba(255, 149, 0, 0.1);
+  border: 1px solid rgba(255, 149, 0, 0.25);
+  border-radius: 10px;
+
+  font-size: 20px;
+}
+
+.dashboard-user > div {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.dashboard-user strong {
+  color: #ffffff;
+  font-size: 14px;
+}
+
+.dashboard-user > div span {
+  color: #777985;
+  font-size: 12px;
+}
+
+/* =========================
+   NAVIGATION DASHBOARD
+========================= */
+
+.dashboard-nav {
+  margin-bottom: 30px;
+
+  background: #11131c;
+  border: 1px solid #30313d;
+  border-radius: 14px;
+
+  overflow-x: auto;
+}
+
+.dashboard-nav-elements {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  min-width: max-content;
+  margin: 0;
+  padding: 8px;
+
+  list-style: none;
+}
+.dashboard-nav-elements li {
+  position: relative;
+
+  padding: 13px 20px;
+  font-size: 14px;
+  font-weight: 600;
+
+  border-radius: 9px;
+
+  cursor: pointer;
+  transition:
+    color 0.3s ease,
+    background-color 0.3s ease,
+    transform 0.2s ease;
+}
+
+.dashboard-nav-elements li:hover {
+  color: #ff9500;
+  background: #1a1c29;
+}
+
+/* =========================
+   ONGLET ACTIF
+========================= */
+
+.dashboard-nav-elements li.active {
+  color: #ff9500;
+  background: rgba(255, 149, 0, 0.1);
+}
+
+/* =========================
+   CONTENU
+========================= */
+
+.dashboard-page > section:not(.dashboard-header):not(.dashboard-nav) {
+  width: 100%;
+}
+
+/* =========================
+   TABLETTE
+========================= */
+
+@media (max-width: 850px) {
+  .dashboard-header {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .dashboard-user {
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  .dashboard-nav {
+    margin-bottom: 25px;
+  }
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 600px) {
+  .dashboard-header {
+    margin-bottom: 25px;
+  }
+
+  .dashboard-header h1 {
+    font-size: 38px;
+  }
+
+  .dashboard-header p {
+    font-size: 13px;
+  }
+
+  .dashboard-nav-elements li {
+    padding: 12px 15px;
+    font-size: 13px;
+  }
+}

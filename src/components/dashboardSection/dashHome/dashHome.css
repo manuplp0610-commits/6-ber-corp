@@ -1,0 +1,125 @@
+.dashHome-stats {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  margin-top: 30px;
+}
+
+.dashHome-stat-card {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+
+  min-height: 145px;
+  padding: 24px;
+
+  background: #11131c;
+  border: 1px solid #30313d;
+  border-radius: 14px;
+
+  transition:
+    border-color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.dashHome-stat-card:hover {
+  border-color: #ff9500;
+  transform: translateY(-2px);
+}
+
+.dashHome-stat-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 58px;
+  height: 58px;
+  flex-shrink: 0;
+
+  background: rgba(255, 149, 0, 0.1);
+  border: 1px solid rgba(255, 149, 0, 0.25);
+  border-radius: 12px;
+
+  font-size: 26px;
+}
+
+.dashHome-stat-card > div {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.dashHome-stat-label {
+  color: #a8aab5;
+  font-size: 13px;
+  font-weight: 500;
+}
+
+.dashHome-stat-card strong {
+  color: #ffffff;
+  font-size: 32px;
+  line-height: 1;
+  font-weight: 700;
+}
+
+.dashHome-stat-card p {
+  margin: 0;
+
+  color: #777985;
+  font-size: 12px;
+}
+
+/* =========================
+   SECTION DU DASHBOARD
+========================= */
+
+.dashHome-section {
+  margin-top: 30px;
+  padding: 30px;
+
+  background: #11131c;
+  border: 1px solid #30313d;
+  border-radius: 14px;
+}
+
+/* =========================
+   TABLETTE
+========================= */
+
+@media (max-width: 1100px) {
+  .dashHome-stats {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 650px) {
+  .dashHome-stats {
+    grid-template-columns: 1fr;
+    gap: 14px;
+    margin-top: 20px;
+  }
+
+  .dashHome-stat-card {
+    min-height: 120px;
+    padding: 18px;
+  }
+
+  .dashHome-stat-icon {
+    width: 50px;
+    height: 50px;
+    font-size: 22px;
+  }
+
+  .dashHome-stat-card strong {
+    font-size: 28px;
+  }
+
+  .dashHome-section {
+    margin-top: 20px;
+    padding: 20px;
+  }
+}

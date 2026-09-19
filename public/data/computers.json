@@ -2,6 +2,7 @@
   {
     "name": "PC Gaming",
     "price": "8,00 €",
+    "numbers":8,
     "description":
       "Des machines performantes pour jouer dans les meilleures conditions, seul ou entre amis.",
     "specs": [

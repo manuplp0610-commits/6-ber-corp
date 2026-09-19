@@ -1,0 +1,106 @@
+.dashBar {
+  width: 100%;
+}
+
+.dashBar-header {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  margin-bottom: 25px;
+}
+
+.dashBar-kicker {
+  display: block;
+  margin-bottom: 6px;
+  color: #ff9500;
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1.2px;
+}
+
+.dashBar-header h2 {
+  margin: 0;
+  color: #ffffff;
+  font-size: 28px;
+  font-weight: 600;
+}
+
+.dashBar-count {
+  color: #858793;
+  font-size: 13px;
+}
+
+/* Liste */
+
+.dashBar-table {
+  width: 100%;
+  background: #11131c;
+  border: 1px solid #30313d;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.dashBar-row {
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr 2fr 0.5fr;
+  align-items: center;
+  min-height: 58px;
+  padding: 0 20px;
+  border-bottom: 1px solid #30313d;
+  color: #92949f;
+  font-size: 13px;
+}
+
+.dashBar-row:last-child {
+  border-bottom: none;
+}
+
+.dashBar-row-header {
+  min-height: 45px;
+  background: #1a1c29;
+  color: #777985;
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.dashBar-name {
+  color: #ffffff;
+  font-weight: 600;
+}
+
+.dashBar-description {
+  padding-right: 20px;
+  color: #858793;
+}
+
+.dashBar-price {
+  color: #ffffff;
+  font-weight: 600;
+  text-align: right;
+}
+
+/* Responsive */
+
+@media (max-width: 800px) {
+  .dashBar-row {
+    grid-template-columns: 1fr 0.8fr 1.5fr 0.5fr;
+    padding: 0 14px;
+  }
+}
+
+@media (max-width: 600px) {
+  .dashBar {
+    overflow-x: auto;
+  }
+
+  .dashBar-table {
+    min-width: 650px;
+  }
+
+  .dashBar-header {
+    min-width: 650px;
+  }
+}

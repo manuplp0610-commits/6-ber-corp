@@ -144,24 +144,28 @@
 }
 
 /* =========================================================
-   BOUTON ONLINE / CONNEXION
+   CONNEXION / DASHBOARD
 ========================================================= */
 
-.navBar > .btn-login {
+.log {
   position: absolute;
+  top: 0;
+  right: 20px;
+  z-index: 300;
+  height: 75px;
 
-  top: 20px;
-  right: 30px;
+  display: flex;
+  align-items: center;
+}
 
-  z-index: 110;
-
+.log .btn-login {
   display: flex;
   align-items: center;
   justify-content: center;
 
-  min-width: 75px;
-
-  padding: 7px 16px;
+  width: 42px;
+  height: 38px;
+  padding: 0;
 
   background: transparent;
   color: #ff9500;
@@ -169,11 +173,8 @@
   border: 1px solid #ff9500;
   border-radius: 6px;
 
-  font-size: 13px;
-  font-weight: 600;
-  letter-spacing: 0.5px;
-
-  text-decoration: none;
+  font-size: 14px;
+  cursor: pointer;
 
   transition:
     background 0.2s ease,
@@ -182,13 +183,54 @@
     transform 0.2s ease;
 }
 
-.navBar > .btn-login:hover {
+.log .btn-login:hover {
   background: #ff9500;
   color: #11131c;
-
   transform: translateY(-1px);
-
   box-shadow: 0 5px 15px rgba(255, 149, 0, 0.25);
+}
+
+/* Fenêtre Dashboard / Connexion */
+
+.log-li {
+  position: absolute;
+  top: 62px;
+  right: 0;
+
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+
+  min-width: 150px;
+  padding: 8px;
+
+  background: #11131c;
+  border: 1px solid #30313d;
+  border-radius: 8px;
+
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.35);
+}
+
+.log-li a {
+  display: block;
+
+  padding: 10px 12px;
+
+  color: #d7d7dc;
+  font-size: 13px;
+  font-weight: 500;
+
+  text-decoration: none;
+  border-radius: 5px;
+
+  transition:
+    background 0.2s ease,
+    color 0.2s ease;
+}
+
+.log-li a:hover {
+  background: #1a1c29;
+  color: #ff9500;
 }
 
 /* =========================================================
@@ -243,10 +285,6 @@
 /* =========================================================
    LIENS DU MENU MOBILE
 ========================================================= */
-
-.nav-mobile-content li {
-  width: 100%;
-}
 
 .nav-mobile-content li a {
   display: block;
@@ -457,7 +495,7 @@
 
   /* Cacher Online desktop */
 
-  .navBar > .btn-login {
+  .btn-login {
     display: none;
   }
 
