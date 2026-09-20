@@ -5,7 +5,7 @@ import { useEffect, useState } from "react";
 export default function Bar() {
   const [dataBar, setDataBar] = useState([]);
   useEffect(() => {
-    fetch("/data/bar.json")
+    fetch(`${import.meta.env.BASE_URL}data/bar.json`)
       .then((reponse) => {
         return reponse.json();
       })

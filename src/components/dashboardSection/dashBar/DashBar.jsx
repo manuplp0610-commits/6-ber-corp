@@ -5,7 +5,7 @@ export default function DashBar() {
   const [dataBar, setDataBar] = useState([]);
 
   useEffect(() => {
-    fetch("/data/bar.json")
+    fetch(`${import.meta.env.BASE_URL}data/bar.json`)
       .then((response) => response.json())
       .then((result) => {
         setDataBar(result);

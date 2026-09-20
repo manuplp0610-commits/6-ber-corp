@@ -12,7 +12,7 @@ export default function Login() {
   const [password, setPassword] = useState("");
 
   useEffect(() => {
-    fetch("/data/dataClient.json")
+    fetch(`${import.meta.env.BASE_URL}data/dataClient.json`)
       .then((reponse) => {
         return reponse.json();
       })

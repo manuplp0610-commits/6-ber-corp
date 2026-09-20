@@ -9,7 +9,7 @@ export default function Shop() {
   const [selectedCategory, setSelectedCategory] = useState("tout");
   const [sortPrice, setSortPrice] = useState("pertinence");
   useEffect(() => {
-    fetch("/data/articles.json")
+    fetch(`${import.meta.env.BASE_URL}data/articles.json`)
       .then((response) => {
         return response.json();
       })

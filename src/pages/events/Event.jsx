@@ -6,7 +6,7 @@ export default function Event() {
   const [dataEvent, setDataEvent] = useState([]);
 
   useEffect(() => {
-    fetch("/data/events.json")
+    fetch(`${import.meta.env.BASE_URL}data/events.json`)
       .then((reponse) => {
         return reponse.json();
       })

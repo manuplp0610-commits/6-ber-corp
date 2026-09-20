@@ -6,7 +6,7 @@ export default function Computer() {
   const [dataComputer, setDataComputer] = useState([]);
 
   useEffect(() => {
-    fetch("/data/computers.json")
+    fetch(`${import.meta.env.BASE_URL}data/computers.json`)
       .then((reponse) => {
         return reponse.json();
       })

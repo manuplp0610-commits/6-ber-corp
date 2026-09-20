@@ -5,7 +5,7 @@ import { useEffect, useState } from "react";
 export default function Console() {
   const [consoles, setConsoles] = useState([]);
   useEffect(() => {
-    fetch("/data/consoles.json")
+    fetch(`${import.meta.env.BASE_URL}data/consoles.json`)
       .then((reponse) => {
         return reponse.json();
       })
