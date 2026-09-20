@@ -12,57 +12,58 @@ import Dashboard from "../pages/dashboard/Dashboard";
 import Contact from "../pages/contact/Contact";
 import ProtectedRoute from "../components/protectedRoute/ProtectedRoute";
 
-const router = createBrowserRouter([
-  {
-    path: "/",
-    element: <Home />,
-  },
+const router = createBrowserRouter(
+  [
+    {
+      path: "/",
+      element: <Home />,
+    },
 
+    {
+      element: <Layout />,
+      children: [
+        {
+          path: "/shop",
+          element: <Shop />,
+        },
+        {
+          path: "/bar",
+          element: <Bar />,
+        },
+        {
+          path: "/console",
+          element: <Console />,
+        },
+        {
+          path: "/computer",
+          element: <Computer />,
+        },
+        {
+          path: "/event",
+          element: <Event />,
+        },
+        {
+          path: "/login",
+          element: <Login />,
+        },
+        {
+          path: "/dashbord",
+          element: (
+            <ProtectedRoute>
+              <Dashboard />
+            </ProtectedRoute>
+          ),
+        },
+        {
+          path: "/contact",
+          element: <Contact />,
+        },
+      ],
+    },
+  ],
   {
-    element: <Layout />,
-    children: [
-      {
-        path: "/shop",
-        element: <Shop />,
-      },
-      {
-        path: "/bar",
-        element: <Bar />,
-      },
-      {
-        path: "/console",
-        element: <Console />,
-      },
-      {
-        path: "/computer",
-        element: <Computer />,
-      },
-      {
-        path: "/event",
-        element: <Event />,
-      },
-      {
-        path: "/console",
-        element: <Console />,
-      },
-      {
-        path: "/login",
-        element: <Login />,
-      },
-      {
-        path: "/dashbord",
-        element: (
-          <ProtectedRoute>
-            <Dashboard />
-          </ProtectedRoute>
-        ),
-      },
-      {
-        path: "/contact",
-        element: <Contact />,
-      },
-    ],
+    basename: "/6-ber-corp",
   },
-]);
+);
 
 export default router;
