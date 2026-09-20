@@ -495,7 +495,7 @@
 
   /* Cacher Online desktop */
 
-  .btn-login {
+  .log .btn-login {
     display: none;
   }
 
