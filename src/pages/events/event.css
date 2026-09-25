@@ -238,7 +238,10 @@
   color: #c6c8d0;
   font-size: 0.8rem;
 }
-
+.event-details i {
+  color: #ff9800;
+  margin-right: 7px;
+}
 /* =================================
    FOOTER
 ================================= */

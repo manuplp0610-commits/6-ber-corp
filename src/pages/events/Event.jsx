@@ -1,5 +1,7 @@
 import "./event.css";
+
 import HeaderPages from "../../components/headerPages/HeaderPages";
+
 import { useEffect, useState } from "react";
 
 export default function Event() {
@@ -10,6 +12,7 @@ export default function Event() {
       .then((reponse) => {
         return reponse.json();
       })
+
       .then((result) => {
         setDataEvent(result);
       });
@@ -23,10 +26,11 @@ export default function Event() {
       />
 
       <section className="event-highlight">
-        <div className="event-highlight-icon">📣</div>
+        <div className="event-highlight-icon">📅</div>
 
         <div>
           <strong>Un événement vous intéresse ?</strong>
+
           <p>
             Les événements sont accessibles directement sur place. Pour plus
             d’informations, adressez-vous à l’équipe du bar.
@@ -38,6 +42,7 @@ export default function Event() {
         <div className="event-section-heading">
           <div>
             <span className="event-kicker">À l’agenda</span>
+
             <h2>À venir chez 6 Ber-Corp</h2>
           </div>
 
@@ -54,6 +59,7 @@ export default function Event() {
             >
               <div className="event-date">
                 <span className="event-day">{event.day}</span>
+
                 <span className="event-month">{event.month}</span>
               </div>
 
@@ -71,9 +77,19 @@ export default function Event() {
                 <p>{event.description}</p>
 
                 <div className="event-details">
-                  <span>📅 {event.date}</span>
-                  <span>🕐 {event.time}</span>
-                  <span>📍 6 Ber-Corp</span>
+                  <span>
+                    <i className="fa-solid fa-calendar-day"></i>
+                    {event.date}
+                  </span>
+
+                  <span>
+                    <i className="fa-solid fa-clock"></i>
+                    {event.time}
+                  </span>
+
+                  <span>
+                    <i className="fa-solid fa-location-dot"></i>6 Ber-Corp
+                  </span>
                 </div>
               </div>
             </article>
@@ -82,10 +98,13 @@ export default function Event() {
       </section>
 
       <section className="event-footer">
-        <span>🎲</span>
+        <span>
+          <i className="fa-solid fa-dice-d20"></i>
+        </span>
 
         <div>
           <h2>Une idée d’événement ?</h2>
+
           <p>
             Tournoi, quiz, soirée thématique ou rencontre entre passionnés :
             partagez vos idées directement avec notre équipe.

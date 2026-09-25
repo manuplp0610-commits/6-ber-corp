@@ -55,7 +55,9 @@ export default function Console() {
           {consoles.map((consoleItem) => (
             <article className="console-card" key={consoleItem.name}>
               <div className="console-card-top">
-                <div className="console-icon">🕹️</div>
+                <div className="console-icon">
+                  <i className="fa-solid fa-gamepad"></i>
+                </div>
 
                 <div className="console-card-title">
                   <h3>{consoleItem.name}</h3>

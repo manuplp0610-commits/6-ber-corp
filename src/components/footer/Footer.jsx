@@ -44,17 +44,21 @@ export default function Footer() {
             verre.
           </p>
 
-          <div className="socials">
+          <div className="contact-social-links">
             <a href="#" aria-label="Instagram">
-              <i className="fa fa-instagram"></i>
+              <i className="fa-brands fa-instagram"></i>
             </a>
 
             <a href="#" aria-label="Facebook">
-              <i className="fa fa-facebook-f"></i>
+              <i className="fa-brands fa-facebook-f"></i>
             </a>
 
             <a href="#" aria-label="Discord">
-              <i className="fab fa-discord"></i>
+              <i className="fa-brands fa-discord"></i>
+            </a>
+
+            <a href="#" aria-label="TikTok">
+              <i className="fa-brands fa-tiktok"></i>
             </a>
           </div>
         </div>

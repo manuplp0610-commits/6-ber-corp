@@ -21,6 +21,7 @@ export default function DashBar() {
         <div>
           <span className="dashBar-kicker">Gestion du bar</span>
           <h2>Articles</h2>
+          <button className="addArticlesBtn">+ Ajouter article</button>
         </div>
 
         <span className="dashBar-count">{dataBar.length} articles</span>
@@ -32,6 +33,7 @@ export default function DashBar() {
           <span>Catégorie</span>
           <span>Description</span>
           <span>Prix</span>
+          <span>Action</span>
         </div>
 
         {dataBar.map((item) => (
@@ -43,6 +45,8 @@ export default function DashBar() {
             <span className="dashBar-description">{item.description}</span>
 
             <span className="dashBar-price">{item.price} €</span>
+
+            <span className="dashBar-deleteBtn">X</span>
           </div>
         ))}
       </div>

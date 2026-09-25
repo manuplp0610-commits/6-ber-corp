@@ -2,6 +2,7 @@ import { useEffect, useMemo, useState } from "react";
 import "./shop.css";
 import HeaderPages from "../../components/headerPages/HeaderPages";
 import Article from "../../components/article/Article";
+import { Link } from "react-router-dom";
 
 export default function Shop() {
   const [articles, setArticles] = useState([]);
@@ -77,7 +78,6 @@ export default function Shop() {
             Les trésors du
             <span> comptoir</span>
           </h1>
-
           <p>
             Retrouvez une sélection d’objets, accessoires et produits inspirés
             de vos univers préférés. Chaque article est disponible directement a
@@ -110,7 +110,7 @@ export default function Shop() {
           </p>
         </div>
 
-        <a href="/contact" className="shop-intro-link">
+        <a href="#contact" className="shop-intro-link">
           Nous trouver
           <span>→</span>
         </a>
@@ -237,7 +237,7 @@ export default function Shop() {
 
           <h2>
             Passez nous voir
-            <span> au bar.</span>
+            <span> en boutique.</span>
           </h2>
 
           <p>
@@ -246,9 +246,9 @@ export default function Shop() {
           </p>
         </div>
 
-        <a href="/contact" className="shop-primary-button">
+        <Link to="/contact" className="shop-primary-button">
           Découvrir 6 Ber-Corp
-        </a>
+        </Link>
       </section>
     </section>
   );

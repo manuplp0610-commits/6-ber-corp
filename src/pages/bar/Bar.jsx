@@ -25,7 +25,11 @@ export default function Bar() {
         {items.map((item) => (
           <article className="bar-menu-item" key={item.id}>
             <div className="bar-menu-item-icon">
-              {item.category === "drink" ? "🍹" : "🍿"}
+              {item.category === "drink" ? (
+                <i classn="fa-solid fa-glass-water"></i>
+              ) : (
+                <i className="fa-solid fa-candy-cane"></i>
+              )}
             </div>
 
             <div className="bar-menu-item-content">
@@ -53,7 +57,7 @@ export default function Bar() {
       />
 
       <section className="bar-introduction">
-        <div className="bar-introduction-icon">🎮</div>
+        <div className="bar-introduction-icon">🍻</div>
 
         <div>
           <span className="bar-kicker">Pause entre deux parties</span>

@@ -46,9 +46,7 @@ export default function Computer() {
             <h2>PC Gaming disponibles</h2>
           </div>
 
-          <span className="pc-status">
-            <i></i> Disponible sur place
-          </span>
+          <span className="pc-status">Disponible sur place</span>
         </div>
 
         <div className="pc-list">
@@ -56,7 +54,10 @@ export default function Computer() {
             <article className="pc-card" key={pc.name}>
               <div className="pc-card-header">
                 <div className="pc-card-title">
-                  <div className="pc-card-icon">⚡</div>
+                  <div className="pc-card-icon">
+                    {" "}
+                    <i className="fa-solid fa-computer"></i>
+                  </div>
 
                   <div>
                     <h3>{pc.name}</h3>

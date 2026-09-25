@@ -31,7 +31,7 @@ export default function Dashboard() {
 
           <div>
             <strong>Administrateur</strong>
-            <span>6 Ber-Corp</span>
+            <span>Le Jenks</span>
           </div>
         </div>
       </section>

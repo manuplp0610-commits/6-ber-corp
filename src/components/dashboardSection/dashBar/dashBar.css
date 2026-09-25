@@ -20,14 +20,23 @@
 }
 
 .dashBar-header h2 {
+  display: inline;
+  margin-right: 30px;
   margin: 0;
   color: #ffffff;
   font-size: 28px;
   font-weight: 600;
 }
-
+.addArticlesBtn {
+  padding: 5px 10px;
+  background: rgb(18, 18, 135);
+  color: #ff3b30;
+  border-radius: 10px;
+  margin-left: 30px;
+  font-size: 12px;
+}
 .dashBar-count {
-  color: #858793;
+  color: #ff9500;
   font-size: 13px;
 }
 
@@ -35,7 +44,6 @@
 
 .dashBar-table {
   width: 100%;
-  background: #11131c;
   border: 1px solid #30313d;
   border-radius: 8px;
   overflow: hidden;
@@ -43,13 +51,15 @@
 
 .dashBar-row {
   display: grid;
-  grid-template-columns: 1.2fr 0.8fr 2fr 0.5fr;
+  grid-template-columns: 1.2fr 0.8fr 2fr 0.5fr 0.3fr;
   align-items: center;
   min-height: 58px;
   padding: 0 20px;
   border-bottom: 1px solid #30313d;
-  color: #92949f;
+  color: #010101;
   font-size: 13px;
+  background: white;
+  margin-bottom: 10px;
 }
 
 .dashBar-row:last-child {
@@ -67,21 +77,32 @@
 }
 
 .dashBar-name {
-  color: #ffffff;
+  color: #030303;
   font-weight: 600;
 }
 
 .dashBar-description {
   padding-right: 20px;
-  color: #858793;
+  color: #030303;
 }
 
 .dashBar-price {
-  color: #ffffff;
+  color: #080808;
   font-weight: 600;
-  text-align: right;
 }
-
+.dashBar-deleteBtn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgb(18, 18, 135);
+  color: #ff3b30;
+  font-weight: 700;
+  text-align: center;
+  cursor: pointer;
+  border: 2px solid #ff3b30;
+  width: 20px;
+  height: 20px;
+}
 /* Responsive */
 
 @media (max-width: 800px) {
