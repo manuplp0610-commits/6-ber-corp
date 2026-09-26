@@ -9,7 +9,7 @@
 
   color: #ffffff;
 
-  background: url("../../assets/images/bg-zone.jpg") center / cover fixed;
+  background: url("../../assets/images/bg-zone.webp") center / cover fixed;
 }
 
 .dashboard-page::before {

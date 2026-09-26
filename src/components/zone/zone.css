@@ -6,7 +6,7 @@
   position: relative;
   isolation: isolate;
   overflow: hidden;
-  background-image: url("../../assets/images/bg-zone.jpg");
+  background-image: url("../../assets/images/bg-zone.webp");
   background-size: cover;
   background-position: center;
   background-attachment: fixed;

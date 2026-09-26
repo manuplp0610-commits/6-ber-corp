@@ -1,6 +1,5 @@
 import { Link } from "react-router-dom";
 import "./zoneCard.css";
-import cardBoutiqur from "../../assets/images/fond-boutique.jpeg";
 
 export default function ZoneCard({
   id,

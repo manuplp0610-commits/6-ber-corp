@@ -60,22 +60,22 @@
 }
 
 .zone-media.shop {
-  background-image: url("../../assets/images/fond-boutique.jpeg");
+  background-image: url("../../assets/images/fond-boutique.webp");
 }
 
 .zone-media.bar {
-  background-image: url("../../assets/images/fond-bar.jpeg");
+  background-image: url("../../assets/images/fond-bar.webp");
 }
 
 .zone-media.console {
-  background-image: url("../../assets/images/fond-consoles.jpeg");
+  background-image: url("../../assets/images/fond-consoles.webp");
 }
 
 .zone-media.computer {
-  background-image: url("../../assets/images/fond-pc.jpeg");
+  background-image: url("../../assets/images/fond-pc.webp");
 }
 .zone-media.events {
-  background-image: url("../../assets/images/fond-tounois.png");
+  background-image: url("../../assets/images/fond-tounois.webp");
 }
 
 /* =========================

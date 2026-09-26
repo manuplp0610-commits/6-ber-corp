@@ -10,7 +10,7 @@
   color: #f6f4ef;
   background:
     linear-gradient(rgba(7, 8, 14, 0.88), rgba(7, 8, 14, 0.96)),
-    url("../../assets/images/bg-zone.jpg") center / cover fixed;
+    url("../../assets/images/bg-zone.webp") center / cover fixed;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
 

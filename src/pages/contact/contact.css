@@ -34,7 +34,7 @@
   position: absolute;
   inset: 0;
   z-index: -2;
-  background-image: url("../../assets/images/bg-zone.jpg");
+  background-image: url("../../assets/images/bg-zone.webp");
   background-position: center;
   background-size: cover;
   opacity: 0.2;

@@ -1,4 +1,5 @@
-import logo from "../../assets/images/logo.png";
+import logoLarge from "../../../public/logoLarg.webp";
+import logoSmall from "../../../public/logoSmall.webp";
 
 import "./navBar.css";
 
@@ -36,8 +37,6 @@ export default function NavBar({ variant = "default" }) {
 
   return (
     <nav className={`navBar navBar--${variant}`}>
-      {/* Connexion desktop */}
-
       <div className="log">
         <button onClick={() => setOpenLog(!openLog)} className="btn-login">
           <i className="fa-solid fa-user"></i>
@@ -57,9 +56,7 @@ export default function NavBar({ variant = "default" }) {
           </div>
         )}
       </div>
-
       {/* Bouton hamburger */}
-
       <button
         onClick={handleClick}
         className="nav-toggle"
@@ -69,17 +66,14 @@ export default function NavBar({ variant = "default" }) {
       >
         ☰
       </button>
-
       {/* Logo gauche - desktop */}
-
       <Link to="/" className="logo-link logo-link--left">
         <img
           className={`logo-left logo-left--${variant}`}
-          src={logo}
+          src={logoSmall}
           alt="6 Ber Corp"
         />
       </Link>
-
       <div className={`nav-inner nav-inner--${variant}`}>
         <div className={`nav-links nav-links--${variant}`}>
           {/* Groupe gauche */}
@@ -94,8 +88,9 @@ export default function NavBar({ variant = "default" }) {
 
           <Link to="/" className="logo-link logo-link--center">
             <img
+              fetchpriority="high"
               className={`logo-center logo-center--${variant}`}
-              src={logo}
+              src={logoLarge}
               alt="6 Ber Corp"
             />
           </Link>
@@ -109,9 +104,7 @@ export default function NavBar({ variant = "default" }) {
           </div>
         </div>
       </div>
-
       {/* Menu mobile */}
-
       {openNav && (
         <div className="nav-mobile" id="nav-mobile">
           <div className="nav-mobile-content">
