@@ -258,7 +258,6 @@
   align-items: center;
   justify-content: space-between;
   gap: 15px;
-
   margin-bottom: 16px;
 }
 
@@ -275,19 +274,17 @@
 
 .games-grid {
   display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: 14px;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 15px;
 }
 
 .game-card {
   position: relative;
-  height: 170px;
+  height: 175px;
   overflow: hidden;
-
   background: #11131c;
   border: 1px solid #30323e;
   border-radius: 8px;
-
   transition:
     transform 0.25s ease,
     border-color 0.25s ease;
@@ -299,11 +296,9 @@
 }
 
 .game-card img {
-  display: block;
-
-  width: 100%;
+  margin: 0 auto;
+  width: 120px;
   height: 100%;
-
   object-fit: cover;
   transition: transform 0.35s ease;
 }
@@ -317,15 +312,13 @@
   right: 0;
   bottom: 0;
   left: 0;
-
-  padding: 35px 10px 10px;
-
+  padding: 35px 12px 11px;
   background: linear-gradient(transparent, rgba(0, 0, 0, 0.9));
 }
 
 .game-overlay span {
   color: #ffffff;
-  font-size: 0.8rem;
+  font-size: 0.82rem;
   font-weight: 700;
 }
 
