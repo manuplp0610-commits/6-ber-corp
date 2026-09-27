@@ -175,4 +175,16 @@
     "description": "Figurine de Vegeta inspirée de l'univers Dragon Ball, parfaite pour accompagner votre collection de figurines Saiyans.",
     "stock": 6
   }
+  ,
+  {
+    "id": 17,
+    "name": "Figurine Vegeta - Dragon Ball",
+    "price": 46.33,
+    "image": "https://m.media-amazon.com/images/I/51ZuUI-LaZL._AC_UF350,350_QL80_AIweblab1381794,T1_.jpg",
+    "rating": 4,
+    "category": "Cartes",
+    "univers": "Dragonball",
+    "description": "Figurine de Vegeta inspirée de l'univers Dragon Ball, parfaite pour accompagner votre collection de figurines Saiyans.",
+    "stock": 6
+  }
 ]

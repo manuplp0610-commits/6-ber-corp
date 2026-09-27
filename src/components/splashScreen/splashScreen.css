@@ -31,7 +31,10 @@
     drop-shadow(0 0 20px rgba(255, 98, 0, 0.5))
     drop-shadow(0 0 40px rgba(255, 98, 0, 0.3));
 }
-
+.splashScreen h1 {
+  position: relative;
+  z-index: 1;
+}
 @keyframes logoPulse {
   0%,
   100% {
