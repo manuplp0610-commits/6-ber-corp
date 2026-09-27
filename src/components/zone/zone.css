@@ -6,17 +6,16 @@
   position: relative;
   isolation: isolate;
   overflow: hidden;
-  background-image: url("../../assets/images/bg-zone.webp");
-  background-size: cover;
-  background-position: center;
-  background-attachment: fixed;
+  background:
+    linear-gradient(rgba(7, 8, 14, 0.9), rgba(7, 8, 14, 0.97)),
+    url("../../assets/images/bg-zone.webp") center top / 100% auto repeat-y;
 }
 
 .zones::before {
   content: "";
   position: absolute;
   inset: 0;
-  background: rgba(0, 0, 0, 0.86);
+  background: rgba(0, 0, 0, 0.8);
   z-index: -1;
 }
 

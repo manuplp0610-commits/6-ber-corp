@@ -4,6 +4,7 @@ import logo from "../../../public/logoLarg.webp";
 
 export default function SplashScreen() {
   const [splashScreenState, setSplashScreenState] = useState(true);
+
   useEffect(() => {
     setTimeout(() => {
       setSplashScreenState(false);
@@ -14,7 +15,8 @@ export default function SplashScreen() {
     <>
       {splashScreenState && (
         <div className="splashScreen">
-          <img fetchpriority="high" src={logo} alt="logo 6-Ber Corp" />
+          <img fetchPriority="high" src={logo} alt="logo 6-Ber Corp" />
+          <h1 className="hero-eyebrow">Chargement ...</h1>
         </div>
       )}
     </>

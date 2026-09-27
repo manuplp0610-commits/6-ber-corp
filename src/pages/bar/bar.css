@@ -10,8 +10,8 @@
 
   color: #f4f4f5;
   background:
-    linear-gradient(rgba(7, 8, 14, 0.9), rgba(7, 8, 14, 0.96)),
-    url("../../assets/images/bg-zone.webp") center / cover fixed;
+    linear-gradient(rgba(7, 8, 14, 0.9), rgba(7, 8, 14, 0.97)),
+    url("../../assets/images/bg-zone.webp") center top / 100% auto repeat-y;
 }
 
 .bar-page::after {

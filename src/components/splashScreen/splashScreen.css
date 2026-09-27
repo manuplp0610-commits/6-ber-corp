@@ -2,25 +2,31 @@
   position: fixed;
   inset: 0;
   z-index: 1000;
-
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
-
-  background: black;
-
+  background: url("../../assets/images/6962.png");
   background-size: cover;
   background-position: center;
-
   animation: splashFadeOut 0.5s ease forwards;
   animation-delay: 2s;
 }
 
+.splashScreen::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.8);
+  z-index: 0;
+}
+
 .splashScreen img {
-  width: 350px;
-
+  position: relative;
+  z-index: 1;
+  width: 270px;
+  transform: translateY(-200px);
   animation: logoPulse 1.2s ease-in-out infinite;
-
   filter: drop-shadow(0 0 5px rgba(255, 98, 0, 0.8))
     drop-shadow(0 0 20px rgba(255, 98, 0, 0.5))
     drop-shadow(0 0 40px rgba(255, 98, 0, 0.3));
@@ -29,12 +35,12 @@
 @keyframes logoPulse {
   0%,
   100% {
-    transform: scale(1);
+    transform: translateY(-65px) scale(1);
     opacity: 0.7;
   }
 
   50% {
-    transform: scale(1.08);
+    transform: translateY(-60px) scale(1.08);
     opacity: 1;
   }
 }
