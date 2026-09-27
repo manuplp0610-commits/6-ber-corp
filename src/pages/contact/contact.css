@@ -144,7 +144,9 @@
     border-color 0.25s ease,
     transform 0.25s ease;
 }
-
+.contact-info-card span {
+  color: rgb(124, 0, 0);
+}
 .contact-info-card:hover {
   transform: translateY(-3px);
   border-color: rgba(255, 149, 0, 0.65);

@@ -18,6 +18,8 @@ export default function Bar() {
   }, []);
   const drinks = dataBar.filter((item) => item.category === "drink");
   const food = dataBar.filter((item) => item.category === "food");
+  const categ = [...new Set(dataBar.map((item) => item.category))];
+  console.log(categ);
 
   const renderItems = (items) => {
     return (
@@ -26,7 +28,7 @@ export default function Bar() {
           <article className="bar-menu-item" key={item.id}>
             <div className="bar-menu-item-icon">
               {item.category === "drink" ? (
-                <i classn="fa-solid fa-glass-water"></i>
+                <i className="fa-solid fa-glass-water"></i>
               ) : (
                 <i className="fa-solid fa-candy-cane"></i>
               )}

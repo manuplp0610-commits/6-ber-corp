@@ -69,7 +69,15 @@
   border-left: 4px solid #ff9500;
   border-radius: 12px;
 }
-
+.event-highlight-link {
+  display: inline;
+  color: #ff9900;
+  margin-left: 20px;
+  font-size: 0.72rem;
+  font-weight: 800;
+  text-decoration: none;
+  white-space: nowrap;
+}
 .event-highlight-icon {
   display: grid;
   flex-shrink: 0;

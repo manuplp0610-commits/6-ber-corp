@@ -29,86 +29,107 @@
     },
     {
         "id":"5",
-        "name":"Red Bull",
-        "price":"3.50",
+        "name":"Ice-Tea",
+        "price":"2.50",
         "description":"Canette 25 cl",
         "category":"drink"
     },
     {
         "id":"6",
-        "name":"Eau",
-        "price":"1.50",
+        "name":"Eau pate",
+        "price":"2.00",
         "description":"Bouteille 50 cl",
         "category":"drink"
     },
     {
         "id":"7",
-        "name":"Café",
-        "price":"2",
-        "description":"Café fraîchement préparé",
+        "name":"Eau pétillante",
+        "price":"2,00",
+        "description":"Bouteille 50 cl",
         "category":"drink"
     },
     {
         "id":"8",
-        "name":"Thé",
-        "price":"2",
-        "description":"Plusieurs parfums disponibles",
+        "name":"Red Bull",
+        "price":"3",
+        "description":"Canette 35 cl",
         "category":"drink"
     },
     {
         "id":"9",
-        "name":"Chips",
-        "price":"2",
-        "description":"Sachet individuel",
-        "category":"food"
+        "name":"Nalu",
+        "price":"3",
+        "description":"Canette 25 cl",
+        "category":"drink"
     },
     {
         "id":"11",
-        "name":"Barre chocolatée",
-        "price":"2",
+        "name":"Monster",
+        "price":"3,50",
         "description":"Snickers, Mars ou Twix",
-        "category":"food"
+        "category":"drink"
     },
     {
         "id":"12",
-        "name":"Cookies",
-        "price":"2.50",
-        "description":"Cookie aux pépites de chocolat",
-        "category":"food"
+        "name":"Bière",
+        "price":"2.80",
+        "description":"Jupiler 33 cl",
+        "category":"drink"
     },
     {
         "id":"13",
-        "name":"Hot-Dog",
-        "price":"5",
-        "description":"Saucisse, pain et sauce au choix",
-        "category":"food"
+        "name":"Cocktail du mois",
+        "price":"8",
+        "description":"Mojito ",
+        "category":"drink"
     },
     {
         "id":"14",
-        "name":"Croque-Monsieur",
-        "price":"5.50",
-        "description":"Jambon et fromage",
+        "name":"M&M,s",
+        "price":"1,50",
+        "description":"Sachet 25g",
         "category":"food"
     },
     {
         "id":"15",
-        "name":"Nuggets",
-        "price":"5",
-        "description":"Portion de 6 nuggets avec sauce",
+        "name":"Snickers",
+        "price":"1,50",
+        "description":"Barre chocolaté 18g",
         "category":"food"
     },
     {
         "id":"16",
-        "name":"Bierre",
-        "price":"2.50",
-        "description":"Jupiler 33cl",
-        "category":"drink"
+        "name":"Mars",
+        "price":"1,50",
+        "description":"Barre chocolaté 18g",
+        "category":"food"
     },
     {
         "id":"17",
-        "name":"Burger",
+        "name":"Chips paprika",
+        "price":"1,50",
+        "description":"Sachet 25g",
+        "category":"food"
+    },
+    {
+        "id":"18",
+        "name":"Chips poivre/sel",
+        "price":"1,50",
+        "description":"Sachet 25g",
+        "category":"food"
+    },
+    {
+        "id":"19",
+        "name":"Nouilles instantanées",
+        "price":"3,50",
+        "description":"Aiki 68g",
+        "category":"food"
+    },
+    {
+        "id":"20",
+        "name":"Croque-Monsieur",
         "price":"5",
-        "description":"Pain bagnat, steak de boeuf, salade, sauce au choix",
+        "description":"Jambon, fromage, ketchup",
         "category":"food"
     }
 ]

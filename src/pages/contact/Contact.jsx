@@ -5,7 +5,6 @@ import Info from "../../components/info/Info";
 export default function Contact() {
   return (
     <section className="contact-page">
-      {/* En-tête de page */}
       <HeaderPages
         title="Contacte-nous"
         subTitle="Une question sur nos espaces gaming, nos événements ou notre
@@ -13,12 +12,9 @@ export default function Contact() {
       />
 
       <Info />
-      {/* Informations et formulaire */}
 
       <section className="contact-content">
         <div className="contact-wrap contact-grid">
-          {/* Informations de contact */}
-
           <div className="contact-informations">
             <div className="section-heading">
               <span className="contact-eyebrow">Nos coordonnées</span>
@@ -37,17 +33,23 @@ export default function Contact() {
                   <i className="fa-solid fa-location-dot"></i>
                 </div>
 
-                <div>
-                  <h3>Adresse</h3>
+                <a
+                  href="https://www.google.com/maps/dir/?api=1&destination=Av.+de+la+Closeraie+22%2F2%2C+4000+Liège&travelmode=driving"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <div>
+                    <h3>Adresse</h3>
 
-                  <p>
-                    Rue de la Gaming Zone, 42
-                    <br />
-                    4000 Liège
-                    <br />
-                    Belgique
-                  </p>
-                </div>
+                    <p>
+                      Avenue de la closeraie, 22/2
+                      <br />
+                      4000 Rocourt
+                      <br />
+                      Belgique
+                    </p>
+                  </div>
+                </a>
               </article>
 
               <article className="contact-info-card">
@@ -59,7 +61,7 @@ export default function Contact() {
                   <h3>Téléphone</h3>
 
                   <p>
-                    <a href="tel:+32470123456">+32 470 12 34 56</a>
+                    <a href="tel:+32471284870">0471/28.48.70</a>
                   </p>
                 </div>
               </article>
@@ -73,7 +75,13 @@ export default function Contact() {
                   <h3>Email</h3>
 
                   <p>
-                    <a href="mailto:contact@6bercorp.be">contact@6bercorp.be</a>
+                    <a
+                      href="https://mail.google.com/mail/?view=cm&fs=1&to=6ber.corp@gmail.com"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      6ber.corp@gmail.com
+                    </a>
                   </p>
                 </div>
               </article>
@@ -87,21 +95,14 @@ export default function Contact() {
                   <h3>Horaires</h3>
 
                   <p>
-                    Lundi - Jeudi : 16h00 - 23h00
-                    <br />
-                    Vendredi - Samedi : 14h00 - 01h00
-                    <br />
-                    Dimanche : 14h00 - 22h00
+                    Lundi - <span>FERMÉ</span> <br /> Mardi - Dimanche : 10h00 -
+                    00h00
                   </p>
                 </div>
               </article>
             </div>
-
-            {/* Réseaux sociaux */}
-
             <div className="contact-socials">
               <h3>Retrouve-nous aussi sur</h3>
-
               <div className="contact-social-links">
                 <a href="#" aria-label="Instagram">
                   <i className="fa-brands fa-instagram"></i>
@@ -111,7 +112,11 @@ export default function Contact() {
                   <i className="fa-brands fa-facebook-f"></i>
                 </a>
 
-                <a href="#" aria-label="Discord">
+                <a
+                  target="blank"
+                  href="https://discord.gg/d2Qqt22ne"
+                  aria-label="Discord"
+                >
                   <i className="fa-brands fa-discord"></i>
                 </a>
 
@@ -121,8 +126,6 @@ export default function Contact() {
               </div>
             </div>
           </div>
-
-          {/* Formulaire */}
 
           <div className="contact-form-container">
             <div className="section-heading">
@@ -241,7 +244,7 @@ export default function Contact() {
             <div className="location-map">
               <iframe
                 title="Localisation de 6 Ber-Corp"
-                src="https://www.google.com/maps?q=Liège,+Belgique&output=embed"
+                src="https://www.google.com/maps?q=Av.+de+la+Closeraie+22%2F2%2C+4000+Liège%2C+Belgique&output=embed"
                 loading="lazy"
                 allowFullScreen
                 referrerPolicy="no-referrer-when-downgrade"
@@ -275,9 +278,9 @@ export default function Contact() {
 
               <a
                 className="location-button"
-                href="https://www.google.com/maps"
+                href="https://www.google.com/maps/dir/?api=1&destination=Av.+de+la+Closeraie+22%2F2%2C+4000+Liège&travelmode=driving"
                 target="_blank"
-                rel="noreferrer"
+                rel="noopener noreferrer"
               >
                 Voir l’itinéraire
                 <i className="fa-solid fa-arrow-up-right-from-square"></i>

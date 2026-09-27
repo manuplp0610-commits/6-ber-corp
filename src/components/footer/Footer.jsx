@@ -23,7 +23,7 @@ export default function Footer() {
           <input
             type="email"
             id="newsletter-email"
-            placeholder="ton@email.com"
+            placeholder="6ber.corp@gmail.com"
             required
           />
 
@@ -38,7 +38,6 @@ export default function Footer() {
           <a href="#" className="nav-logo">
             <img className="logo-footer" src={logo} alt="6 Ber Corp" />
           </a>
-
           <p>
             Le bar geek où cartes, consoles et PC se retrouvent autour d'un bon
             verre.
@@ -53,7 +52,11 @@ export default function Footer() {
               <i className="fa-brands fa-facebook-f"></i>
             </a>
 
-            <a href="#" aria-label="Discord">
+            <a
+              target="_blank"
+              href="https://discord.gg/d2Qqt22ne"
+              aria-label="Discord"
+            >
               <i className="fa-brands fa-discord"></i>
             </a>
 
@@ -68,19 +71,19 @@ export default function Footer() {
 
           <ul>
             <li>
-              <a href="#boutique">Boutique</a>
+              <a href="">Boutique</a>
             </li>
             <li>
-              <a href="#bar">Bar</a>
+              <a href="">Bar</a>
             </li>
             <li>
-              <a href="#playstation">PlayStation</a>
+              <a href="">PlayStation</a>
             </li>
             <li>
-              <a href="#pc">Ordinateurs</a>
+              <a href="">Ordinateurs</a>
             </li>
             <li>
-              <a href="#events">Événements</a>
+              <a href="">Événements</a>
             </li>
           </ul>
         </div>
@@ -94,6 +97,7 @@ export default function Footer() {
             </li>
             <li>
               <a href="#">SEO partners</a>
+              <span>motcha</span>
             </li>
           </ul>
         </div>
@@ -103,9 +107,9 @@ export default function Footer() {
 
           <ul>
             <li>Mar-Dim · 10h-00h</li>
-            <li>Rue de l'Arcade 12</li>
-            <li>0476/91.44.56</li>
-            <li>contact@6ber-corp.be</li>
+            <li>Avenue de la closeraie 22/2, 4000 Rocourt</li>
+            <li>0471/28.48.70</li>
+            <li>6ber.corp@gmail.com</li>
           </ul>
         </div>
       </div>

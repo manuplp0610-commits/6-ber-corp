@@ -1,7 +1,7 @@
 import "./event.css";
 
 import HeaderPages from "../../components/headerPages/HeaderPages";
-
+import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
 
 export default function Event() {
@@ -33,7 +33,12 @@ export default function Event() {
 
           <p>
             Les événements sont accessibles directement sur place. Pour plus
-            d’informations, adressez-vous à l’équipe du bar.
+            d’informations, adressez-vous à l’équipe du bar ou contactez nous
+            par le formulaire.
+            <Link to="/contact" className="event-highlight-link">
+              Nous contacter
+              <span>→</span>
+            </Link>
           </p>
         </div>
       </section>
@@ -108,6 +113,10 @@ export default function Event() {
           <p>
             Tournoi, quiz, soirée thématique ou rencontre entre passionnés :
             partagez vos idées directement avec notre équipe.
+            <Link to="/contact" className="event-highlight-link">
+              Nous contacter
+              <span>→</span>
+            </Link>
           </p>
         </div>
       </section>

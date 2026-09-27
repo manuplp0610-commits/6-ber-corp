@@ -109,11 +109,10 @@ export default function Shop() {
             notre équipe.
           </p>
         </div>
-
-        <a href="#contact" className="shop-intro-link">
+        <Link to="/contact" className="shop-intro-link">
           Nous trouver
           <span>→</span>
-        </a>
+        </Link>
       </section>
 
       <section className="shop-catalogue" id="catalogue">
