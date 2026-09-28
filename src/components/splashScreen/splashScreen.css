@@ -27,9 +27,9 @@
   width: 270px;
   transform: translateY(-200px);
   animation: logoPulse 1.2s ease-in-out infinite;
-  filter: drop-shadow(0 0 5px rgba(255, 98, 0, 0.8))
-    drop-shadow(0 0 20px rgba(255, 98, 0, 0.5))
-    drop-shadow(0 0 40px rgba(255, 98, 0, 0.3));
+  filter: drop-shadow(0 0 5px var(--color-secondary))
+    drop-shadow(0 0 20px var(--color-primary-hover))
+    drop-shadow(0 0 40px var(--color-primary-hover));
 }
 .splashScreen h1 {
   position: relative;

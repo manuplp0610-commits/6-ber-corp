@@ -21,7 +21,7 @@
   width: 100%;
 
   background: rgba(26, 28, 41, 0.97);
-  border: 1px solid #ff9500;
+  border: 1px solid var(--color-primary);
   border-radius: 0 0 14px 14px;
 
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
@@ -128,14 +128,14 @@
   width: 0;
   height: 2px;
 
-  background: #ff9500;
+  background: var(--color-primary);
   border-radius: 2px;
 
   transition: width 0.2s ease;
 }
 
 .sind-nav a:hover {
-  color: #ff9500;
+  color: var(--color-primary);
   transform: translateY(-2px);
 }
 
@@ -168,9 +168,9 @@
   padding: 0;
 
   background: transparent;
-  color: #ff9500;
+  color: var(--color-primary);
 
-  border: 1px solid #ff9500;
+  border: 1px solid var(--color-primary);
   border-radius: 6px;
 
   font-size: 14px;
@@ -184,7 +184,7 @@
 }
 
 .log .btn-login:hover {
-  background: #ff9500;
+  background: var(--color-primary);
   color: #11131c;
   transform: translateY(-1px);
   box-shadow: 0 5px 15px rgba(255, 149, 0, 0.25);
@@ -230,7 +230,7 @@
 
 .log-li a:hover {
   background: #1a1c29;
-  color: #ff9500;
+  color: var(--color-primary);
 }
 
 /* =========================================================
@@ -316,9 +316,9 @@
 
 .nav-mobile-content li a:hover {
   background: #202331;
-  color: #ff9500;
+  color: var(--color-primary);
 
-  border-color: #ff9500;
+  border-color: var(--color-primary);
 
   transform: translateY(-1px);
 }
@@ -332,17 +332,17 @@
 }
 
 .nav-mobile-content li.btn-login a {
-  background: #ff9500;
+  background: var(--color-primary);
   color: #11131c;
 
-  border-color: #ff9500;
+  border-color: var(--color-primary);
 }
 
 .nav-mobile-content li.btn-login a:hover {
-  background: #ffad33;
+  background: var(--color-primary);
   color: #11131c;
 
-  border-color: #ffad33;
+  border-color: var(--color-primary);
 }
 
 /* =========================================================
@@ -365,7 +365,7 @@
   padding: 0;
 
   background: #1a1c29;
-  color: #ff9500;
+  color: var(--color-primary);
 
   border: 1px solid #303030;
   border-radius: 7px;
@@ -383,7 +383,7 @@
 
 .nav-toggle:hover {
   background: #202331;
-  border-color: #ff9500;
+  border-color: var(--color-primary);
 }
 
 /* =========================================================
@@ -400,8 +400,15 @@
 
 .logo-center--hero {
   width: 300px;
+  transition:
+    transform 0.3s ease,
+    filter 0.3s ease;
 }
 
+.logo-center--hero:hover {
+  transform: scale(1.05);
+  filter: drop-shadow(0 0 50px var(--color-primary-hover));
+}
 .nav-links--hero {
   width: 100%;
 

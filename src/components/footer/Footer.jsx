@@ -27,7 +27,7 @@ export default function Footer() {
             required
           />
 
-          <button type="submit" className="btn btn-primary">
+          <button type="submit" className="btn btn-NL">
             S'inscrire
           </button>
         </form>
@@ -43,7 +43,7 @@ export default function Footer() {
             verre.
           </p>
 
-          <div className="contact-social-links">
+          <div className="footer-social-links">
             <a href="#" aria-label="Instagram">
               <i className="fa-brands fa-instagram"></i>
             </a>

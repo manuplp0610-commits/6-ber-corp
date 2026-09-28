@@ -71,21 +71,6 @@
 }
 
 /* ============================================
-   LOGO
-   ============================================ */
-
-.logo-heros {
-  transition:
-    transform 0.3s ease,
-    filter 0.3s ease;
-}
-
-.logo-heros:hover {
-  transform: scale(1.05);
-  filter: drop-shadow(0 0 50px rgba(255, 149, 0, 0.7));
-}
-
-/* ============================================
    CONTENU HERO
    ============================================ */
 
@@ -170,12 +155,16 @@
 .btn-primary {
   color: #12131c;
 
-  background: linear-gradient(135deg, #ff9500 0%, #ffcc00 100%);
+  background: linear-gradient(
+    135deg,
+    var(--color-secondary) 0%,
+    var(--color-primary) 100%
+  );
 
   border: none;
 
   box-shadow:
-    0 4px 20px rgba(255, 149, 0, 0.4),
+    0 4px 20px var(--color-primary),
     inset 0 1px 0 rgba(255, 255, 255, 0.3);
 }
 
@@ -183,7 +172,7 @@
   transform: translateY(-2px);
 
   box-shadow:
-    0 8px 40px rgba(255, 149, 0, 0.6),
+    0 8px 40px var(--color-primary),
     inset 0 1px 0 rgba(255, 255, 255, 0.3);
 }
 
@@ -204,9 +193,9 @@
 }
 
 .btn-ghost:hover {
-  color: #ff9500;
+  color: var(--color-primary);
 
-  border-color: #ff9500;
+  border-color: var(--color-primary);
 
   background: rgba(255, 149, 0, 0.1);
 

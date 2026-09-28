@@ -40,7 +40,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  color: #ffbe3d;
+  color: var(--color-primary);
   font-size: 16px;
 }
 

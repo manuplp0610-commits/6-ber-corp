@@ -74,10 +74,12 @@ footer {
 
 .newsletter-form input[type="email"]:focus-visible {
   outline: none;
-  border-color: #ffbe3d;
+  border-color: var(--color-primary);
   box-shadow: 0 0 0 2px rgba(255, 204, 0, 0.15);
 }
-
+.btn-NL {
+  background: var(--color-primary);
+}
 /* ============================================
    FOOTER GRID
 ============================================ */
@@ -99,7 +101,7 @@ footer {
 .footer-col h4 {
   margin-bottom: 18px;
 
-  color: #ffbe3d;
+  color: var(--color-primary);
   font-size: 12px;
   font-weight: 700;
   letter-spacing: 0.12em;
@@ -153,7 +155,7 @@ footer {
 
 .nav-logo:hover .logo-footer {
   transform: scale(1.05);
-  filter: drop-shadow(0 0 20px rgba(255, 149, 0, 0.5));
+  filter: drop-shadow(0 0 20px var(--color-primary-hover));
 }
 
 .footer-brand p {
@@ -169,13 +171,13 @@ footer {
    RÉSEAUX SOCIAUX
 ============================================ */
 
-.socials {
+.footer-social-links {
   display: flex;
   gap: 10px;
   margin-top: 20px;
 }
 
-.socials a {
+.footer-social-links a {
   width: 36px;
   height: 36px;
 
@@ -183,10 +185,10 @@ footer {
   align-items: center;
   justify-content: center;
 
-  border: 1px solid #33364a;
+  border: 1px solid var(--color-primary);
   border-radius: 50%;
 
-  color: #a9a8b8;
+  color: var(--color-primary);
   font-size: 15px;
 
   transition:
@@ -195,9 +197,10 @@ footer {
     transform 0.2s ease;
 }
 
-.socials a:hover {
-  border-color: #ffbe3d;
-  color: #ffbe3d;
+.footer-social-links a:hover {
+  border-color: var(--color-primary);
+  background: var(--color-primary);
+  color: #33364a;
   transform: translateY(-2px);
 }
 
@@ -217,12 +220,12 @@ footer {
 }
 
 .footer-bottom a {
-  color: #ff5a2c;
+  color: orangered;
   transition: color 0.2s ease;
 }
 
 .footer-bottom a:hover {
-  color: #ffbe3d;
+  color: var(--color-primary);
 }
 
 /* ============================================

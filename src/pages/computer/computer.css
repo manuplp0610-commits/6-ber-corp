@@ -28,7 +28,7 @@
 .pc-kicker {
   display: block;
   margin-bottom: 8px;
-  color: #ff9500;
+  color: var(--color-primary);
   font-size: 0.72rem;
   font-weight: 800;
   letter-spacing: 0.14em;
@@ -68,7 +68,7 @@
     rgba(22, 24, 35, 0.96) 55%
   );
   border: 1px solid rgba(255, 149, 0, 0.3);
-  border-left: 4px solid #ff9500;
+  border-left: 4px solid var(--color-primary);
   border-radius: 12px;
 }
 
@@ -156,7 +156,7 @@
 
 .pc-card:hover {
   transform: translateY(-5px);
-  border-color: rgba(255, 149, 0, 0.75);
+  border-color: var(--color-primary-hover);
   box-shadow:
     0 15px 35px rgba(0, 0, 0, 0.35),
     0 0 18px rgba(255, 149, 0, 0.08);
@@ -200,12 +200,12 @@
   gap: 6px;
   flex-shrink: 0;
   padding: 11px 15px;
-  border: 1px solid #ff9500;
+  border: 1px solid var(--color-primary);
   border-radius: 7px;
 }
 
 .pc-price strong {
-  color: #ff9500;
+  color: var(--color-primary);
   font-size: 1.3rem;
 }
 
@@ -266,13 +266,13 @@
 
 .step-card:hover {
   transform: translateY(-4px);
-  border-color: rgba(255, 149, 0, 0.7);
+  border-color: var(--color-primary-hover);
 }
 
 .step-card > span {
   display: block;
   margin-bottom: 20px;
-  color: #ff9500;
+  color: var(--color-primary);
   font-size: 0.8rem;
   font-weight: 800;
   letter-spacing: 0.1em;
