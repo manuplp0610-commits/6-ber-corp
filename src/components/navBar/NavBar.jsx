@@ -17,7 +17,6 @@ export default function NavBar({ variant = "default" }) {
   const [openNav, setOpenNav] = useState(false);
   const [openLog, setOpenLog] = useState(false);
   const [openMobileLog, setOpenMobileLog] = useState(false);
-
   const handleLogout = () => {
     sessionStorage.removeItem("isLoggedIn");
     setIsLoggedIn(false);
@@ -27,8 +26,12 @@ export default function NavBar({ variant = "default" }) {
 
   const handleClick = () => {
     setOpenNav((prev) => !prev);
+    setOpenLog(false);
+    setOpenMobileLog(false);
   };
-
+  const closeNav = () => {
+    setOpenNav(false);
+  };
   useEffect(() => {
     setOpenNav(false);
   }, [location.pathname]);
@@ -46,14 +49,20 @@ export default function NavBar({ variant = "default" }) {
 
         {openLog && (
           <div className="log-li">
-            {isLoggedIn && <Link to="/dashbord">Dashboard</Link>}
+            {isLoggedIn && (
+              <Link onClick={closeNav} to="/dashbord">
+                Dashboard
+              </Link>
+            )}
 
             {isLoggedIn ? (
               <Link onClick={handleLogout} to="/login">
                 Déconnexion
               </Link>
             ) : (
-              <Link to="/login">Connexion</Link>
+              <Link onClick={handleLogout} to="/login">
+                Connexion
+              </Link>
             )}
           </div>
         )}
@@ -130,14 +139,20 @@ export default function NavBar({ variant = "default" }) {
 
               {openMobileLog && (
                 <div className="log-li">
-                  {isLoggedIn && <Link to="/dashbord">Dashboard</Link>}
+                  {isLoggedIn && (
+                    <Link onClick={closeNav} to="/dashbord">
+                      Dashboard
+                    </Link>
+                  )}
 
                   {isLoggedIn ? (
                     <Link onClick={handleLogout} to="/login">
                       Déconnexion
                     </Link>
                   ) : (
-                    <Link to="/login">Connexion</Link>
+                    <Link onClick={handleLogout} to="/login">
+                      Connexion
+                    </Link>
                   )}
                 </div>
               )}
@@ -145,27 +160,39 @@ export default function NavBar({ variant = "default" }) {
 
             <ul>
               <li>
-                <Link to="/shop">Boutique</Link>
+                <Link onClick={closeNav} to="/shop">
+                  Boutique
+                </Link>
               </li>
 
               <li>
-                <Link to="/bar">Bar</Link>
+                <Link onClick={closeNav} to="/bar">
+                  Bar
+                </Link>
               </li>
 
               <li>
-                <Link to="/console">Consoles</Link>
+                <Link onClick={closeNav} to="/console">
+                  Consoles
+                </Link>
               </li>
 
               <li>
-                <Link to="/computer">PC</Link>
+                <Link onClick={closeNav} to="/computer">
+                  PC
+                </Link>
               </li>
 
               <li>
-                <Link to="/event">Événements</Link>
+                <Link onClick={closeNav} to="/event">
+                  Événements
+                </Link>
               </li>
 
               <li>
-                <Link to="/contact">Contact</Link>
+                <Link onClick={closeNav} to="/contact">
+                  Contact
+                </Link>
               </li>
             </ul>
           </div>

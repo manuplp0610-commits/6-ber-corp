@@ -11,6 +11,7 @@ import Login from "../pages/login/Login";
 import Dashboard from "../pages/dashboard/Dashboard";
 import Contact from "../pages/contact/Contact";
 import ProtectedRoute from "../components/protectedRoute/ProtectedRoute";
+import NoFound from "../pages/noFound/NoFound";
 
 const router = createBrowserRouter(
   [
@@ -59,6 +60,10 @@ const router = createBrowserRouter(
           element: <Contact />,
         },
       ],
+    },
+    {
+      path: "*",
+      element: <NoFound />,
     },
   ],
   {
