@@ -20,7 +20,7 @@ export default function Shop() {
       .catch((error) => {
         console.error(error);
       });
-  }, []);
+  });
 
   const universes = useMemo(() => {
     return ["tout", ...new Set(articles.map((article) => article.univers))];
