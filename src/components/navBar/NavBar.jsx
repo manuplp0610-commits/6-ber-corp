@@ -16,11 +16,13 @@ export default function NavBar({ variant = "default" }) {
 
   const [openNav, setOpenNav] = useState(false);
   const [openLog, setOpenLog] = useState(false);
+  const [openMobileLog, setOpenMobileLog] = useState(false);
 
   const handleLogout = () => {
     sessionStorage.removeItem("isLoggedIn");
     setIsLoggedIn(false);
     setOpenLog(false);
+    setOpenMobileLog(false);
   };
 
   const handleClick = () => {
@@ -56,6 +58,7 @@ export default function NavBar({ variant = "default" }) {
           </div>
         )}
       </div>
+
       {/* Bouton hamburger */}
       <button
         onClick={handleClick}
@@ -66,18 +69,23 @@ export default function NavBar({ variant = "default" }) {
       >
         ☰
       </button>
-      {/* Logo gauche - desktop */}
-      <Link to="/" className="logo-link logo-link--left">
+
+      <Link
+        to="/"
+        className={`logo-link logo-link--left ${
+          openNav ? "logo-link--mobile-open" : ""
+        }`}
+      >
         <img
           className={`logo-left logo-left--${variant}`}
           src={logoSmall}
           alt="6 Ber Corp"
         />
       </Link>
+
       <div className={`nav-inner nav-inner--${variant}`}>
         <div className={`nav-links nav-links--${variant}`}>
           {/* Groupe gauche */}
-
           <div className={`sind-nav sind-nav--left sind-nav--${variant}`}>
             <Link to="/shop">Boutique</Link>
             <Link to="/bar">Bar</Link>
@@ -85,7 +93,6 @@ export default function NavBar({ variant = "default" }) {
           </div>
 
           {/* Logo central */}
-
           <Link to="/" className="logo-link logo-link--center">
             <img
               fetchpriority="high"
@@ -96,7 +103,6 @@ export default function NavBar({ variant = "default" }) {
           </Link>
 
           {/* Groupe droit */}
-
           <div className={`sind-nav sind-nav--right sind-nav--${variant}`}>
             <Link to="/computer">PC</Link>
             <Link to="/event">Événements</Link>
@@ -104,31 +110,40 @@ export default function NavBar({ variant = "default" }) {
           </div>
         </div>
       </div>
+
       {/* Menu mobile */}
       {openNav && (
         <div className="nav-mobile" id="nav-mobile">
           <div className="nav-mobile-content">
-            <ul>
-              {/* Connexion / Dashboard mobile */}
+            <div className="mobile-login">
+              <button
+                onClick={() => setOpenMobileLog(!openMobileLog)}
+                className="btn-login"
+                aria-label={
+                  openMobileLog
+                    ? "Fermer le menu utilisateur"
+                    : "Ouvrir le menu utilisateur"
+                }
+              >
+                <i className="fa-solid fa-user"></i>
+              </button>
 
-              {isLoggedIn ? (
-                <>
-                  <li>
-                    <Link to="/dashbord">Dashboard</Link>
-                  </li>
+              {openMobileLog && (
+                <div className="log-li">
+                  {isLoggedIn && <Link to="/dashbord">Dashboard</Link>}
 
-                  <li>
+                  {isLoggedIn ? (
                     <Link onClick={handleLogout} to="/login">
                       Déconnexion
                     </Link>
-                  </li>
-                </>
-              ) : (
-                <li>
-                  <Link to="/login">Connexion</Link>
-                </li>
+                  ) : (
+                    <Link to="/login">Connexion</Link>
+                  )}
+                </div>
               )}
+            </div>
 
+            <ul>
               <li>
                 <Link to="/shop">Boutique</Link>
               </li>
