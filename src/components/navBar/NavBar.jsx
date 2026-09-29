@@ -17,6 +17,7 @@ export default function NavBar({ variant = "default" }) {
   const [openNav, setOpenNav] = useState(false);
   const [openLog, setOpenLog] = useState(false);
   const [openMobileLog, setOpenMobileLog] = useState(false);
+  const [showLogoLeft, setShowLogoLeft] = useState(false);
 
   const handleLogout = () => {
     sessionStorage.removeItem("isLoggedIn");
@@ -44,6 +45,25 @@ export default function NavBar({ variant = "default" }) {
   useEffect(() => {
     setIsLoggedIn(sessionStorage.getItem("isLoggedIn") === "true");
   }, [location.pathname]);
+
+  useEffect(() => {
+    if (location.pathname !== "/" || openNav) {
+      setShowLogoLeft(true);
+      return;
+    }
+
+    const handleScroll = () => {
+      setShowLogoLeft(window.scrollY >= 300);
+    };
+
+    handleScroll();
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, [location.pathname, openNav]);
 
   return (
     <nav className={`navBar navBar--${variant}`}>
@@ -88,8 +108,8 @@ export default function NavBar({ variant = "default" }) {
       <Link
         to="/"
         className={`logo-link logo-link--left ${
-          openNav ? "logo-link--mobile-open" : ""
-        }`}
+          openNav || showLogoLeft ? "logo-link--visible" : ""
+        } ${openNav ? "logo-link--mobile-open" : ""}`}
       >
         <img
           className={`logo-left logo-left--${variant}`}

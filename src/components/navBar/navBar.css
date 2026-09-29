@@ -49,31 +49,45 @@
 ========================================================= */
 
 /* Boîte de référence du logo small */
+
 .logo-link--left {
   position: absolute;
   top: 0;
   left: 0;
   z-index: 200;
-
   width: 75px;
   height: 75px;
-
   display: flex;
   align-items: center;
   justify-content: center;
-
   margin: 0;
   padding: 0;
+
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+
+  transition:
+    opacity 0.3s ease,
+    visibility 0.3s ease;
+}
+
+/* Logo visible */
+
+.logo-link--left.logo-link--visible {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
 }
 
 /* Logo small */
+
 .logo-left--default {
   display: block;
   width: 58px;
   height: 58px;
   object-fit: contain;
   margin: 0;
-
   transition: transform 0.25s ease;
 }
 
@@ -191,20 +205,15 @@
   position: absolute;
   top: 62px;
   right: 0;
-
   display: flex;
   flex-direction: column;
   gap: 4px;
-
   min-width: 150px;
   padding: 8px;
-
   background: #11131c;
   border: 1px solid var(--color-primary);
   border-radius: 8px;
-
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.35);
-
   animation: loginMenuIn 0.2s ease-out;
   transform-origin: top right;
 }
@@ -256,7 +265,6 @@
   border-top: 1px solid #303030;
   box-shadow: 0 15px 30px rgba(0, 0, 0, 0.45);
   z-index: 99;
-
   animation: mobileNavOpen 0.3s ease-out;
 }
 
@@ -373,22 +381,16 @@
   top: calc(100% + 10px);
   left: 50%;
   right: auto;
-
   transform: translateX(-50%);
-
   z-index: 300;
-
   min-width: 180px;
   padding: 8px;
-
   background: rgba(17, 19, 28, 0.98);
   border: 1px solid var(--color-primary);
   border-radius: 8px;
-
   box-shadow:
     0 10px 25px rgba(0, 0, 0, 0.45),
     0 0 15px rgba(255, 149, 0, 0.08);
-
   animation: mobileLoginMenu 0.2s ease-out;
 }
 
@@ -396,18 +398,13 @@
   display: block;
   width: 100%;
   box-sizing: border-box;
-
   padding: 11px 14px;
-
   color: #d7d7dc;
   font-size: 13px;
   font-weight: 500;
-
   text-align: center;
   text-decoration: none;
-
   border-radius: 5px;
-
   transition:
     background 0.2s ease,
     color 0.2s ease,
@@ -452,7 +449,6 @@
   font-size: 22px;
   line-height: 1;
   cursor: pointer;
-
   transition:
     background 0.2s ease,
     border-color 0.2s ease,
@@ -479,12 +475,12 @@
 }
 
 .logo-left--hero {
-  display: none;
+  margin: 10px 0 0 10px;
+  width: 52px;
 }
 
 .logo-center--hero {
   width: 300px;
-
   transition:
     transform 0.3s ease,
     filter 0.3s ease;
@@ -575,17 +571,13 @@
     position: fixed;
     top: 0;
     left: 0;
-
     width: 64px;
     height: 64px;
-
     display: flex;
     align-items: center;
     justify-content: center;
-
     margin: 0;
     padding: 0;
-
     z-index: 110;
   }
 
@@ -602,34 +594,24 @@
      LOGO SMALL HERO MOBILE
   ======================================================= */
 
-  .logo-left--hero {
-    display: none;
-  }
-
   .logo-link--mobile-open {
     position: fixed;
     top: 0;
     left: 0;
-
     width: 64px;
     height: 64px;
-
     display: flex;
     align-items: center;
     justify-content: center;
-
     margin: 0;
     padding: 0;
-
     z-index: 110;
   }
 
   .logo-link--mobile-open .logo-left--hero {
     display: block;
-
     width: 52px;
     height: 52px;
-
     margin: 10px 0 0 10px;
     object-fit: contain;
   }
