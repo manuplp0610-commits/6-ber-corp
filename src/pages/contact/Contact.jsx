@@ -112,9 +112,9 @@ export default function Contact() {
                   <i className="fa-brands fa-instagram"></i>
                 </a>
 
-                <a href="#" aria-label="Facebook">
+                {/* <a href="#" aria-label="Facebook">
                   <i className="fa-brands fa-facebook-f"></i>
-                </a>
+                </a> */}
 
                 <a
                   target="blank"
@@ -124,9 +124,9 @@ export default function Contact() {
                   <i className="fa-brands fa-discord"></i>
                 </a>
 
-                <a href="#" aria-label="TikTok">
+                {/* <a href="#" aria-label="TikTok">
                   <i className="fa-brands fa-tiktok"></i>
-                </a>
+                </a> */}
               </div>
             </div>
           </div>
