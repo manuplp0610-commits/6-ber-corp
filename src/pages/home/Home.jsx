@@ -3,7 +3,6 @@ import Footer from "../../components/footer/Footer";
 import Zone from "../../components/zone/Zone";
 import ScrollToTop from "../../components/scrollToTop/ScrollToTop";
 import SplashScreen from "../../components/splashScreen/SplashScreen";
-import { useEffect } from "react";
 
 export default function Home() {
   return (

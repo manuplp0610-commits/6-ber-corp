@@ -3,6 +3,7 @@ import "./shop.css";
 import HeaderPages from "../../components/headerPages/HeaderPages";
 import Article from "../../components/article/Article";
 import { Link } from "react-router-dom";
+import { motion, AnimatePresence } from "motion/react";
 
 export default function Shop() {
   const [articles, setArticles] = useState([]);
@@ -71,25 +72,51 @@ export default function Shop() {
         subTitle="Découvrez une sélection de produits geek et pop culture disponibles directement chez 6 Ber-Corp."
       />
       <section className="shop-hero">
-        <div className="shop-hero-content">
-          <span className="shop-eyebrow">Collection 6 Ber-Corp</span>
+        <motion.div
+          className="shop-hero-content"
+          initial={{ opacity: 0, y: 40 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.7, delay: 0.2 }}
+        >
+          <motion.span
+            className="shop-eyebrow"
+            initial={{ opacity: 0, y: 15 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.3 }}
+          >
+            Collection 6 Ber-Corp
+          </motion.span>
 
-          <h1>
+          <motion.h1
+            initial={{ opacity: 0, y: 25 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.4 }}
+          >
             Les trésors du
             <span> comptoir</span>
-          </h1>
-          <p>
+          </motion.h1>
+
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.5 }}
+          >
             Retrouvez une sélection d’objets, accessoires et produits inspirés
             de vos univers préférés. Chaque article est disponible directement
             au magasin.
-          </p>
+          </motion.p>
 
-          <div className="shop-hero-actions">
+          <motion.div
+            className="shop-hero-actions"
+            initial={{ opacity: 0, y: 20, scale: 0.98 }}
+            animate={{ opacity: 1, y: 0, scale: 1 }}
+            transition={{ duration: 0.6, delay: 0.6 }}
+          >
             <a href="#catalogue" className="shop-primary-button">
               Explorer la sélection
             </a>
-          </div>
-        </div>
+          </motion.div>
+        </motion.div>
 
         <div className="shop-hero-decoration" aria-hidden="true">
           <span>✦</span>
@@ -98,7 +125,14 @@ export default function Shop() {
         </div>
       </section>
 
-      <section className="shop-intro" id="infos">
+      <motion.section
+        className="shop-intro"
+        id="infos"
+        initial={{ opacity: 0, y: 40 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, amount: 0.3 }}
+        transition={{ duration: 0.7 }}
+      >
         <div className="shop-intro-icon">🛍️</div>
 
         <div>
@@ -113,10 +147,16 @@ export default function Shop() {
           Nous trouver
           <span>→</span>
         </Link>
-      </section>
+      </motion.section>
 
       <section className="shop-catalogue" id="catalogue">
-        <div className="catalogue-heading">
+        <motion.div
+          className="catalogue-heading"
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.3 }}
+          transition={{ duration: 0.6 }}
+        >
           <div>
             <span className="section-label">La sélection du moment</span>
 
@@ -131,9 +171,15 @@ export default function Shop() {
             {filteredArticles.length > 1 ? "s" : ""} disponible
             {filteredArticles.length > 1 ? "s" : ""}
           </p>
-        </div>
+        </motion.div>
 
-        <div className="shop-controls">
+        <motion.div
+          className="shop-controls"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.2 }}
+          transition={{ duration: 0.6, delay: 0.1 }}
+        >
           <div className="filter-group">
             <span className="filter-label">Univers</span>
 
@@ -169,9 +215,15 @@ export default function Shop() {
               <option value="popularity">Popularité</option>
             </select>
           </div>
-        </div>
+        </motion.div>
 
-        <div className="category-filter">
+        <motion.div
+          className="category-filter"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.2 }}
+          transition={{ duration: 0.6, delay: 0.2 }}
+        >
           <span className="filter-label">Catégorie</span>
 
           <div className="category-buttons">
@@ -190,7 +242,7 @@ export default function Shop() {
               </button>
             ))}
           </div>
-        </div>
+        </motion.div>
 
         {(selectedUniverse !== "tout" ||
           selectedCategory !== "tout" ||
@@ -205,11 +257,24 @@ export default function Shop() {
         )}
 
         {filteredArticles.length > 0 ? (
-          <div className="articles-grid">
-            {filteredArticles.map((article) => (
-              <Article key={article.id} article={article} />
-            ))}
-          </div>
+          <AnimatePresence mode="popLayout">
+            <div className="articles-grid">
+              {filteredArticles.map((article, index) => (
+                <motion.div
+                  key={article.id}
+                  initial={{ opacity: 0, y: 25 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, y: -15 }}
+                  transition={{
+                    duration: 0.4,
+                    delay: index * 0.04,
+                  }}
+                >
+                  <Article article={article} />
+                </motion.div>
+              ))}
+            </div>
+          </AnimatePresence>
         ) : (
           <div className="empty-catalogue">
             <span>◌</span>
