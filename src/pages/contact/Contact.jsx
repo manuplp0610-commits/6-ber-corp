@@ -104,7 +104,11 @@ export default function Contact() {
             <div className="contact-socials">
               <h3>Retrouve-nous aussi sur</h3>
               <div className="contact-social-links">
-                <a href="#" aria-label="Instagram">
+                <a
+                  target="_blank"
+                  href="https://www.instagram.com/6ber.corp/"
+                  aria-label="Instagram"
+                >
                   <i className="fa-brands fa-instagram"></i>
                 </a>
 

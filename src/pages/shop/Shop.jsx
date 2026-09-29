@@ -80,7 +80,7 @@ export default function Shop() {
           </h1>
           <p>
             Retrouvez une sélection d’objets, accessoires et produits inspirés
-            de vos univers préférés. Chaque article est disponible directement a
+            de vos univers préférés. Chaque article est disponible directement
             au magasin.
           </p>
 

@@ -2,16 +2,16 @@ import { Link } from "react-router-dom";
 import "./zoneCard.css";
 
 export default function ZoneCard({
-  id,
   tag,
   title,
   description,
   button,
   imageClass,
   wide = false,
+  path,
 }) {
   return (
-    <article className={`zone-card ${wide ? "wide" : ""}`} id={id}>
+    <article className={`zone-card ${wide ? "wide" : ""}`}>
       <div className={`zone-media ${imageClass}`}>
         <span className="tag">{tag}</span>
       </div>
@@ -20,7 +20,7 @@ export default function ZoneCard({
         <h3>{title}</h3>
         <p>{description}</p>
 
-        <Link to={`/${id}`} className="btn btn-ghost">
+        <Link to={`/${path}`} className="btn btn-ghost">
           {button}
         </Link>
       </div>

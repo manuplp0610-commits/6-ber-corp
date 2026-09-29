@@ -79,6 +79,8 @@ footer {
 }
 .btn-NL {
   background: var(--color-primary);
+  border-radius: 25px;
+  padding: 10px 30px;
 }
 /* ============================================
    FOOTER GRID
@@ -117,10 +119,11 @@ footer {
 .footer-col ul li {
   font-size: 14px;
   line-height: 1.5;
+  color: #a9a8b8;
+  cursor: pointer;
 }
 
 .footer-col ul a {
-  color: #a9a8b8;
   transition:
     color 0.2s ease,
     transform 0.2s ease;
@@ -129,7 +132,13 @@ footer {
 .footer-col ul a:hover {
   color: #f2efe8;
 }
-
+.seo-link {
+  font-weight: bold;
+  color: white;
+}
+.footer-col-prat ul li {
+  color: white;
+}
 /* ============================================
    MARQUE
 ============================================ */
@@ -281,7 +290,8 @@ footer {
   }
 
   .newsletter-form .btn {
-    width: 100%;
+    width: 200px;
+    margin: 0 auto;
   }
 }
 

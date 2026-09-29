@@ -1,6 +1,6 @@
-/* =========================
+/* =========================================================
    CARTE ZONE
-========================= */
+========================================================= */
 
 .zone-card {
   position: relative;
@@ -12,21 +12,24 @@
   border: 1px solid #30313d;
   border-radius: 18px;
   box-shadow: 0 12px 35px rgba(0, 0, 0, 0.2);
+
   transition:
-    transform 0.3s ease,
-    border-color 0.3s ease,
-    box-shadow 0.3s ease;
+    transform 0.35s ease,
+    border-color 0.35s ease,
+    box-shadow 0.35s ease;
 }
 
 .zone-card:hover {
-  transform: translateY(-6px);
+  transform: translateY(-4px);
   border-color: var(--color-primary-hover);
-  box-shadow: 0 18px 45px rgba(0, 0, 0, 0.35);
+  box-shadow:
+    0 18px 45px rgba(0, 0, 0, 0.35),
+    0 0 20px rgba(255, 149, 0, 0.08);
 }
 
-/* =========================
+/* =========================================================
    IMAGE / MEDIA
-========================= */
+========================================================= */
 
 .zone-media {
   position: relative;
@@ -36,9 +39,21 @@
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
+
+  transition: transform 0.5s ease;
 }
 
-/* Overlay sombre sur les images */
+/* =========================================================
+   ZOOM IMAGE
+========================================================= */
+
+.zone-card:hover .zone-media {
+  transform: scale(1.025);
+}
+
+/* =========================================================
+   OVERLAY SOMBRE SUR LES IMAGES
+========================================================= */
 
 .zone-media::after {
   content: "";
@@ -53,11 +68,9 @@
   pointer-events: none;
 }
 
-/* Animation légère de l'image */
-
-.zone-card:hover .zone-media {
-  background-size: 105%;
-}
+/* =========================================================
+   IMAGES
+========================================================= */
 
 .zone-media.shop {
   background-image: url("../../assets/images/fond-boutique.webp");
@@ -74,37 +87,53 @@
 .zone-media.computer {
   background-image: url("../../assets/images/fond-pc.webp");
 }
+
 .zone-media.events {
   background-image: url("../../assets/images/fond-tounois.webp");
 }
 
-/* =========================
+/* =========================================================
    TAG
-========================= */
+========================================================= */
 
 .zone-media .tag {
   position: absolute;
   top: 18px;
   left: 18px;
   z-index: 2;
+
   display: inline-flex;
   align-items: center;
+
   min-height: 30px;
   padding: 6px 12px;
+
   color: var(--color-primary);
   background: rgba(17, 19, 28, 0.88);
+
   border: 1px solid var(--color-primary);
   border-radius: 999px;
+
   font-size: 0.72rem;
   font-weight: 700;
   letter-spacing: 0.08em;
   text-transform: uppercase;
+
   backdrop-filter: blur(8px);
+
+  transition:
+    background-color 0.3s ease,
+    box-shadow 0.3s ease;
 }
 
-/* =========================
+.zone-card:hover .zone-media .tag {
+  background: rgba(17, 19, 28, 0.94);
+  box-shadow: 0 0 15px rgba(255, 149, 0, 0.12);
+}
+
+/* =========================================================
    CONTENU
-========================= */
+========================================================= */
 
 .zone-body {
   display: flex;
@@ -129,39 +158,46 @@
   line-height: 1.7;
 }
 
-/* =========================
+/* =========================================================
    BOUTON
-========================= */
+========================================================= */
 
 .zone-body .btn {
   display: inline-flex;
   align-items: center;
   justify-content: center;
+
   min-height: 42px;
   margin-top: auto;
   padding: 10px 18px;
+
   border: 1px solid var(--color-primary);
   border-radius: 8px;
+
   color: var(--color-primary);
   background: transparent;
+
   font-size: 0.85rem;
   font-weight: 700;
   text-decoration: none;
+
   transition:
     color 0.25s ease,
     background-color 0.25s ease,
-    transform 0.25s ease;
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
 }
 
 .zone-body .btn:hover {
   color: #11131c;
   background: var(--color-primary);
   transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(255, 149, 0, 0.18);
 }
 
-/* =========================
+/* =========================================================
    CARTE LARGE
-========================= */
+========================================================= */
 
 .zone-card.wide {
   min-height: 330px;
@@ -171,9 +207,9 @@
   min-height: 190px;
 }
 
-/* =========================
+/* =========================================================
    RESPONSIVE
-========================= */
+========================================================= */
 
 @media (max-width: 650px) {
   .zone-card {

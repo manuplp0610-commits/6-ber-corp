@@ -25,7 +25,9 @@ export default function Info() {
           <div className="info-icon">☎</div>
           <div>
             <div className="info-label">Contact</div>
-            <div className="info-value">0471/28.48.70</div>
+            <a href="tel:+32471284870" className="info-value">
+              0471/28.48.70
+            </a>
           </div>
         </div>
       </div>

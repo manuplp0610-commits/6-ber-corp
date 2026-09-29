@@ -48,13 +48,32 @@
    LOGO
 ========================================================= */
 
-.logo-left--default {
-  position: relative;
+/* Boîte de référence du logo small */
+.logo-link--left {
+  position: absolute;
+  top: 0;
+  left: 0;
   z-index: 200;
+
+  width: 75px;
+  height: 75px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  margin: 0;
+  padding: 0;
+}
+
+/* Logo small */
+.logo-left--default {
+  display: block;
   width: 58px;
   height: 58px;
   object-fit: contain;
-  margin: 13px 15px;
+  margin: 0;
+
   transition: transform 0.25s ease;
 }
 
@@ -172,17 +191,24 @@
   position: absolute;
   top: 62px;
   right: 0;
+
   display: flex;
   flex-direction: column;
   gap: 4px;
+
   min-width: 150px;
   padding: 8px;
+
   background: #11131c;
   border: 1px solid var(--color-primary);
   border-radius: 8px;
+
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.35);
+
   animation: loginMenuIn 0.2s ease-out;
+  transform-origin: top right;
 }
+
 @keyframes loginMenuIn {
   from {
     opacity: 0;
@@ -194,6 +220,7 @@
     transform: translateY(0) scale(1);
   }
 }
+
 .log-li a {
   display: block;
   padding: 10px 12px;
@@ -232,6 +259,7 @@
 
   animation: mobileNavOpen 0.3s ease-out;
 }
+
 @keyframes mobileNavOpen {
   from {
     opacity: 0;
@@ -243,6 +271,7 @@
     transform: translateY(0);
   }
 }
+
 .nav-mobile-content {
   width: 100%;
   max-width: 500px;
@@ -344,6 +373,7 @@
   top: calc(100% + 10px);
   left: 50%;
   right: auto;
+
   transform: translateX(-50%);
 
   z-index: 300;
@@ -422,15 +452,22 @@
   font-size: 22px;
   line-height: 1;
   cursor: pointer;
+
   transition:
     background 0.2s ease,
     border-color 0.2s ease,
-    color 0.2s ease;
+    color 0.2s ease,
+    transform 0.2s ease;
 }
 
 .nav-toggle:hover {
   background: #202331;
   border-color: var(--color-primary);
+  transform: scale(1.05);
+}
+
+.nav-toggle:active {
+  transform: scale(0.94);
 }
 
 /* =========================================================
@@ -447,6 +484,7 @@
 
 .logo-center--hero {
   width: 300px;
+
   transition:
     transform 0.3s ease,
     filter 0.3s ease;
@@ -530,24 +568,38 @@
   }
 
   /* =======================================================
-     LOGO GAUCHE MOBILE
+     LOGO SMALL MOBILE
   ======================================================= */
 
   .logo-link--left {
-    display: flex;
     position: fixed;
     top: 0;
     left: 0;
+
+    width: 64px;
+    height: 64px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    margin: 0;
+    padding: 0;
+
     z-index: 110;
   }
 
   .logo-left--default {
+    display: block;
     width: 52px;
     height: 52px;
+    margin-top: 10px;
+    margin-left: 10px;
+    object-fit: contain;
   }
 
   /* =======================================================
-     LOGO GAUCHE HERO
+     LOGO SMALL HERO MOBILE
   ======================================================= */
 
   .logo-left--hero {
@@ -555,19 +607,30 @@
   }
 
   .logo-link--mobile-open {
-    display: flex;
     position: fixed;
-    top: 3px;
+    top: 0;
     left: 0;
+
+    width: 64px;
+    height: 64px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    margin: 0;
+    padding: 0;
+
     z-index: 110;
   }
 
   .logo-link--mobile-open .logo-left--hero {
     display: block;
+
     width: 52px;
     height: 52px;
-    margin-top: 10px;
-    margin-left: 15px;
+
+    margin: 0;
     object-fit: contain;
   }
 

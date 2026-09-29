@@ -1,11 +1,16 @@
+import { useState } from "react";
 import logo from "../../../public/logoSmall.webp";
 import "./footer.css";
+import { Link } from "react-router-dom";
+
 export default function Footer() {
+  const [seoOpen, setSeoOpen] = useState(false);
   return (
     <footer id="footer">
       <div className="newsletter">
         <div>
           <h3>Ne rate aucun événement</h3>
+          <p>Inscris-toi à la newsletter pour ne rien manquer.</p>
           <p>
             Tournois, soirées à thème et sorties de cartes - directement dans ta
             boîte mail.
@@ -23,7 +28,7 @@ export default function Footer() {
           <input
             type="email"
             id="newsletter-email"
-            placeholder="6ber.corp@gmail.com"
+            placeholder="ton@emial"
             required
           />
 
@@ -44,13 +49,17 @@ export default function Footer() {
           </p>
 
           <div className="footer-social-links">
-            <a href="#" aria-label="Instagram">
+            <a
+              target="_blank"
+              href="https://www.instagram.com/6ber.corp/"
+              aria-label="Instagram"
+            >
               <i className="fa-brands fa-instagram"></i>
             </a>
 
-            <a href="#" aria-label="Facebook">
+            {/* <a href="#" aria-label="Facebook">
               <i className="fa-brands fa-facebook-f"></i>
-            </a>
+            </a> */}
 
             <a
               target="_blank"
@@ -60,9 +69,9 @@ export default function Footer() {
               <i className="fa-brands fa-discord"></i>
             </a>
 
-            <a href="#" aria-label="TikTok">
+            {/* <a href="#" aria-label="TikTok">
               <i className="fa-brands fa-tiktok"></i>
-            </a>
+            </a> */}
           </div>
         </div>
 
@@ -71,19 +80,22 @@ export default function Footer() {
 
           <ul>
             <li>
-              <a href="">Boutique</a>
+              <Link to="/shop">Boutique</Link>
             </li>
             <li>
-              <a href="">Bar</a>
+              <Link to="/bar">Bar</Link>
             </li>
             <li>
-              <a href="">PlayStation</a>
+              <Link to="/console">PlayStation</Link>
             </li>
             <li>
-              <a href="">Ordinateurs</a>
+              <Link to="/computer">Ordinateurs</Link>
             </li>
             <li>
-              <a href="">Événements</a>
+              <Link to="/event">Événements</Link>
+            </li>
+            <li>
+              <Link to="/contact">Contact</Link>
             </li>
           </ul>
         </div>
@@ -92,22 +104,36 @@ export default function Footer() {
           <h4>Tools and parts</h4>
 
           <ul>
+            <li>Authorisations</li>
             <li>
-              <a href="#">Authorisations</a>
-            </li>
-            <li>
-              <a href="#">SEO partners</a>
-              <span>motcha</span>
+              <p
+                style={{ cursor: "pointer" }}
+                onClick={() => setSeoOpen(!seoOpen)}
+              >
+                SEO partners
+              </p>
+              {seoOpen && (
+                <a
+                  className="seo-link"
+                  target="_blank"
+                  href="https://www.motcha-barista.be/"
+                >
+                  - Motcha-Barista
+                </a>
+              )}
             </li>
           </ul>
         </div>
 
-        <div className="footer-col">
+        <div className="footer-col footer-col-prat">
           <h4>Pratique</h4>
 
           <ul>
             <li>Mar-Dim · 10h-00h</li>
-            <li>Avenue de la closeraie 22/2, 4000 Rocourt</li>
+            <li>
+              Avenue de la closeraie 22/2,
+              <br /> 4000 Rocourt
+            </li>
             <li>0471/28.48.70</li>
             <li>6ber.corp@gmail.com</li>
           </ul>
@@ -115,7 +141,7 @@ export default function Footer() {
       </div>
 
       <div className="footer-bottom">
-        © 2026 6Ber-Corp. Tous droits réservés. Website créé par{" "}
+        © 2026 6Ber-Corp. Tous droits réservés. Website create by{" "}
         <a href="">Nova Dev</a>
       </div>
     </footer>

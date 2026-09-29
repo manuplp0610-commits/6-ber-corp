@@ -17,6 +17,7 @@ export default function NavBar({ variant = "default" }) {
   const [openNav, setOpenNav] = useState(false);
   const [openLog, setOpenLog] = useState(false);
   const [openMobileLog, setOpenMobileLog] = useState(false);
+
   const handleLogout = () => {
     sessionStorage.removeItem("isLoggedIn");
     setIsLoggedIn(false);
@@ -29,11 +30,13 @@ export default function NavBar({ variant = "default" }) {
     setOpenLog(false);
     setOpenMobileLog(false);
   };
+
   const closeNav = () => {
     setOpenNav(false);
     setOpenLog(false);
     setOpenMobileLog(false);
   };
+
   useEffect(() => {
     setOpenNav(false);
   }, [location.pathname]);
@@ -62,7 +65,9 @@ export default function NavBar({ variant = "default" }) {
                 Déconnexion
               </Link>
             ) : (
-              <Link to="/login">Connexion</Link>
+              <Link onClick={closeNav} to="/login">
+                Connexion
+              </Link>
             )}
           </div>
         )}
@@ -79,6 +84,7 @@ export default function NavBar({ variant = "default" }) {
         ☰
       </button>
 
+      {/* Logo small */}
       <Link
         to="/"
         className={`logo-link logo-link--left ${
@@ -99,9 +105,11 @@ export default function NavBar({ variant = "default" }) {
             <Link onClick={closeNav} to="/shop">
               Boutique
             </Link>
+
             <Link onClick={closeNav} to="/bar">
               Bar
             </Link>
+
             <Link onClick={closeNav} to="/console">
               Consoles
             </Link>
@@ -122,9 +130,11 @@ export default function NavBar({ variant = "default" }) {
             <Link onClick={closeNav} to="/computer">
               PC
             </Link>
+
             <Link onClick={closeNav} to="/event">
               Événements
             </Link>
+
             <Link onClick={closeNav} to="/contact">
               Contact
             </Link>
@@ -162,7 +172,9 @@ export default function NavBar({ variant = "default" }) {
                       Déconnexion
                     </Link>
                   ) : (
-                    <Link to="/login">Connexion</Link>
+                    <Link onClick={closeNav} to="/login">
+                      Connexion
+                    </Link>
                   )}
                 </div>
               )}
