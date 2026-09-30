@@ -92,7 +92,7 @@
         "id": "13",
         "name": "Cocktail du mois",
         "price": "8",
-        "description": "Mojito ",
+        "description": "Une nouvelle saveur chaque mois — demandez au bar !",
         "category": "drink",
         "alcool":true
       }

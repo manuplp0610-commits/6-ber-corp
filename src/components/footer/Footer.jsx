@@ -61,7 +61,7 @@ export default function Footer() {
               href="https://www.snapchat.com/add/jazouk1996"
               aria-label="Snapchat"
             >
-              <i class="fa-brands fa-snapchat"></i>
+              <i className="fa-brands fa-snapchat"></i>
             </a>
 
             <a
