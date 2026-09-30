@@ -91,5 +91,31 @@
           "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQXyvXiSzYksOnX-S75gmJ0VV8iVjPakJDci0otbdqVlA&s=10"
         }
       ]
+    },
+    {
+      "name": "PlayStation 4",
+      "price": 6.00,
+      "numbers":2,
+      "description": "Une sélection de grands classiques PlayStation.",
+      "games": [
+        {
+          "name": "Dragon Ball FighterZ",
+          "image":
+            "https://m.media-amazon.com/images/I/71us5dOt2QL._AC_UF1000,1000_QL80_.jpg"
+        },
+        {
+          "name": "One Piece: Pirate Warriors 4",
+          "image":
+            "https://m.media-amazon.com/images/I/81n2uiEtuML._AC_UF1000,1000_QL80_.jpg"
+        },
+        {
+          "name": "Tekken 7",
+          "image": "https://m.media-amazon.com/images/I/81tk896p+VL.jpg"
+        },
+        {
+          "name": "Crash bandicoot",
+          "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQXyvXiSzYksOnX-S75gmJ0VV8iVjPakJDci0otbdqVlA&s=10"
+        }
+      ]
     }
   ]

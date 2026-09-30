@@ -1,7 +1,9 @@
 import "./event.css";
 
 import HeaderPages from "../../components/headerPages/HeaderPages";
+
 import { Link } from "react-router-dom";
+
 import { useEffect, useState } from "react";
 
 export default function Event() {
@@ -12,11 +14,33 @@ export default function Event() {
       .then((reponse) => {
         return reponse.json();
       })
-
       .then((result) => {
         setDataEvent(result);
       });
   }, []);
+
+  // Motion légère des événements au scroll
+  useEffect(() => {
+    const eventCards = document.querySelectorAll(".event-card");
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("show");
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      {
+        threshold: 0.15,
+      },
+    );
+
+    eventCards.forEach((card) => observer.observe(card));
+
+    return () => observer.disconnect();
+  }, [dataEvent]);
 
   return (
     <section className="event-page">
