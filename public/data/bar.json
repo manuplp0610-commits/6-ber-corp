@@ -1,135 +1,152 @@
-[
-    {
-        "id":"1",
-        "name":"Coca-Cola",
-        "price":"2.50",
-        "description":"Canette 33 cl",
-        "category":"drink"
-    },
-    {
-        "id":"2",
-        "name":"Coca-Cola Zero",
-        "price":"2.50",
-        "description":"Canette 33 cl",
-        "category":"drink"
-    },
-    {
-        "id":"3",
-        "name":"Fanta Orange",
-        "price":"2.50",
-        "description":"Canette 33 cl",
-        "category":"drink"
-    },
-    {
-        "id":"4",
-        "name":"Sprite",
-        "price":"2.50",
-        "description":"Canette 33 cl",
-        "category":"drink"
-    },
-    {
-        "id":"5",
-        "name":"Ice-Tea",
-        "price":"2.50",
-        "description":"Canette 25 cl",
-        "category":"drink"
-    },
-    {
-        "id":"6",
-        "name":"Eau pate",
-        "price":"2.00",
-        "description":"Bouteille 50 cl",
-        "category":"drink"
-    },
-    {
-        "id":"7",
-        "name":"Eau pétillante",
-        "price":"2,00",
-        "description":"Bouteille 50 cl",
-        "category":"drink"
-    },
-    {
-        "id":"8",
-        "name":"Red Bull",
-        "price":"3",
-        "description":"Canette 35 cl",
-        "category":"drink"
-    },
-    {
-        "id":"9",
-        "name":"Nalu",
-        "price":"3",
-        "description":"Canette 25 cl",
-        "category":"drink"
-    },
-    {
-        "id":"11",
-        "name":"Monster",
-        "price":"3,50",
-        "description":"Snickers, Mars ou Twix",
-        "category":"drink"
-    },
-    {
-        "id":"12",
-        "name":"Bière",
-        "price":"2.80",
-        "description":"Jupiler 33 cl",
-        "category":"drink"
-    },
-    {
-        "id":"13",
-        "name":"Cocktail du mois",
-        "price":"8",
-        "description":"Mojito ",
-        "category":"drink"
-    },
-    {
-        "id":"14",
-        "name":"M&M,s",
-        "price":"1,50",
-        "description":"Sachet 25g",
-        "category":"food"
-    },
-    {
-        "id":"15",
-        "name":"Snickers",
-        "price":"1,50",
-        "description":"Barre chocolaté 18g",
-        "category":"food"
-    },
-    {
-        "id":"16",
-        "name":"Mars",
-        "price":"1,50",
-        "description":"Barre chocolaté 18g",
-        "category":"food"
-    },
-    {
-        "id":"17",
-        "name":"Chips paprika",
-        "price":"1,50",
-        "description":"Sachet 25g",
-        "category":"food"
-    },
-    {
-        "id":"18",
-        "name":"Chips poivre/sel",
-        "price":"1,50",
-        "description":"Sachet 25g",
-        "category":"food"
-    },
-    {
-        "id":"19",
-        "name":"Nouilles instantanées",
-        "price":"3,50",
-        "description":"Aiki 68g",
-        "category":"food"
-    },
-    {
-        "id":"20",
-        "name":"Croque-Monsieur",
-        "price":"5",
-        "description":"Jambon, fromage, ketchup",
-        "category":"food"
-    }
-]
+{
+  "boissons": [
+      {
+        "id": "1",
+        "name": "Coca-Cola",
+        "price": "2.50",
+        "description": "Canette 33 cl",
+        "category": "drink",
+        "alcool":false
+      },
+      {
+        "id": "2",
+        "name": "Coca-Cola Zero",
+        "price": "2.50",
+        "description": "Canette 33 cl",
+        "category": "drink",
+        "alcool":false
+      },
+      {
+        "id": "3",
+        "name": "Fanta Orange",
+        "price": "2.50",
+        "description": "Canette 33 cl",
+        "category": "drink",
+        "alcool":false
+      },
+      {
+        "id": "4",
+        "name": "Sprite",
+        "price": "2.50",
+        "description": "Canette 33 cl",
+        "category": "drink",
+        "alcool":false
+      },
+      {
+        "id": "5",
+        "name": "Ice-Tea",
+        "price": "2.50",
+        "description": "Canette 25 cl",
+        "category": "drink",
+        "alcool":false
+      },
+      {
+        "id": "6",
+        "name": "Eau pate",
+        "price": "2.00",
+        "description": "Bouteille 50 cl",
+        "category": "drink",
+        "alcool":false
+      },
+      {
+        "id": "7",
+        "name": "Eau pétillante",
+        "price": "2,00",
+        "description": "Bouteille 50 cl",
+        "category": "drink",
+        "alcool":false
+      },
+      {
+        "id": "8",
+        "name": "Red Bull",
+        "price": "3",
+        "description": "Canette 35 cl",
+        "category": "drink",
+        "alcool":false
+      },
+      {
+        "id": "9",
+        "name": "Nalu",
+        "price": "3",
+        "description": "Canette 25 cl",
+        "category": "drink",
+        "alcool":false
+      },
+      {
+        "id": "11",
+        "name": "Monster",
+        "price": "3,50",
+        "description": "Snickers, Mars ou Twix",
+        "category": "drink",
+        "alcool":false
+      },
+      {
+        "id": "12",
+        "name": "Bière",
+        "price": "2.80",
+        "description": "Jupiler 33 cl",
+        "category": "drink",
+        "alcool":true
+      },
+      {
+        "id": "13",
+        "name": "Cocktail du mois",
+        "price": "8",
+        "description": "Mojito ",
+        "category": "drink",
+        "alcool":true
+      }
+    ],
+  
+    "manger": [
+      {
+        "id": "14",
+        "name": "M&M,s",
+        "price": "1,50",
+        "description": "Sachet 25g",
+        "category": "snack"
+      },
+      {
+        "id": "15",
+        "name": "Snickers",
+        "price": "1,50",
+        "description": "Barre chocolaté 18g",
+        "category": "snack"
+      },
+      {
+        "id": "16",
+        "name": "Mars",
+        "price": "1,50",
+        "description": "Barre chocolaté 18g",
+        "category": "snack"
+      },
+      {
+        "id": "17",
+        "name": "Chips paprika",
+        "price": "1,50",
+        "description": "Sachet 25g",
+        "category": "snack"
+      },
+      {
+        "id": "18",
+        "name": "Chips poivre/sel",
+        "price": "1,50",
+        "description": "Sachet 25g",
+        "category": "snack"
+      },
+      {
+        "id": "19",
+        "name": "Nouilles instantanées",
+        "price": "3,50",
+        "description": "Aiki 68g",
+        "category": "food"
+      },
+      {
+        "id": "20",
+        "name": "Croque-Monsieur",
+        "price": "5",
+        "description": "Jambon, fromage, ketchup",
+        "category": "food"
+      }
+    ]
+}

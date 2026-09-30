@@ -48,7 +48,7 @@ const router = createBrowserRouter(
           element: <Login />,
         },
         {
-          path: "/dashbord",
+          path: "/dashboard",
           element: (
             <ProtectedRoute>
               <Dashboard />

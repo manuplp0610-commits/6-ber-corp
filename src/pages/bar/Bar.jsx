@@ -1,14 +1,19 @@
 import "./bar.css";
+
 import HeaderPages from "../../components/headerPages/HeaderPages";
+
 import { useEffect, useState } from "react";
+import { motion } from "motion/react";
 
 export default function Bar() {
-  const [dataBar, setDataBar] = useState([]);
+  const [dataBar, setDataBar] = useState({
+    boissons: [],
+    manger: [],
+  });
+
   useEffect(() => {
     fetch(`${import.meta.env.BASE_URL}data/bar.json`)
-      .then((reponse) => {
-        return reponse.json();
-      })
+      .then((response) => response.json())
       .then((result) => {
         setDataBar(result);
       })
@@ -16,40 +21,6 @@ export default function Bar() {
         console.error(error);
       });
   }, []);
-  const drinks = dataBar.filter((item) => item.category === "drink");
-  const food = dataBar.filter((item) => item.category === "food");
-  const categ = [...new Set(dataBar.map((item) => item.category))];
-  console.log(categ);
-
-  const renderItems = (items) => {
-    return (
-      <div className="bar-menu-list">
-        {items.map((item) => (
-          <article className="bar-menu-item" key={item.id}>
-            <div className="bar-menu-item-icon">
-              {item.category === "drink" ? (
-                <i className="fa-solid fa-glass-water"></i>
-              ) : (
-                <i className="fa-solid fa-candy-cane"></i>
-              )}
-            </div>
-
-            <div className="bar-menu-item-content">
-              <div className="bar-menu-item-heading">
-                <h3>{item.name}</h3>
-                <span className="bar-menu-line"></span>
-                <strong>{item.price} €</strong>
-              </div>
-
-              <p>{item.description}</p>
-
-              <span className="bar-availability">Disponible au comptoir</span>
-            </div>
-          </article>
-        ))}
-      </div>
-    );
-  };
 
   return (
     <section className="bar-page">
@@ -58,68 +29,165 @@ export default function Bar() {
         subTitle="Faites une pause entre deux parties et profitez de nos boissons et snacks dans une ambiance geek et conviviale."
       />
 
-      <section className="bar-introduction">
+      {/* =========================
+          INTRODUCTION
+      ========================= */}
+
+      <motion.section
+        className="bar-introduction"
+        initial={{ opacity: 0, y: 25 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, amount: 0.2 }}
+        transition={{
+          duration: 0.6,
+          ease: "easeOut",
+        }}
+      >
         <div className="bar-introduction-icon">🍻</div>
 
         <div>
           <span className="bar-kicker">Pause entre deux parties</span>
+
           <h2>Rechargez vos batteries</h2>
+
           <p>
             Que vous soyez en pleine session compétitive ou simplement venu
             discuter autour d’un verre, notre carte vous accompagne tout au long
             de votre expérience chez 6 Ber-Corp.
           </p>
         </div>
-      </section>
+      </motion.section>
 
       <section className="bar-menu-section">
-        <div className="bar-section-heading">
-          <div>
+        {/* =========================
+            À BOIRE
+        ========================= */}
+
+        <motion.div
+          className="bar-menu-category"
+          initial={{ opacity: 0, y: 35 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.15 }}
+          transition={{
+            duration: 0.65,
+            ease: "easeOut",
+          }}
+        >
+          <div className="bar-category-header">
             <span className="bar-kicker">À boire</span>
-            <h2>Boissons</h2>
+
+            <h2>Petite soif ?</h2>
           </div>
 
-          <span className="bar-section-count">{drinks.length} références</span>
-        </div>
+          <div className="bar-subcategory">
+            <h3>Sans alcool</h3>
 
-        {drinks.length > 0 ? (
-          renderItems(drinks)
-        ) : (
-          <p className="bar-empty-message">
-            La carte des boissons sera bientôt disponible.
-          </p>
-        )}
-      </section>
+            <div className="bar-items">
+              {dataBar.boissons
+                .filter((item) => item.alcool === false)
+                .map((item) => (
+                  <div className="bar-item" key={item.id}>
+                    <div className="bar-item-info">
+                      <h4>{item.name}</h4>
 
-      <section className="bar-menu-section">
-        <div className="bar-section-heading">
-          <div>
-            <span className="bar-kicker">À grignoter</span>
-            <h2>Snacks</h2>
+                      <p>{item.description}</p>
+                    </div>
+
+                    <span className="bar-item-line"></span>
+
+                    <strong className="bar-item-price">{item.price} €</strong>
+                  </div>
+                ))}
+            </div>
           </div>
 
-          <span className="bar-section-count">{food.length} références</span>
-        </div>
+          <div className="bar-subcategory">
+            <h3>Avec alcool</h3>
 
-        {food.length > 0 ? (
-          renderItems(food)
-        ) : (
-          <p className="bar-empty-message">
-            La carte des snacks sera bientôt disponible.
-          </p>
-        )}
-      </section>
+            <div className="bar-items">
+              {dataBar.boissons
+                .filter((item) => item.alcool === true)
+                .map((item) => (
+                  <div className="bar-item" key={item.id}>
+                    <div className="bar-item-info">
+                      <h4>{item.name}</h4>
 
-      <section className="bar-bottom-info">
-        <div className="bar-bottom-info-icon">📍</div>
+                      <p>{item.description}</p>
+                    </div>
 
-        <div>
-          <h2>Disponible uniquement sur place</h2>
-          <p>
-            Les boissons et snacks sont à commander directement au comptoir
-            pendant votre visite chez 6 Ber-Corp.
-          </p>
-        </div>
+                    <span className="bar-item-line"></span>
+
+                    <strong className="bar-item-price">{item.price} €</strong>
+                  </div>
+                ))}
+            </div>
+          </div>
+        </motion.div>
+
+        {/* =========================
+            À MANGER
+        ========================= */}
+
+        <motion.div
+          className="bar-menu-category"
+          initial={{ opacity: 0, y: 35 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.15 }}
+          transition={{
+            duration: 0.65,
+            ease: "easeOut",
+          }}
+        >
+          <div className="bar-category-header">
+            <span className="bar-kicker">À manger</span>
+
+            <h2>Petite faim ?</h2>
+          </div>
+
+          <div className="bar-subcategory">
+            <h3>Barres et snacks</h3>
+
+            <div className="bar-items">
+              {dataBar.manger
+                .filter((item) => item.category === "snack")
+                .map((item) => (
+                  <div className="bar-item" key={item.id}>
+                    <div className="bar-item-info">
+                      <h4>{item.name}</h4>
+
+                      <p>{item.description}</p>
+                    </div>
+
+                    <span className="bar-item-line"></span>
+
+                    <strong className="bar-item-price">{item.price} €</strong>
+                  </div>
+                ))}
+            </div>
+          </div>
+
+          <div className="bar-subcategory">
+            <h3>Hot</h3>
+
+            <div className="bar-items">
+              {dataBar.manger
+                .filter((item) => item.category === "food")
+                .map((item) => (
+                  <div className="bar-item" key={item.id}>
+                    <div className="bar-item-info">
+                      <h4>{item.name}</h4>
+
+                      <p>{item.description}</p>
+                    </div>
+
+                    <span className="bar-item-line"></span>
+
+                    <strong className="bar-item-price">{item.price} €</strong>
+                  </div>
+                ))}
+            </div>
+          </div>
+        </motion.div>
       </section>
     </section>
   );
