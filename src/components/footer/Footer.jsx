@@ -2,6 +2,12 @@ import { useState } from "react";
 import logo from "../../../public/logoSmall.webp";
 import "./footer.css";
 import { Link } from "react-router-dom";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+  faInstagram,
+  faSnapchat,
+  faDiscord,
+} from "@fortawesome/free-brands-svg-icons";
 
 export default function Footer() {
   const [seoOpen, setSeoOpen] = useState(false);
@@ -41,7 +47,13 @@ export default function Footer() {
       <div className="footer-grid">
         <div className="footer-col footer-brand">
           <a href="#" className="nav-logo">
-            <img className="logo-footer" src={logo} alt="6 Ber Corp" />
+            <img
+              className="logo-footer"
+              src={logo}
+              alt="6 Ber Corp"
+              width="120"
+              height="114"
+            />
           </a>
           <p>
             Le bar geek où cartes, consoles et PC se retrouvent autour d'un bon
@@ -54,14 +66,14 @@ export default function Footer() {
               href="https://www.instagram.com/6ber.corp/"
               aria-label="Instagram"
             >
-              <i className="fa-brands fa-instagram"></i>
+              <FontAwesomeIcon icon={faInstagram} />
             </a>
 
             <a
               href="https://www.snapchat.com/add/jazouk1996"
               aria-label="Snapchat"
             >
-              <i className="fa-brands fa-snapchat"></i>
+              <FontAwesomeIcon icon={faSnapchat} />
             </a>
 
             <a
@@ -69,12 +81,8 @@ export default function Footer() {
               href="https://discord.gg/d2Qqt22ne"
               aria-label="Discord"
             >
-              <i className="fa-brands fa-discord"></i>
+              <FontAwesomeIcon icon={faDiscord} />
             </a>
-
-            {/* <a href="#" aria-label="TikTok">
-              <i className="fa-brands fa-tiktok"></i>
-            </a> */}
           </div>
         </div>
 

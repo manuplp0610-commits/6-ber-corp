@@ -1,7 +1,7 @@
 import "./hero.css";
 import NavBar from "../navBar/NavBar";
 import { Link } from "react-router-dom";
-import { motion } from "framer-motion";
+import { motion } from "motion/react";
 import OpeningBanner from "../openingBanner/OpeningBanner";
 
 export default function Hero() {

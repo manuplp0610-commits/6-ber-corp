@@ -27,7 +27,7 @@ export default function Login() {
 
     if (email === data[0].username && password === data[0].password) {
       sessionStorage.setItem("isLoggedIn", "true");
-      navigate("/dashbord");
+      navigate("/dashboard");
     } else {
       alert("Mauvais identifiant ou mot de passe, veuillez réessayer.");
     }

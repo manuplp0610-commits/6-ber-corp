@@ -45,21 +45,23 @@
 }
 
 /* =========================================================
-   LOGO
+   LOGO GAUCHE
 ========================================================= */
 
 /* Boîte de référence du logo small */
-
 .logo-link--left {
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   z-index: 200;
+
   width: 75px;
   height: 75px;
+
   display: flex;
   align-items: center;
   justify-content: center;
+
   margin: 0;
   padding: 0;
 
@@ -72,31 +74,37 @@
     visibility 0.3s ease;
 }
 
-/* Logo visible */
-
+/* Apparition du logo */
 .logo-link--left.logo-link--visible {
   opacity: 1;
   visibility: visible;
   pointer-events: auto;
 }
 
-/* Logo small */
-
-.logo-left--default {
+/* Logo small : même taille partout */
+.logo-left {
   display: block;
+
   width: 58px;
-  height: 58px;
+  height: 55px;
+
   object-fit: contain;
+  flex-shrink: 0;
+
   margin: 0;
+
   transition: transform 0.25s ease;
 }
 
-.logo-left--default:hover {
+.logo-left:hover {
   transform: scale(1.08);
 }
 
-.logo-center--default {
-  display: none;
+/* Aucun changement selon la variante */
+.logo-left--default,
+.logo-left--hero {
+  width: 58px;
+  height: 55px;
 }
 
 /* =========================================================
@@ -105,13 +113,11 @@
 
 .nav-links--default {
   width: 100%;
-  transform: translateX(50px);
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 35px;
+  gap: 20px;
   margin-left: auto;
-  padding-right: 125px;
   box-sizing: border-box;
 }
 
@@ -124,12 +130,15 @@
 .sind-nav a {
   position: relative;
   padding: 10px 0;
+
   color: #f5f5f5;
   font-size: 14px;
   font-weight: 600;
   letter-spacing: 0.8px;
+
   text-transform: uppercase;
   text-decoration: none;
+
   transition:
     color 0.2s ease,
     transform 0.2s ease;
@@ -137,13 +146,17 @@
 
 .sind-nav a::after {
   content: "";
+
   position: absolute;
   left: 0;
   bottom: 2px;
+
   width: 0;
   height: 2px;
+
   background: var(--color-primary);
   border-radius: 2px;
+
   transition: width 0.2s ease;
 }
 
@@ -164,8 +177,11 @@
   position: absolute;
   top: 0;
   right: 20px;
+
   z-index: 300;
+
   height: 75px;
+
   display: flex;
   align-items: center;
 }
@@ -174,15 +190,20 @@
   display: flex;
   align-items: center;
   justify-content: center;
+
   width: 42px;
   height: 38px;
   padding: 0;
+
   background: transparent;
   color: var(--color-primary);
+
   border: 1px solid var(--color-primary);
   border-radius: 6px;
+
   font-size: 14px;
   cursor: pointer;
+
   transition:
     background 0.2s ease,
     color 0.2s ease,
@@ -193,7 +214,9 @@
 .log .btn-login:hover {
   background: var(--color-primary);
   color: #11131c;
+
   transform: translateY(-1px);
+
   box-shadow: 0 5px 15px rgba(255, 149, 0, 0.25);
 }
 
@@ -205,15 +228,21 @@
   position: absolute;
   top: 62px;
   right: 0;
+
   display: flex;
   flex-direction: column;
   gap: 4px;
+
   min-width: 150px;
   padding: 8px;
+
   background: #11131c;
+
   border: 1px solid var(--color-primary);
   border-radius: 8px;
+
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.35);
+
   animation: loginMenuIn 0.2s ease-out;
   transform-origin: top right;
 }
@@ -232,12 +261,16 @@
 
 .log-li a {
   display: block;
+
   padding: 10px 12px;
+
   color: #d7d7dc;
   font-size: 13px;
   font-weight: 500;
+
   text-decoration: none;
   border-radius: 5px;
+
   transition:
     background 0.2s ease,
     color 0.2s ease;
@@ -255,16 +288,25 @@
 .nav-mobile {
   position: fixed;
   top: 0;
+
   padding-top: 80px;
+
   left: 0;
   right: 0;
+
   width: 100%;
   height: 100%;
+
   overflow-y: auto;
+
   background: rgba(17, 19, 28, 0.98);
+
   border-top: 1px solid #303030;
+
   box-shadow: 0 15px 30px rgba(0, 0, 0, 0.45);
+
   z-index: 99;
+
   animation: mobileNavOpen 0.3s ease-out;
 }
 
@@ -283,18 +325,24 @@
 .nav-mobile-content {
   width: 100%;
   max-width: 500px;
+
   margin: 0 auto;
   padding: 25px 20px 40px;
+
   box-sizing: border-box;
 }
 
 .nav-mobile-content ul {
   display: flex;
   flex-direction: column;
+
   width: 100%;
+
   gap: 8px;
+
   padding: 0;
   margin: 0;
+
   list-style: none;
 }
 
@@ -304,18 +352,26 @@
 
 .nav-mobile-content li a {
   display: block;
+
   width: 100%;
+
   box-sizing: border-box;
+
   padding: 15px 18px;
+
   background: #1a1c29;
   color: #f5f5f5;
+
   border: 1px solid #303030;
   border-radius: 7px;
+
   font-size: 15px;
   font-weight: 600;
   letter-spacing: 0.5px;
+
   text-align: center;
   text-decoration: none;
+
   transition:
     color 0.2s ease,
     background 0.2s ease,
@@ -327,6 +383,7 @@
   background: #202331;
   color: var(--color-primary);
   border-color: var(--color-primary);
+
   transform: translateY(-1px);
 }
 
@@ -336,8 +393,10 @@
 
 .mobile-login {
   position: relative;
+
   display: flex;
   justify-content: center;
+
   margin-bottom: 18px;
 }
 
@@ -345,15 +404,20 @@
   display: flex;
   align-items: center;
   justify-content: center;
+
   width: 48px;
   height: 44px;
   padding: 0;
+
   background: transparent;
   color: var(--color-primary);
+
   border: 1px solid var(--color-primary);
   border-radius: 7px;
+
   font-size: 16px;
   cursor: pointer;
+
   transition:
     background 0.2s ease,
     color 0.2s ease,
@@ -364,7 +428,9 @@
 .mobile-login .btn-login:hover {
   background: var(--color-primary);
   color: #11131c;
+
   transform: translateY(-1px);
+
   box-shadow: 0 5px 15px rgba(255, 149, 0, 0.25);
 }
 
@@ -378,33 +444,49 @@
 
 .mobile-login .log-li {
   position: absolute;
+
   top: calc(100% + 10px);
   left: 50%;
   right: auto;
+
   transform: translateX(-50%);
+
   z-index: 300;
+
   min-width: 180px;
   padding: 8px;
+
   background: rgba(17, 19, 28, 0.98);
+
   border: 1px solid var(--color-primary);
   border-radius: 8px;
+
   box-shadow:
     0 10px 25px rgba(0, 0, 0, 0.45),
     0 0 15px rgba(255, 149, 0, 0.08);
+
   animation: mobileLoginMenu 0.2s ease-out;
 }
 
 .mobile-login .log-li a {
   display: block;
+
   width: 100%;
+
   box-sizing: border-box;
+
   padding: 11px 14px;
+
   color: #d7d7dc;
+
   font-size: 13px;
   font-weight: 500;
+
   text-align: center;
   text-decoration: none;
+
   border-radius: 5px;
+
   transition:
     background 0.2s ease,
     color 0.2s ease,
@@ -414,6 +496,7 @@
 .mobile-login .log-li a:hover {
   background: #1a1c29;
   color: var(--color-primary);
+
   transform: translateY(-1px);
 }
 
@@ -435,20 +518,28 @@
 
 .nav-toggle {
   display: none;
+
   position: fixed;
   top: 19px;
   right: 20px;
+
   z-index: 110;
+
   width: 42px;
   height: 42px;
   padding: 0;
+
   background: #1a1c29;
   color: var(--color-primary);
+
   border: 1px solid #303030;
   border-radius: 7px;
+
   font-size: 22px;
   line-height: 1;
+
   cursor: pointer;
+
   transition:
     background 0.2s ease,
     border-color 0.2s ease,
@@ -459,6 +550,7 @@
 .nav-toggle:hover {
   background: #202331;
   border-color: var(--color-primary);
+
   transform: scale(1.05);
 }
 
@@ -475,24 +567,29 @@
 }
 
 .logo-left--hero {
-  margin: 10px 0 0 10px;
-  width: 52px;
+  width: 58px;
+  height: 55px;
 }
 
 .logo-center--hero {
   width: 300px;
+
   transition:
     transform 0.3s ease,
     filter 0.3s ease;
 }
-
+.logo-center--default {
+  display: none;
+}
 .logo-center--hero:hover {
   transform: scale(1.05);
+
   filter: drop-shadow(0 0 50px var(--color-primary-hover));
 }
 
 .nav-links--hero {
   width: 100%;
+
   display: flex;
   align-items: center;
   justify-content: space-evenly;
@@ -530,14 +627,11 @@
 
   .logo-link--center {
     order: 1;
+
     flex: 0 0 100%;
+
     display: flex;
     justify-content: center;
-  }
-
-  .logo-center--hero {
-    width: 250px;
-    margin-bottom: 10px;
   }
 
   .sind-nav--left {
@@ -568,51 +662,20 @@
   ======================================================= */
 
   .logo-link--left {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 64px;
-    height: 64px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    /*
+      Même position et même taille que partout ailleurs.
+      On ne modifie plus le conteneur sur mobile.
+    */
+    width: 75px;
+    height: 75px;
+  }
+
+  .logo-left--default,
+  .logo-left--hero {
+    width: 58px;
+    height: 55px;
+
     margin: 0;
-    padding: 0;
-    z-index: 110;
-  }
-
-  .logo-left--default {
-    display: block;
-    width: 52px;
-    height: 52px;
-    margin-top: 10px;
-    margin-left: 10px;
-    object-fit: contain;
-  }
-
-  /* =======================================================
-     LOGO SMALL HERO MOBILE
-  ======================================================= */
-
-  .logo-link--mobile-open {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 64px;
-    height: 64px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin: 0;
-    padding: 0;
-    z-index: 110;
-  }
-
-  .logo-link--mobile-open .logo-left--hero {
-    display: block;
-    width: 52px;
-    height: 52px;
-    margin: 10px 0 0 10px;
     object-fit: contain;
   }
 
@@ -656,9 +719,5 @@
 
   .nav-links--hero {
     display: flex;
-  }
-
-  .logo-center--hero {
-    width: 210px;
   }
 }

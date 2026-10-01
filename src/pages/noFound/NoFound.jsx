@@ -6,7 +6,13 @@ export default function NoFound() {
   return (
     <main className="not-found">
       <div className="not-found-content">
-        <img src={logoLarge} alt="6 Ber Corp" className="not-found-logo" />
+        <img
+          width="300"
+          height="287"
+          src={logoLarge}
+          alt="6 Ber Corp"
+          className="not-found-logo"
+        />
 
         <div className="not-found-error">404</div>
 

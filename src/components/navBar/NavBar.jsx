@@ -1,6 +1,7 @@
 import logoLarge from "../../../public/logoLarg.webp";
 import logoSmall from "../../../public/logoSmall.webp";
-
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faUser } from "@fortawesome/free-solid-svg-icons";
 import "./navBar.css";
 
 import { Link, useLocation } from "react-router-dom";
@@ -69,13 +70,13 @@ export default function NavBar({ variant = "default" }) {
     <nav className={`navBar navBar--${variant}`}>
       <div className="log">
         <button onClick={() => setOpenLog(!openLog)} className="btn-login">
-          <i className="fa-solid fa-user"></i>
+          <FontAwesomeIcon icon={faUser} />
         </button>
 
         {openLog && (
           <div className="log-li">
             {isLoggedIn && (
-              <Link onClick={closeNav} to="/dashbord">
+              <Link onClick={closeNav} to="/dashboard">
                 Dashboard
               </Link>
             )}
@@ -115,6 +116,8 @@ export default function NavBar({ variant = "default" }) {
           className={`logo-left logo-left--${variant}`}
           src={logoSmall}
           alt="6 Ber Corp"
+          width="120"
+          height="114"
         />
       </Link>
 
@@ -142,6 +145,8 @@ export default function NavBar({ variant = "default" }) {
               className={`logo-center logo-center--${variant}`}
               src={logoLarge}
               alt="6 Ber Corp"
+              width="300"
+              height="287"
             />
           </Link>
 
@@ -176,13 +181,13 @@ export default function NavBar({ variant = "default" }) {
                     : "Ouvrir le menu utilisateur"
                 }
               >
-                <i className="fa-solid fa-user"></i>
+                <FontAwesomeIcon icon={faUser} />
               </button>
 
               {openMobileLog && (
                 <div className="log-li">
                   {isLoggedIn && (
-                    <Link onClick={closeNav} to="/dashbord">
+                    <Link onClick={closeNav} to="/dashboard">
                       Dashboard
                     </Link>
                   )}

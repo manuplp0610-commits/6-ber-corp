@@ -6,6 +6,15 @@ import { Link } from "react-router-dom";
 
 import { useEffect, useState } from "react";
 
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+
+import {
+  faCalendarDay,
+  faClock,
+  faLocationDot,
+  faDiceD20,
+} from "@fortawesome/free-solid-svg-icons";
+
 export default function Event() {
   const [dataEvent, setDataEvent] = useState([]);
 
@@ -57,8 +66,7 @@ export default function Event() {
 
           <p>
             Les événements sont accessibles directement sur place. Pour plus
-            d’informations, adressez-vous à l’équipe du bar ou contactez nous
-            par le formulaire.
+            d’informations, adressez-vous à l’équipe du bar ou contactez nous.
             <Link to="/contact" className="event-highlight-link">
               Nous contacter
               <span>→</span>
@@ -71,7 +79,6 @@ export default function Event() {
         <div className="event-section-heading">
           <div>
             <span className="event-kicker">À l’agenda</span>
-
             <h2>À venir chez 6 Ber-Corp</h2>
           </div>
 
@@ -88,7 +95,6 @@ export default function Event() {
             >
               <div className="event-date">
                 <span className="event-day">{event.day}</span>
-
                 <span className="event-month">{event.month}</span>
               </div>
 
@@ -107,17 +113,17 @@ export default function Event() {
 
                 <div className="event-details">
                   <span>
-                    <i className="fa-solid fa-calendar-day"></i>
+                    <FontAwesomeIcon icon={faCalendarDay} />
                     {event.date}
                   </span>
 
                   <span>
-                    <i className="fa-solid fa-clock"></i>
+                    <FontAwesomeIcon icon={faClock} />
                     {event.time}
                   </span>
 
                   <span>
-                    <i className="fa-solid fa-location-dot"></i>6 Ber-Corp
+                    <FontAwesomeIcon icon={faLocationDot} />6 Ber-Corp
                   </span>
                 </div>
               </div>
@@ -128,7 +134,7 @@ export default function Event() {
 
       <section className="event-footer">
         <span>
-          <i className="fa-solid fa-dice-d20"></i>
+          <FontAwesomeIcon icon={faDiceD20} />
         </span>
 
         <div>

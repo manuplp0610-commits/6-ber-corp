@@ -1,6 +1,8 @@
 import "./console.css";
 import HeaderPages from "../../components/headerPages/HeaderPages";
 import { useEffect, useState } from "react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faGamepad } from "@fortawesome/free-solid-svg-icons";
 
 export default function Console() {
   const [consoles, setConsoles] = useState([]);
@@ -56,7 +58,7 @@ export default function Console() {
             <article className="console-card" key={consoleItem.name}>
               <div className="console-card-top">
                 <div className="console-icon">
-                  <i className="fa-solid fa-gamepad"></i>
+                  <FontAwesomeIcon icon={faGamepad} />
                 </div>
 
                 <div className="console-card-title">

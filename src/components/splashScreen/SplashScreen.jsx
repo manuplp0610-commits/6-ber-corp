@@ -15,7 +15,14 @@ export default function SplashScreen() {
     <>
       {splashScreenState && (
         <div className="splashScreen">
-          <img fetchpriority="high" src={logo} alt="logo 6-Ber Corp" />
+          <img
+            width="300"
+            height="300"
+            fetchpriority="high"
+            src={logo}
+            alt="logo 6-Ber Corp"
+          />
+
           <h1 className="hero-eyebrow">Bienvenue chez 6 Ber Corp ...</h1>
         </div>
       )}

@@ -1,6 +1,8 @@
 import "./computer.css";
 import HeaderPages from "../../components/headerPages/HeaderPages";
 import { useEffect, useState } from "react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faComputer } from "@fortawesome/free-solid-svg-icons";
 
 export default function Computer() {
   const [dataComputer, setDataComputer] = useState([]);
@@ -56,7 +58,7 @@ export default function Computer() {
                 <div className="pc-card-title">
                   <div className="pc-card-icon">
                     {" "}
-                    <i className="fa-solid fa-computer"></i>
+                    <FontAwesomeIcon icon={faComputer} />
                   </div>
 
                   <div>

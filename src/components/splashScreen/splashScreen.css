@@ -6,7 +6,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background: url("../../assets/images/6962.png");
+  background: url("../../assets/images/bg-hero.avif");
   background-size: cover;
   background-position: center;
   animation: splashFadeOut 0.5s ease forwards;
@@ -25,6 +25,7 @@
   position: relative;
   z-index: 1;
   width: 270px;
+  height: 270px;
   transform: translateY(-200px);
   animation: logoPulse 1.2s ease-in-out infinite;
   filter: drop-shadow(0 0 5px var(--color-secondary))
@@ -56,5 +57,10 @@
   to {
     opacity: 0;
     visibility: hidden;
+  }
+}
+@media (max-width: 850px) {
+  .splashScreen {
+    padding-top: 70px;
   }
 }

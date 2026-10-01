@@ -1,14 +1,35 @@
 import "./contact.css";
+
 import HeaderPages from "../../components/headerPages/HeaderPages";
 import Info from "../../components/info/Info";
+
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+
+import {
+  faInstagram,
+  faSnapchat,
+  faDiscord,
+} from "@fortawesome/free-brands-svg-icons";
+
+import {
+  faLocationDot,
+  faPhone,
+  faEnvelope,
+  faClock,
+  faArrowRight,
+  faCar,
+  faBus,
+  faUsers,
+  faGamepad,
+  faArrowUpRightFromSquare,
+} from "@fortawesome/free-solid-svg-icons";
 
 export default function Contact() {
   return (
     <section className="contact-page">
       <HeaderPages
         title="Contacte-nous"
-        subTitle="Une question sur nos espaces gaming, nos événements ou notre
-            boutique ? Notre équipe est là pour te répondre.."
+        subTitle="Une question sur nos espaces gaming, nos événements ou notre boutique ? Notre équipe est là pour te répondre.."
       />
 
       <Info />
@@ -18,9 +39,7 @@ export default function Contact() {
           <div className="contact-informations">
             <div className="section-heading">
               <span className="contact-eyebrow">Nos coordonnées</span>
-
               <h2>Retrouve-nous facilement</h2>
-
               <p>
                 Passe nous voir directement sur place ou contacte-nous via l’un
                 des moyens ci-dessous.
@@ -30,7 +49,7 @@ export default function Contact() {
             <div className="contact-info-list">
               <article className="contact-info-card">
                 <div className="contact-info-icon">
-                  <i className="fa-solid fa-location-dot"></i>
+                  <FontAwesomeIcon icon={faLocationDot} />
                 </div>
 
                 <a
@@ -40,7 +59,6 @@ export default function Contact() {
                 >
                   <div>
                     <h3>Adresse</h3>
-
                     <p>
                       Avenue de la closeraie, 22/2
                       <br />
@@ -54,12 +72,11 @@ export default function Contact() {
 
               <article className="contact-info-card">
                 <div className="contact-info-icon">
-                  <i className="fa-solid fa-phone"></i>
+                  <FontAwesomeIcon icon={faPhone} />
                 </div>
 
                 <div>
                   <h3>Téléphone</h3>
-
                   <p>
                     <a href="tel:+32471284870">0471/28.48.70</a>
                   </p>
@@ -68,12 +85,11 @@ export default function Contact() {
 
               <article className="contact-info-card">
                 <div className="contact-info-icon">
-                  <i className="fa-solid fa-envelope"></i>
+                  <FontAwesomeIcon icon={faEnvelope} />
                 </div>
 
                 <div>
                   <h3>Email</h3>
-
                   <p>
                     <a
                       href="https://mail.google.com/mail/?view=cm&fs=1&to=6ber.corp@gmail.com"
@@ -88,48 +104,44 @@ export default function Contact() {
 
               <article className="contact-info-card">
                 <div className="contact-info-icon">
-                  <i className="fa-solid fa-clock"></i>
+                  <FontAwesomeIcon icon={faClock} />
                 </div>
 
                 <div>
                   <h3>Horaires</h3>
-
                   <p>
-                    Lundi - <span>FERMÉ</span> <br /> Mardi - Dimanche : 10h00 -
-                    00h00
+                    Lundi - <span>FERMÉ</span>
+                    <br />
+                    Mardi - Dimanche : 10h00 - 00h00
                   </p>
                 </div>
               </article>
             </div>
+
             <div className="contact-socials">
-              <h3>Retrouve-nous aussi sur</h3>
               <div className="contact-social-links">
                 <a
                   target="_blank"
                   href="https://www.instagram.com/6ber.corp/"
                   aria-label="Instagram"
                 >
-                  <i className="fa-brands fa-instagram"></i>
+                  <FontAwesomeIcon icon={faInstagram} />
                 </a>
 
                 <a
                   href="https://www.snapchat.com/add/jazouk1996"
                   aria-label="Snapchat"
                 >
-                  <i className="fa-brands fa-snapchat"></i>
+                  <FontAwesomeIcon icon={faSnapchat} />
                 </a>
 
                 <a
-                  target="blank"
+                  target="_blank"
                   href="https://discord.gg/d2Qqt22ne"
                   aria-label="Discord"
                 >
-                  <i className="fa-brands fa-discord"></i>
+                  <FontAwesomeIcon icon={faDiscord} />
                 </a>
-
-                {/* <a href="#" aria-label="TikTok">
-                  <i className="fa-brands fa-tiktok"></i>
-                </a> */}
               </div>
             </div>
           </div>
@@ -137,9 +149,7 @@ export default function Contact() {
           <div className="contact-form-container">
             <div className="section-heading">
               <span className="contact-eyebrow">Écris-nous</span>
-
               <h2>Envoyer un message</h2>
-
               <p>
                 Remplis le formulaire ci-dessous et nous te répondrons dans les
                 plus brefs délais.
@@ -150,7 +160,6 @@ export default function Contact() {
               <div className="form-row">
                 <div className="form-group">
                   <label htmlFor="firstName">Prénom</label>
-
                   <input
                     type="text"
                     id="firstName"
@@ -162,7 +171,6 @@ export default function Contact() {
 
                 <div className="form-group">
                   <label htmlFor="lastName">Nom</label>
-
                   <input
                     type="text"
                     id="lastName"
@@ -175,7 +183,6 @@ export default function Contact() {
 
               <div className="form-group">
                 <label htmlFor="email">Adresse email</label>
-
                 <input
                   type="email"
                   id="email"
@@ -225,7 +232,7 @@ export default function Contact() {
 
               <button type="submit" className="contact-submit">
                 Envoyer le message
-                <i className="fa-solid fa-arrow-right"></i>
+                <FontAwesomeIcon icon={faArrowRight} />
               </button>
             </form>
           </div>
@@ -263,22 +270,22 @@ export default function Contact() {
 
               <ul>
                 <li>
-                  <i className="fa-solid fa-car"></i>
+                  <FontAwesomeIcon icon={faCar} />
                   Parking disponible à proximité
                 </li>
 
                 <li>
-                  <i className="fa-solid fa-bus"></i>
+                  <FontAwesomeIcon icon={faBus} />
                   Arrêt de bus à quelques minutes
                 </li>
 
                 <li>
-                  <i className="fa-solid fa-users"></i>
+                  <FontAwesomeIcon icon={faUsers} />
                   Accueil des groupes et événements privés
                 </li>
 
                 <li>
-                  <i className="fa-solid fa-gamepad"></i>
+                  <FontAwesomeIcon icon={faGamepad} />
                   Réservation recommandée pour les sessions gaming
                 </li>
               </ul>
@@ -290,7 +297,7 @@ export default function Contact() {
                 rel="noopener noreferrer"
               >
                 Voir l’itinéraire
-                <i className="fa-solid fa-arrow-up-right-from-square"></i>
+                <FontAwesomeIcon icon={faArrowUpRightFromSquare} />
               </a>
             </div>
           </div>
