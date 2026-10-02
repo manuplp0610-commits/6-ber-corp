@@ -107,7 +107,7 @@ export default function NavBar({ variant = "default" }) {
 
       {/* Logo small */}
       <Link
-        to="/#footer"
+        to="/"
         className={`logo-link logo-link--left ${
           openNav || showLogoLeft ? "logo-link--visible" : ""
         } ${openNav ? "logo-link--mobile-open" : ""}`}

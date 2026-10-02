@@ -5,7 +5,7 @@
 .headerPages {
   max-width: 900px;
   margin: 0 auto 65px;
-  padding: 35px 20px 0;
+  padding: 15px 20px 0;
   text-align: center;
 }
 
@@ -46,7 +46,7 @@
 @media (max-width: 600px) {
   .headerPages {
     margin-bottom: 48px;
-    padding: 70px 0 0;
+    padding: 20px 0 0;
   }
 
   .headerPagesTitle {
@@ -62,5 +62,6 @@
   .headerPages p {
     font-size: 0.92rem;
     line-height: 1.65;
+    padding: 0 10px;
   }
 }

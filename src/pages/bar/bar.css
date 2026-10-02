@@ -286,7 +286,7 @@
 
 @media (max-width: 900px) {
   .bar-page {
-    padding: 60px 20px 80px;
+    padding: 70px 20px 80px;
     background-attachment: scroll;
   }
 
@@ -306,7 +306,7 @@
 
 @media (max-width: 600px) {
   .bar-page {
-    padding: 45px 15px 60px;
+    padding: 70px 15px 60px;
   }
 
   .bar-introduction {

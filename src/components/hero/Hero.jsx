@@ -1,10 +1,53 @@
 import "./hero.css";
+
 import NavBar from "../navBar/NavBar";
+
 import { Link } from "react-router-dom";
+
 import { motion } from "motion/react";
+
 import InfoFlashBanner from "../infoFlashBanner/InfoFlashBanner";
 
 export default function Hero() {
+  const heroContainer = {
+    hidden: {},
+    visible: {
+      transition: {
+        staggerChildren: 0.15,
+      },
+    },
+  };
+
+  const heroItem = {
+    hidden: {
+      opacity: 0,
+      y: 25,
+    },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 0.7,
+        ease: "easeOut",
+      },
+    },
+  };
+
+  const heroButtons = {
+    hidden: {
+      opacity: 0,
+      y: 20,
+    },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 0.6,
+        ease: "easeOut",
+      },
+    },
+  };
+
   return (
     <section className="hero">
       <InfoFlashBanner
@@ -12,41 +55,27 @@ export default function Hero() {
         title={"Ouverture prochaine"}
         link={"Inscrivez-vous à notre newsletter pour ne rien manquer."}
       />
+
       <div className="overlay"></div>
+
       <NavBar variant="hero" />
 
-      <div className="wrap hero-content">
-        <motion.h1
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1, delay: 2.5 }}
-          className="hero-eyebrow"
-        >
+      <motion.div
+        className="wrap hero-content"
+        variants={heroContainer}
+        initial="hidden"
+        animate="visible"
+      >
+        <motion.h1 className="hero-eyebrow" variants={heroItem}>
           6 Ber Corp - Bar geek à Liège
         </motion.h1>
 
-        <motion.p
-          className="hero-tagline"
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{
-            duration: 0.6,
-            delay: 2,
-          }}
-        >
+        <motion.p className="hero-tagline" variants={heroItem}>
           Cartes, consoles, PC et bonnes ondes. Le repaire où ton niveau de
           puissance grimpe à chaque partie.
         </motion.p>
 
-        <motion.div
-          className="hero-cta"
-          initial={{ opacity: 0, y: 20, scale: 0.98 }}
-          animate={{ opacity: 1, y: 0, scale: 1 }}
-          transition={{
-            duration: 0.6,
-            delay: 2.4,
-          }}
-        >
+        <motion.div className="hero-cta" variants={heroButtons}>
           <Link to="/shop" className="btn btn-primary">
             Découvrir la boutique
           </Link>
@@ -55,7 +84,7 @@ export default function Hero() {
             Voir les prochains tournois
           </Link>
         </motion.div>
-      </div>
+      </motion.div>
     </section>
   );
 }

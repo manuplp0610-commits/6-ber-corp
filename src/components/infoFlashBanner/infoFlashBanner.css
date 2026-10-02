@@ -1,3 +1,6 @@
+html {
+  scroll-behavior: smooth;
+}
 .opening-banner {
   width: 100%;
   margin: 0 auto;
@@ -91,6 +94,7 @@
 ================================================================== */
 .opening-banner--hero {
   width: 100%;
+  position: relative;
 }
 .opening-banner--hero:hover .opening-banner__link {
   color: #ff7800;

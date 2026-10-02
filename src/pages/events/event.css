@@ -71,10 +71,17 @@
   max-width: 850px;
   margin: 0 auto 75px;
   padding: 22px 25px;
-  background: rgba(255, 149, 0, 0.1);
+  background: linear-gradient(
+    110deg,
+    rgba(255, 149, 0, 0.12),
+    rgba(23, 25, 35, 0.96) 45%
+  );
+
   border: 1px solid rgba(255, 149, 0, 0.35);
   border-left: 4px solid var(--color-primary);
-  border-radius: 12px;
+  border-radius: 14px;
+
+  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.25);
 }
 .event-highlight-link {
   display: inline;

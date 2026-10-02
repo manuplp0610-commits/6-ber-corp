@@ -27,12 +27,6 @@ import {
 export default function Contact() {
   return (
     <section className="contact-page">
-      <HeaderPages
-        title="Contacte-nous"
-        subTitle="Une question sur nos espaces gaming, nos événements ou notre boutique ? Notre équipe est là pour te répondre.."
-      />
-
-      <Info />
       <InfoFlashBanner
         variant={"shop"}
         title={"Ouverture prochaine"}
@@ -41,6 +35,13 @@ export default function Contact() {
         }
         link={"Contactez-nous dès maintenant."}
       />
+      <HeaderPages
+        title="Contacte-nous"
+        subTitle="Une question sur nos espaces gaming, nos événements ou notre boutique ? Notre équipe est là pour te répondre.."
+      />
+
+      <Info />
+
       <section className="contact-content">
         <div className="contact-wrap contact-grid">
           <div className="contact-informations">
