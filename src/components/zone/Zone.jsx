@@ -1,10 +1,18 @@
 import "./zone.css";
 import ZoneCard from "../zoneCard/ZoneCard";
 import Info from "../info/Info";
+import InfoFlashBanner from "../infoFlashBanner/InfoFlashBanner";
 
 export default function Zone() {
   return (
     <section className="zones">
+      <InfoFlashBanner
+        title={"Ouverture prochaine"}
+        info={"Découvrez l’univers 6 Ber-Corp avant l’ouverture du magasin."}
+        link={
+          "Inscrivez-vous à notre newsletter pour ne pas manquer la prochaine ouverture"
+        }
+      />
       <Info />
       <div className="wrap">
         <div className="section-head">

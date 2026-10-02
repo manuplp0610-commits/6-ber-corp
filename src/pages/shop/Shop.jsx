@@ -4,6 +4,7 @@ import HeaderPages from "../../components/headerPages/HeaderPages";
 import Article from "../../components/article/Article";
 import { Link } from "react-router-dom";
 import { motion, AnimatePresence } from "motion/react";
+import InfoFlashBanner from "../../components/infoFlashBanner/InfoFlashBanner";
 
 export default function Shop() {
   const [articles, setArticles] = useState([]);
@@ -117,7 +118,6 @@ export default function Shop() {
             </a>
           </motion.div>
         </motion.div>
-
         <div className="shop-hero-decoration" aria-hidden="true">
           <span>✦</span>
           <span>◈</span>

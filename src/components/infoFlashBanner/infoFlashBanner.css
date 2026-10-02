@@ -1,11 +1,11 @@
 .opening-banner {
-  position: absolute;
-  top: 30px;
-  width: 500px;
+  width: 100%;
   margin: 0 auto;
+  text-align: center;
   z-index: 10;
   display: flex;
   align-items: center;
+  justify-content: center;
   gap: 12px;
   padding: 12px 20px;
   background: rgba(10, 10, 15, 0.85);
@@ -55,6 +55,10 @@
 .opening-banner__link {
   color: #ff7800;
 }
+.opening-banner:hover .opening-banner__link {
+  color: #ffffff;
+}
+
 @keyframes openingGlow {
   0%,
   100% {
@@ -82,17 +86,37 @@
     transform: scale(0.8);
   }
 }
+/* ===============================================================
+                          variant hero                           =
+================================================================== */
+.opening-banner--hero {
+  position: absolute;
+  z-index: 3000;
+  max-width: 500px;
+}
+.opening-banner--hero:hover .opening-banner__link {
+  color: #ff7800;
+}
+.opening-banner__link--hero {
+  color: white;
+}
+/* ===============================================================
+                          variant shop                           =
+================================================================== */
+.opening-banner--shop {
+  width: 100%;
+  position: relative;
+}
 @media (max-width: 850px) {
   .opening-banner {
     position: relative;
-    transform: translateY(-20px);
+  }
+  .opening-banner--hero {
+    z-index: 1000;
   }
 }
 @media (max-width: 600px) {
   .opening-banner {
-    top: 20px;
-    width: calc(100% - 30px);
-
     padding: 10px 14px;
   }
 

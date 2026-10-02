@@ -2,12 +2,18 @@ import "./hero.css";
 import NavBar from "../navBar/NavBar";
 import { Link } from "react-router-dom";
 import { motion } from "motion/react";
-import OpeningBanner from "../openingBanner/OpeningBanner";
+import InfoFlashBanner from "../infoFlashBanner/InfoFlashBanner";
 
 export default function Hero() {
   return (
     <section className="hero">
-      <OpeningBanner />
+      <InfoFlashBanner
+        variant={"hero"}
+        title={"Ouverture prochaine"}
+        link={
+          "Inscrivez-vous à notre newsletter pour ne pas manquer la prochaine ouverture"
+        }
+      />
       <div className="overlay"></div>
 
       <NavBar variant="hero" />
