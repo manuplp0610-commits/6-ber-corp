@@ -2,7 +2,7 @@ import "./contact.css";
 
 import HeaderPages from "../../components/headerPages/HeaderPages";
 import Info from "../../components/info/Info";
-
+import InfoFlashBanner from "../../components/infoFlashBanner/InfoFlashBanner";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 import {
@@ -33,7 +33,14 @@ export default function Contact() {
       />
 
       <Info />
-
+      <InfoFlashBanner
+        variant={"shop"}
+        title={"Ouverture prochaine"}
+        info={
+          "Le 6 Ber-Corp se prépare à vous accueillir. Une question avant le lancement ? Nous sommes déjà à votre écoute."
+        }
+        link={"Contactez-nous dès maintenant."}
+      />
       <section className="contact-content">
         <div className="contact-wrap contact-grid">
           <div className="contact-informations">
