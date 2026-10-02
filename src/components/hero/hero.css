@@ -6,13 +6,13 @@
   position: relative;
   display: flex;
   flex-direction: column;
-  justify-content: space-evenly;
+  justify-content: space-around;
 
   width: 100%;
   min-height: 100vh;
   min-height: 100svh;
 
-  padding: 40px;
+  padding: 20px 40px;
 
   background-image: url("../../assets/images/bg-hero.avif");
   background-position: center;
@@ -209,7 +209,7 @@
 
 @media (max-width: 600px) {
   .hero {
-    padding: 20px;
+    padding: 0 20px;
   }
 
   .hero-cta {

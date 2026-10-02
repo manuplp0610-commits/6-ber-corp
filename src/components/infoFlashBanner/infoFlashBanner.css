@@ -90,9 +90,7 @@
                           variant hero                           =
 ================================================================== */
 .opening-banner--hero {
-  position: absolute;
-  z-index: 3000;
-  max-width: 500px;
+  width: 100%;
 }
 .opening-banner--hero:hover .opening-banner__link {
   color: #ff7800;

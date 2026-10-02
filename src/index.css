@@ -60,3 +60,6 @@ ol {
   --color-primary: #ff9500;
   --color-primary-hover: rgba(255, 149, 0, 0.7);
 }
+body {
+  background: rgb(38, 38, 58);
+}
