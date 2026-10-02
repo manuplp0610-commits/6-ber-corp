@@ -7,13 +7,7 @@ import InfoFlashBanner from "../infoFlashBanner/InfoFlashBanner";
 export default function Hero() {
   return (
     <section className="hero">
-      <InfoFlashBanner
-        variant={"hero"}
-        title={"Ouverture prochaine"}
-        link={
-          "Inscrivez-vous à notre newsletter pour ne pas manquer la prochaine ouverture"
-        }
-      />
+      <InfoFlashBanner variant={"hero"} title={"Ouverture prochaine"} />
       <div className="overlay"></div>
 
       <NavBar variant="hero" />
@@ -59,6 +53,16 @@ export default function Hero() {
           </Link>
         </motion.div>
       </div>
+      <InfoFlashBanner
+        variant={"shop"}
+        title={"Ouverture prochaine"}
+        info={
+          "Plongez dans l’univers 6 Ber-Corp et découvrez nos espaces avant leur lancement."
+        }
+        link={
+          "Inscrivez-vous à notre newsletter pour ne pas manquer la prochaine ouverture"
+        }
+      />
     </section>
   );
 }

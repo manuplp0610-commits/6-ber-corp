@@ -1,5 +1,15 @@
 [
   {
+  "day": "??",
+  "month": "??",
+  "date": "??",
+  "time": "??",
+  "type": "OUVERTURE",
+  "icon": "🏆",
+  "title": "Grande soirée d'ouverture",
+  "description": "Venez célébrer l'ouverture de 6 Ber-Corp et découvrir notre univers geek : bar, gaming, PC, consoles et boutique. Une soirée placée sous le signe du partage, du jeu et de la pop culture."
+},
+  {
     "day": "20",
     "month": "SEP",
     "date": "20 septembre 2026",

@@ -255,7 +255,14 @@ export default function Shop() {
             Réinitialiser les filtres
           </button>
         )}
-
+        <InfoFlashBanner
+          variant={"shop"}
+          title={"Ouverture prochaine"}
+          info={"Retrouvez bientôt tous nos articles directement en magasin."}
+          link={
+            "Inscrivez-vous à notre newsletter pour ne pas manquer notre ouverture."
+          }
+        />
         {filteredArticles.length > 0 ? (
           <AnimatePresence mode="popLayout">
             <div className="articles-grid">
