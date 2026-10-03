@@ -102,7 +102,7 @@ export default function NavBar({ variant = "default" }) {
         aria-expanded={openNav}
         aria-controls="nav-mobile"
       >
-        ☰
+        {openNav ? "︿" : "☰"}
       </button>
 
       {/* Logo small */}
