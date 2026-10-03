@@ -31,6 +31,7 @@ export default function NavBar({ variant = "default" }) {
     setIsLoggedIn(false);
     setOpenLog(false);
     setOpenMobileLog(false);
+    setOpenNav(false);
   };
 
   const handleClick = () => {

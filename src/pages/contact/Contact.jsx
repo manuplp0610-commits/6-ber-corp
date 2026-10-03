@@ -36,7 +36,7 @@ export default function Contact() {
         link={"Contactez-nous dès maintenant."}
       />
       <HeaderPages
-        title="Contacte-nous"
+        title="Contactez-nous"
         subTitle="Une question sur nos espaces gaming, nos événements ou notre boutique ? Notre équipe est là pour te répondre.."
       />
 
@@ -118,7 +118,7 @@ export default function Contact() {
                 <div>
                   <h3>Horaires</h3>
                   <p>
-                    Lundi - <span>FERMÉ</span>
+                    Lundi : <span>FERMÉ</span>
                     <br />
                     Mardi - Dimanche : 10h00 - 00h00
                   </p>
