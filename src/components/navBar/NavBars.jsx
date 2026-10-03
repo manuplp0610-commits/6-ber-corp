@@ -2,7 +2,6 @@ import logoLarge from "../../../public/logoLarg.webp";
 import logoSmall from "../../../public/logoSmall.webp";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-
 import {
   faUser,
   faChevronUp,
@@ -12,7 +11,7 @@ import {
 
 import "./navBar.css";
 
-import { Link, useLocation, useNavigate } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { useEffect, useState } from "react";
 
 export default function NavBar({ variant = "default" }) {
@@ -21,6 +20,7 @@ export default function NavBar({ variant = "default" }) {
   const [isLoggedIn, setIsLoggedIn] = useState(
     sessionStorage.getItem("isLoggedIn") === "true",
   );
+
   const [openNav, setOpenNav] = useState(false);
   const [openLog, setOpenLog] = useState(false);
   const [openMobileLog, setOpenMobileLog] = useState(false);
@@ -58,29 +58,26 @@ export default function NavBar({ variant = "default" }) {
       setShowLogoLeft(true);
       return;
     }
+
     const handleScroll = () => {
       setShowLogoLeft(window.scrollY >= 300);
     };
+
     handleScroll();
+
     window.addEventListener("scroll", handleScroll);
+
     return () => {
       window.removeEventListener("scroll", handleScroll);
     };
   }, [location.pathname, openNav]);
 
-  const navigate = useNavigate();
-
   return (
     <nav className={`navBar navBar--${variant}`}>
+      {/* Menu utilisateur desktop */}
       <div className="log">
         <button
-          onClick={() => {
-            if (!isLoggedIn) {
-              navigate("/login");
-              return;
-            }
-            setOpenLog((prev) => !prev);
-          }}
+          onClick={() => setOpenLog((prev) => !prev)}
           className="btn-login"
           aria-label={
             openLog
@@ -91,6 +88,7 @@ export default function NavBar({ variant = "default" }) {
         >
           <FontAwesomeIcon icon={isLoggedIn ? faUserSlash : faUser} />
         </button>
+
         {openLog && (
           <div className="log-li">
             {isLoggedIn && (
@@ -98,8 +96,9 @@ export default function NavBar({ variant = "default" }) {
                 Dashboard
               </Link>
             )}
+
             {isLoggedIn ? (
-              <Link onClick={handleLogout} to="/">
+              <Link onClick={handleLogout} to="/login">
                 Déconnexion
               </Link>
             ) : (
@@ -113,6 +112,7 @@ export default function NavBar({ variant = "default" }) {
         )}
       </div>
 
+      {/* Bouton hamburger */}
       <button
         onClick={handleClick}
         className="nav-toggle"
@@ -123,13 +123,13 @@ export default function NavBar({ variant = "default" }) {
         <FontAwesomeIcon icon={openNav ? faChevronUp : faBarsStaggered} />
       </button>
 
+      {/* Logo small */}
       <Link
         to={location.pathname === "/" ? "/#top" : "/"}
         onClick={(event) => {
-          closeNav();
-
           if (location.pathname === "/") {
             event.preventDefault();
+
             document.getElementById("top")?.scrollIntoView({
               behavior: "smooth",
             });
@@ -150,21 +150,25 @@ export default function NavBar({ variant = "default" }) {
 
       <div className={`nav-inner nav-inner--${variant}`}>
         <div className={`nav-links nav-links--${variant}`}>
+          {/* Groupe gauche */}
           <div className={`sind-nav sind-nav--left sind-nav--${variant}`}>
             <Link onClick={closeNav} to="/shop">
               Boutique
             </Link>
+
             <Link onClick={closeNav} to="/bar">
               Bar
             </Link>
+
             <Link onClick={closeNav} to="/console">
               Consoles
             </Link>
           </div>
 
+          {/* Logo central */}
           <Link to="/" className="logo-link logo-link--center">
             <img
-              fetchpriority="high"
+              fetchPriority="high"
               className={`logo-center logo-center--${variant}`}
               src={logoLarge}
               alt="6 Ber Corp"
@@ -173,13 +177,16 @@ export default function NavBar({ variant = "default" }) {
             />
           </Link>
 
+          {/* Groupe droit */}
           <div className={`sind-nav sind-nav--right sind-nav--${variant}`}>
             <Link onClick={closeNav} to="/computer">
               PC
             </Link>
+
             <Link onClick={closeNav} to="/event">
               Événements
             </Link>
+
             <Link onClick={closeNav} to="/contact">
               Contact
             </Link>
@@ -187,70 +194,80 @@ export default function NavBar({ variant = "default" }) {
         </div>
       </div>
 
+      {/* Menu mobile */}
       {openNav && (
         <div className="nav-mobile" id="nav-mobile">
           <div className="nav-mobile-content">
+            {/* Menu utilisateur mobile */}
             <div className="mobile-login">
               <button
-                onClick={() => {
-                  if (!isLoggedIn) {
-                    navigate("/login");
-                    return;
-                  }
-
-                  setOpenMobileLog((prev) => !prev);
-                }}
+                onClick={() => setOpenMobileLog((prev) => !prev)}
                 className="btn-login"
                 aria-label={
-                  isLoggedIn
-                    ? openMobileLog
-                      ? "Fermer le menu utilisateur"
-                      : "Ouvrir le menu utilisateur"
-                    : "Se connecter"
+                  openMobileLog
+                    ? "Fermer le menu utilisateur"
+                    : "Ouvrir le menu utilisateur"
                 }
-                aria-expanded={isLoggedIn ? openMobileLog : undefined}
+                aria-expanded={openMobileLog}
               >
                 <FontAwesomeIcon icon={isLoggedIn ? faUserSlash : faUser} />
               </button>
 
-              {openMobileLog && isLoggedIn && (
+              {openMobileLog && (
                 <div className="log-li">
-                  <Link onClick={closeNav} to="/dashboard">
-                    Dashboard
-                  </Link>
-                  <Link onClick={handleLogout} to="/">
-                    Déconnexion
-                  </Link>
+                  {isLoggedIn && (
+                    <Link onClick={closeNav} to="/dashboard">
+                      Dashboard
+                    </Link>
+                  )}
+
+                  {isLoggedIn ? (
+                    <Link onClick={handleLogout} to="/login">
+                      Déconnexion
+                    </Link>
+                  ) : (
+                    location.pathname !== "/login" && (
+                      <Link onClick={closeNav} to="/login">
+                        Connexion
+                      </Link>
+                    )
+                  )}
                 </div>
               )}
             </div>
 
+            {/* Navigation mobile */}
             <ul>
               <li>
                 <Link onClick={closeNav} to="/shop">
                   Boutique
                 </Link>
               </li>
+
               <li>
                 <Link onClick={closeNav} to="/bar">
                   Bar
                 </Link>
               </li>
+
               <li>
                 <Link onClick={closeNav} to="/console">
                   Consoles
                 </Link>
               </li>
+
               <li>
                 <Link onClick={closeNav} to="/computer">
                   PC
                 </Link>
               </li>
+
               <li>
                 <Link onClick={closeNav} to="/event">
                   Événements
                 </Link>
               </li>
+
               <li>
                 <Link onClick={closeNav} to="/contact">
                   Contact
