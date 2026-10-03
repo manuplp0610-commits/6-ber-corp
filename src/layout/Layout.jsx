@@ -7,8 +7,6 @@ import ScrollToTop from "../components/scrollToTop/ScrollToTop";
 export default function Layout() {
   return (
     <>
-      <ScrollToTop />
-
       <header>
         <NavBar variant="default" />
       </header>

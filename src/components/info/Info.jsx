@@ -1,6 +1,20 @@
+import { useState, useEffect } from "react";
 import "../info/info.css";
 
 export default function Info() {
+  const [businessInfo, setBusinessInfo] = useState({});
+  useEffect(() => {
+    fetch(`${import.meta.env.BASE_URL}data/businessInfo.json`)
+      .then((response) => {
+        return response.json();
+      })
+      .then((result) => {
+        setBusinessInfo(result);
+      })
+      .catch((error) => {
+        console.error(error);
+      });
+  }, []);
   return (
     <section className="infos">
       <div className="wrap infos-grid">
@@ -8,7 +22,7 @@ export default function Info() {
           <div className="info-icon">⏰</div>
           <div>
             <div className="info-label">Horaires</div>
-            <div className="info-value">Mar–Dim · 10h–00h</div>
+            <div className="info-value">{businessInfo[0]?.openHoursCut}</div>
           </div>
         </div>
         <div className="info-item">
@@ -16,8 +30,9 @@ export default function Info() {
           <div>
             <div className="info-label">Adresse</div>
             <div className="info-value">
-              Avenue de la closeraie 22 / 2
-              <br /> 4000 Rocourt
+              {businessInfo[0]?.adress.rue}, {businessInfo[0]?.adress.numero}
+              <br /> {businessInfo[0]?.adress.cp}{" "}
+              {businessInfo[0]?.adress.ville}
             </div>
           </div>
         </div>
@@ -26,7 +41,7 @@ export default function Info() {
           <div>
             <div className="info-label">Contact</div>
             <a href="tel:+32471284870" className="info-value">
-              0471/28.48.70
+              {businessInfo[0]?.phone}
             </a>
           </div>
         </div>

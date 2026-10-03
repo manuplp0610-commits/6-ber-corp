@@ -1,15 +1,17 @@
 [
-    {
-        "name":"6 Ber Corp",
-        "phone":"0471/28.48.70",
-        "mail":"6ber.corp@gmail.com",
-        "openHours":"Mar–Dim · 10h–00h",
-        "adress":{
-            "rue":"Avenue de la closeraie",
-            "numero":"22/2",
-            "ville":"Rocourt",
-            "cp":"4000"
-        }
-        
+  {
+    "name": "6 Ber Corp",
+    "phone": "0471/28.48.70",
+    "mail": "6ber.corp@gmail.com",
+    "openHoursCut": "Mar – Dim · 11h – 00h",
+    "openHours": "Mardi - Dimanche : 10h00 - 00h00",
+    "dayOff": "Lundi",
+    "adress": {
+      "rue": "Avenue de la closeraie",
+      "numero": "22/2",
+      "ville": "Rocourt",
+      "cp": "4000",
+      "pays": "Belgique"
     }
+  }
 ]

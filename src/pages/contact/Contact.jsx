@@ -23,8 +23,23 @@ import {
   faGamepad,
   faArrowUpRightFromSquare,
 } from "@fortawesome/free-solid-svg-icons";
+import { useEffect, useState } from "react";
 
 export default function Contact() {
+  const [businessInfo, setBusinessInfo] = useState({});
+  useEffect(() => {
+    fetch(`${import.meta.env.BASE_URL}data/businessInfo.json`)
+      .then((response) => {
+        return response.json();
+      })
+      .then((result) => {
+        setBusinessInfo(result);
+      })
+      .catch((error) => {
+        console.error(error);
+      });
+  }, []);
+
   return (
     <section className="contact-page">
       <InfoFlashBanner
@@ -68,11 +83,13 @@ export default function Contact() {
                   <div>
                     <h3>Adresse</h3>
                     <p>
-                      Avenue de la closeraie, 22/2
+                      {businessInfo[0]?.adress.rue},
+                      {businessInfo[0]?.adress.numero}
                       <br />
-                      4000 Rocourt
+                      {businessInfo[0]?.adress.cp}
+                      {businessInfo[0]?.adress.ville}
                       <br />
-                      Belgique
+                      {businessInfo[0]?.adress.pays}
                     </p>
                   </div>
                 </a>
@@ -86,7 +103,7 @@ export default function Contact() {
                 <div>
                   <h3>Téléphone</h3>
                   <p>
-                    <a href="tel:+32471284870">0471/28.48.70</a>
+                    <a href="tel:+32471284870">{businessInfo[0]?.phone}</a>
                   </p>
                 </div>
               </article>
@@ -104,7 +121,7 @@ export default function Contact() {
                       target="_blank"
                       rel="noopener noreferrer"
                     >
-                      6ber.corp@gmail.com
+                      {businessInfo[0]?.mail}
                     </a>
                   </p>
                 </div>
@@ -118,9 +135,9 @@ export default function Contact() {
                 <div>
                   <h3>Horaires</h3>
                   <p>
-                    Lundi : <span>FERMÉ</span>
+                    {businessInfo[0]?.dayOff} : <span>FERMÉ</span>
                     <br />
-                    Mardi - Dimanche : 10h00 - 00h00
+                    {businessInfo[0]?.openHours}
                   </p>
                 </div>
               </article>

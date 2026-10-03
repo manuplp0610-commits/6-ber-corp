@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import logo from "../../../public/logoSmall.webp";
 import "./footer.css";
 import { Link } from "react-router-dom";
@@ -11,6 +11,19 @@ import {
 
 export default function Footer() {
   const [seoOpen, setSeoOpen] = useState(false);
+  const [businessInfo, setBusinessInfo] = useState({});
+  useEffect(() => {
+    fetch(`${import.meta.env.BASE_URL}data/businessInfo.json`)
+      .then((response) => {
+        return response.json();
+      })
+      .then((result) => {
+        setBusinessInfo(result);
+      })
+      .catch((error) => {
+        console.error(error);
+      });
+  }, []);
   return (
     <footer id="footer">
       <div className="newsletter">
@@ -56,7 +69,7 @@ export default function Footer() {
             />
           </a>
           <p>
-            Le bar geek où cartes, consoles et PC se retrouvent autour d'un bon
+            Le bar TCG où cartes, consoles et PC se retrouvent autour d'un bon
             verre.
           </p>
 
@@ -140,13 +153,14 @@ export default function Footer() {
           <h4>Pratique</h4>
 
           <ul>
-            <li>Mar-Dim · 10h-00h</li>
+            <li>{businessInfo[0]?.openHoursCut}</li>
             <li>
-              Avenue de la closeraie 22/2,
-              <br /> 4000 Rocourt
+              {businessInfo[0]?.adress.rue} {businessInfo[0]?.adress.numero},
+              <br /> {businessInfo[0]?.adress.cp}{" "}
+              {businessInfo[0]?.adress.ville}
             </li>
-            <li>0471/28.48.70</li>
-            <li>6ber.corp@gmail.com</li>
+            <li>{businessInfo[0]?.phone}</li>
+            <li>{businessInfo[0]?.mail}</li>
           </ul>
         </div>
       </div>
