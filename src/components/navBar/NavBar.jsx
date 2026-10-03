@@ -107,7 +107,16 @@ export default function NavBar({ variant = "default" }) {
 
       {/* Logo small */}
       <Link
-        to="/"
+        to={location.pathname === "/" ? "/#top" : "/"}
+        onClick={(event) => {
+          if (location.pathname === "/") {
+            event.preventDefault();
+
+            document.getElementById("top")?.scrollIntoView({
+              behavior: "smooth",
+            });
+          }
+        }}
         className={`logo-link logo-link--left ${
           openNav || showLogoLeft ? "logo-link--visible" : ""
         } ${openNav ? "logo-link--mobile-open" : ""}`}

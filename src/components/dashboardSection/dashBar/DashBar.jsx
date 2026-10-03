@@ -14,6 +14,7 @@ export default function DashBar() {
         console.error(error);
       });
   }, []);
+  console.log(dataBar);
 
   return (
     <section className="dashBar">
@@ -36,7 +37,7 @@ export default function DashBar() {
           <span>Action</span>
         </div>
 
-        {dataBar.map((item) => (
+        {/* {dataBar.map((item) => (
           <div className="dashBar-row" key={item.id}>
             <span className="dashBar-name">{item.name}</span>
 
@@ -48,7 +49,7 @@ export default function DashBar() {
 
             <span className="dashBar-deleteBtn">X</span>
           </div>
-        ))}
+        ))} */}
       </div>
     </section>
   );

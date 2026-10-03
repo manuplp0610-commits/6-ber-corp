@@ -63,3 +63,6 @@ ol {
 body {
   background: rgb(38, 38, 58);
 }
+html {
+  scroll-behavior: smooth;
+}

@@ -49,7 +49,7 @@ export default function Hero() {
   };
 
   return (
-    <section className="hero">
+    <section id="top" className="hero">
       <InfoFlashBanner
         variant={"hero"}
         title={"Ouverture prochaine"}

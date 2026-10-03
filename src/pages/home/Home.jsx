@@ -9,6 +9,7 @@ export default function Home() {
     <>
       <ScrollToTop />
       <SplashScreen />
+
       <header>
         <Hero />
       </header>

@@ -48,7 +48,10 @@ export default function Computer() {
             <h2>PC Gaming disponibles</h2>
           </div>
 
-          <span className="pc-status">Disponible sur place</span>
+          <span className="pc-status">
+            {dataComputer.length > 0 && dataComputer[0].numbers} PC Disponible
+            sur place
+          </span>
         </div>
 
         <div className="pc-list">

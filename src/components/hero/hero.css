@@ -1,7 +1,9 @@
 /* ============================================
    HERO
    ============================================ */
-
+html {
+  scroll-behavior: smooth;
+}
 .hero {
   position: relative;
   display: flex;

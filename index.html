@@ -1,26 +1,94 @@
 <!doctype html>
-<html lang="en">
+<html lang="fr">
   <head>
     <meta charset="UTF-8" />
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- SEO -->
     <meta
       name="description"
       content="6 Ber Corp, le bar geek et gaming à Liège : consoles, PC gaming, événements, boissons, snacks et boutique pop-culture."
     />
+    <meta name="robots" content="index, follow" />
+
     <meta name="theme-color" content="#11131c" />
 
-    <title>6 Ber Corp — Bar Geek & Gaming à Liège</title>
+    <link rel="canonical" href="https://TON-DOMAINE.be/" />
 
-    <link rel="icon" type="image/png" href="./public/logoSmall.webp" />
+    <!-- Favicon -->
+    <link rel="icon" type="image/webp" href="/6-ber-corp/logoSmall.webp" />
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="fr_BE" />
+    <meta
+      property="og:title"
+      content="6 Ber Corp — Bar Geek & Gaming à Liège"
+    />
+    <meta
+      property="og:description"
+      content="Le repaire geek et gaming à Liège : consoles, PC, événements, boissons, snacks et boutique pop-culture."
+    />
+    <meta property="og:url" content="https://TON-DOMAINE.be/" />
+    <meta
+      property="og:image"
+      content="https://TON-DOMAINE.be/6-ber-corp/og-image.jpg"
+    />
+    <meta
+      property="og:image:alt"
+      content="6 Ber Corp — Bar Geek & Gaming à Liège"
+    />
+
+    <!-- Twitter / X -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta
+      name="twitter:title"
+      content="6 Ber Corp — Bar Geek & Gaming à Liège"
+    />
+    <meta
+      name="twitter:description"
+      content="Bar geek et gaming à Liège : consoles, PC, événements, boissons, snacks et boutique pop-culture."
+    />
+    <meta
+      name="twitter:image"
+      content="https://TON-DOMAINE.be/6-ber-corp/og-image.jpg"
+    />
+
+    <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
     <link
       href="https://fonts.googleapis.com/css2?family=Anton&family=Sora:wght@400;500;600;700;800&display=swap"
       rel="stylesheet"
     />
+
+    <title>6 Ber Corp — Bar Geek & Gaming à Liège</title>
+
+    <!-- Données structurées -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "LocalBusiness",
+        "name": "6 Ber Corp",
+        "description": "Bar geek et gaming à Liège avec consoles, PC gaming, événements et boutique pop-culture.",
+        "url": "https://TON-DOMAINE.be/",
+        "logo": "https://TON-DOMAINE.be/6-ber-corp/logoLarg.webp",
+        "image": "https://TON-DOMAINE.be/6-ber-corp/og-image.jpg",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Liège",
+          "addressRegion": "Liège",
+          "addressCountry": "BE"
+        }
+      }
+    </script>
   </head>
+
   <body>
     <div id="root"></div>
+
     <script type="module" src="/src/main.jsx"></script>
   </body>
 </html>
