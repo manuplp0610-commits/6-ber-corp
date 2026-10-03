@@ -1,7 +1,11 @@
 import logoLarge from "../../../public/logoLarg.webp";
 import logoSmall from "../../../public/logoSmall.webp";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faUser } from "@fortawesome/free-solid-svg-icons";
+import {
+  faUser,
+  faChevronUp,
+  faBarsStaggered,
+} from "@fortawesome/free-solid-svg-icons";
 import "./navBar.css";
 
 import { Link, useLocation } from "react-router-dom";
@@ -102,7 +106,7 @@ export default function NavBar({ variant = "default" }) {
         aria-expanded={openNav}
         aria-controls="nav-mobile"
       >
-        {openNav ? "︿" : "☰"}
+        <FontAwesomeIcon icon={openNav ? faChevronUp : faBarsStaggered} />
       </button>
 
       {/* Logo small */}
