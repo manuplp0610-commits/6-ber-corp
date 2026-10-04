@@ -652,6 +652,9 @@ html {
 @media (max-width: 850px) {
   .navBar--default {
     border-radius: 0 0 10px 10px;
+    background: transparent;
+    border: none;
+    box-shadow: none;
   }
 
   .nav-inner--default {
