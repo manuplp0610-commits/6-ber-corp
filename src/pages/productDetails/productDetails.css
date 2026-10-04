@@ -30,7 +30,6 @@
 
 .product-details-back {
   display: flex;
-  z-index: 3000;
   align-items: center;
   gap: 8px;
   max-width: 1100px;
@@ -38,7 +37,7 @@
   padding: 8px 13px;
   color: var(--color-primary);
   background: #151722;
-  border: 1px solid #393c49;
+  border: 1px solid var(--color-primary);
   border-radius: 5px;
   cursor: pointer;
   font-size: 0.78rem;
@@ -396,13 +395,21 @@
    TABLET
 ================================= */
 
-@media (max-width: 900px) {
+@media (max-width: 850px) {
+  .product-details {
+    padding: 110px 0 60px;
+  }
   .product-details-card {
     grid-template-columns: minmax(250px, 340px) minmax(0, 1fr);
     gap: 25px;
     margin: 0 20px;
   }
+  .product-details-back {
+    position: fixed;
+    top: 50px;
 
+    z-index: 200;
+  }
   .product-details-image {
     min-height: 320px;
   }
@@ -432,16 +439,6 @@
 ================================= */
 
 @media (max-width: 700px) {
-  .product-details {
-    padding: 110px 0 60px;
-  }
-
-  .product-details-back {
-    position: fixed;
-    top: 25px;
-    transform: translateX(50%);
-  }
-
   .product-details-card {
     grid-template-columns: 1fr;
     gap: 22px;
