@@ -433,11 +433,13 @@
 
 @media (max-width: 700px) {
   .product-details {
-    padding: 40px 0 60px;
+    padding: 110px 0 60px;
   }
 
   .product-details-back {
-    margin: 20px auto 20px;
+    position: fixed;
+    top: 25px;
+    transform: translateX(50%);
   }
 
   .product-details-card {

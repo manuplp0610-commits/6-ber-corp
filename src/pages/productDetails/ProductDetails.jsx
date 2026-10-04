@@ -48,21 +48,7 @@ export default function ProductDetails() {
   }
 
   if (!product) {
-    return (
-      <main className="product-details">
-        <div className="product-details-message">
-          <h1>Produit introuvable</h1>
-
-          <button
-            className="product-details-back"
-            onClick={() => navigate("/shop")}
-          >
-            <FontAwesomeIcon icon={faArrowLeft} />
-            Retour à la boutique
-          </button>
-        </div>
-      </main>
-    );
+    navigate("/noFound");
   }
 
   return (

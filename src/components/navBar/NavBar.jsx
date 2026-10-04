@@ -70,7 +70,25 @@ export default function NavBar({ variant = "default" }) {
   }, [location.pathname, openNav]);
 
   const navigate = useNavigate();
+  useEffect(() => {
+    let lastScrollY = window.scrollY;
 
+    const handleScroll = () => {
+      const currentScrollY = window.scrollY;
+
+      if (currentScrollY > lastScrollY && openNav) {
+        setOpenNav(false);
+      }
+
+      lastScrollY = currentScrollY;
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, [openNav]);
   return (
     <nav className={`navBar navBar--${variant}`}>
       <div className="log">
