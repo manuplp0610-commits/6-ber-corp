@@ -8,7 +8,17 @@
     "category": "Figurines",
     "univers": "Dragonball",
     "description": "Figurine détaillée de Son Goku en Super Saiyan, idéale pour les collectionneurs et fans de Dragon Ball.",
-    "stock": 12
+    "shortDescription": "Figurine de Son Goku en Super Saiyan.",
+    "longDescription": "Cette figurine représente Son Goku dans sa transformation en Super Saiyan. Avec ses nombreux détails et sa finition soignée, elle trouvera facilement sa place dans une collection dédiée à Dragon Ball.",
+    "stock": 12,
+    "brand": "Bandai",
+    "collection": "Dragon Ball",
+    "material": "PVC",
+    "dimensions": "18 x 12 x 10 cm",
+    "weight": "350 g",
+    "condition": "Neuf",
+    "featured": true,
+    "tags": ["Son Goku", "Super Saiyan", "Dragon Ball", "Figurine"]
   },
   {
     "id": 2,
@@ -19,7 +29,17 @@
     "category": "Cartes",
     "univers": "Pokemon",
     "description": "Booster Pokémon contenant plusieurs cartes à collectionner pour compléter votre collection et découvrir de nouvelles cartes.",
-    "stock": 84
+    "shortDescription": "Booster Pokémon pour collectionneurs et joueurs.",
+    "longDescription": "Un booster Pokémon permettant de découvrir de nouvelles cartes et d'enrichir votre collection. Chaque paquet peut réserver de belles surprises aux collectionneurs et joueurs.",
+    "stock": 84,
+    "brand": "Pokémon",
+    "collection": "L'Éveil des Étoiles",
+    "material": "Carton",
+    "dimensions": "14 x 7 x 0,5 cm",
+    "weight": "20 g",
+    "condition": "Neuf",
+    "featured": true,
+    "tags": ["Pokémon", "Booster", "Cartes", "Collection"]
   },
   {
     "id": 3,
@@ -30,7 +50,17 @@
     "category": "Accessoires",
     "univers": "Autre",
     "description": "Grande vitrine en verre avec éclairage LED, parfaite pour exposer et protéger vos figurines et objets de collection.",
-    "stock": 6
+    "shortDescription": "Vitrine avec éclairage LED pour collections.",
+    "longDescription": "Cette grande vitrine permet d'exposer vos figurines et objets de collection tout en les protégeant de la poussière. Son éclairage LED met particulièrement bien en valeur les pièces exposées.",
+    "stock": 6,
+    "brand": "Collection",
+    "collection": "Display",
+    "material": "Verre et métal",
+    "dimensions": "80 x 35 x 165 cm",
+    "weight": "35 kg",
+    "condition": "Neuf",
+    "featured": false,
+    "tags": ["Vitrine", "LED", "Collection", "Display"]
   },
   {
     "id": 4,
@@ -41,7 +71,17 @@
     "category": "Figurines",
     "univers": "Yu-gi-ho",
     "description": "Statue en résine haut de gamme représentant le célèbre Dragon Blanc aux Yeux Bleus, idéale pour les collectionneurs Yu-Gi-Oh!",
-    "stock": 3
+    "shortDescription": "Statue premium du Dragon Blanc aux Yeux Bleus.",
+    "longDescription": "Une statue en résine représentant l'un des monstres les plus emblématiques de Yu-Gi-Oh!. Sa taille et ses nombreux détails en font une pièce idéale pour une collection haut de gamme.",
+    "stock": 3,
+    "brand": "Yu-Gi-Oh!",
+    "collection": "Legendary Collection",
+    "material": "Résine",
+    "dimensions": "30 x 25 x 20 cm",
+    "weight": "1,8 kg",
+    "condition": "Neuf",
+    "featured": true,
+    "tags": ["Yu-Gi-Oh!", "Dragon Blanc", "Blue-Eyes", "Statue"]
   },
   {
     "id": 5,
@@ -52,7 +92,17 @@
     "category": "Accessoires",
     "univers": "Autre",
     "description": "Boîte de rangement avec plusieurs compartiments pour organiser et protéger vos cartes à collectionner.",
-    "stock": 18
+    "shortDescription": "Boîte premium pour ranger vos cartes.",
+    "longDescription": "Cette boîte de rangement possède plusieurs compartiments permettant d'organiser différentes cartes à collectionner. Elle convient aussi bien aux collectionneurs qu'aux joueurs.",
+    "stock": 18,
+    "brand": "Collection",
+    "collection": "Card Storage",
+    "material": "Bois",
+    "dimensions": "32 x 24 x 8 cm",
+    "weight": "900 g",
+    "condition": "Neuf",
+    "featured": false,
+    "tags": ["Cartes", "Rangement", "Collection", "Storage"]
   },
   {
     "id": 6,
@@ -63,7 +113,17 @@
     "category": "Accessoires",
     "univers": "Autre",
     "description": "Lot de 100 protège-cartes transparents pour protéger vos cartes de collection contre les rayures et l'usure.",
-    "stock": 75
+    "shortDescription": "100 protège-cartes transparents.",
+    "longDescription": "Un lot de 100 protège-cartes transparents permettant de conserver vos cartes en bon état et de les protéger contre les rayures, la poussière et l'usure.",
+    "stock": 75,
+    "brand": "Ultra Pro",
+    "collection": "Card Sleeves",
+    "material": "Polypropylène",
+    "dimensions": "Standard",
+    "weight": "80 g",
+    "condition": "Neuf",
+    "featured": false,
+    "tags": ["Cartes", "Sleeves", "Protection", "Collection"]
   },
   {
     "id": 7,
@@ -74,7 +134,17 @@
     "category": "Figurines",
     "univers": "Pokemon",
     "description": "Figurine de Mewtwo représentant le célèbre Pokémon légendaire, parfaite pour compléter une collection Pokémon.",
-    "stock": 9
+    "shortDescription": "Figurine de Mewtwo, Pokémon légendaire.",
+    "longDescription": "Cette figurine représente Mewtwo, l'un des Pokémon légendaires les plus connus. Sa taille compacte permet de l'intégrer facilement à une collection Pokémon.",
+    "stock": 9,
+    "brand": "Pokémon",
+    "collection": "Pokémon",
+    "material": "PVC",
+    "dimensions": "15 cm",
+    "weight": "250 g",
+    "condition": "Neuf",
+    "featured": true,
+    "tags": ["Pokémon", "Mewtwo", "Légendaire", "Figurine"]
   },
   {
     "id": 8,
@@ -85,7 +155,17 @@
     "category": "Cartes",
     "univers": "Dragonball",
     "description": "Carte de collection Dragon Ball mettant en scène Son Goku, destinée aux collectionneurs et joueurs confirmés.",
-    "stock": 2
+    "shortDescription": "Carte Dragon Ball destinée aux collectionneurs.",
+    "longDescription": "Une carte de collection mettant en scène Son Goku. Sa valeur fictive élevée dans cette démonstration permet d'illustrer une pièce rare destinée aux collectionneurs confirmés.",
+    "stock": 2,
+    "brand": "Dragon Ball Super Card Game",
+    "collection": "BT16",
+    "material": "Carton",
+    "dimensions": "Standard",
+    "weight": "2 g",
+    "condition": "Neuf",
+    "featured": true,
+    "tags": ["Dragon Ball", "Son Goku", "Carte", "Rare"]
   },
   {
     "id": 9,
@@ -96,7 +176,17 @@
     "category": "Cartes",
     "univers": "Yu-gi-ho",
     "description": "Booster Yu-Gi-Oh! permettant de découvrir de nouvelles cartes et d'enrichir votre collection.",
-    "stock": 46
+    "shortDescription": "Booster Yu-Gi-Oh! à collectionner.",
+    "longDescription": "Un booster Yu-Gi-Oh! permettant de découvrir de nouvelles cartes et d'enrichir une collection. Une bonne option pour les joueurs comme pour les collectionneurs.",
+    "stock": 46,
+    "brand": "Konami",
+    "collection": "Héritage de la Destruction",
+    "material": "Carton",
+    "dimensions": "14 x 7 x 0,5 cm",
+    "weight": "20 g",
+    "condition": "Neuf",
+    "featured": false,
+    "tags": ["Yu-Gi-Oh!", "Booster", "Cartes", "Konami"]
   },
   {
     "id": 10,
@@ -107,7 +197,17 @@
     "category": "Accessoires",
     "univers": "Dragonball",
     "description": "Set décoratif représentant les sept boules de cristal de Dragon Ball, parfait pour décorer votre espace gaming ou collection.",
-    "stock": 7
+    "shortDescription": "Set décoratif des sept boules de cristal.",
+    "longDescription": "Ce set décoratif reprend les sept boules de cristal emblématiques de Dragon Ball. Il peut être utilisé pour décorer une pièce gaming, une étagère ou une collection.",
+    "stock": 7,
+    "brand": "Dragon Ball",
+    "collection": "Dragon Ball",
+    "material": "Résine",
+    "dimensions": "75 cm",
+    "weight": "1,2 kg",
+    "condition": "Neuf",
+    "featured": true,
+    "tags": ["Dragon Ball", "Boules de cristal", "Décoration", "Collection"]
   },
   {
     "id": 11,
@@ -118,7 +218,17 @@
     "category": "Accessoires",
     "univers": "Pokemon",
     "description": "Manette sans fil au design Pokémon Pikachu et Ectoplasma, parfaite pour les sessions de jeu entre amis.",
-    "stock": 5
+    "shortDescription": "Manette sans fil Pokémon pour Nintendo Switch.",
+    "longDescription": "Une manette sans fil arborant un design mettant en scène Pikachu et Ectoplasma. Elle apporte une touche Pokémon aux sessions de jeu entre amis.",
+    "stock": 5,
+    "brand": "PowerA",
+    "collection": "Pokémon",
+    "material": "Plastique",
+    "dimensions": "16 x 11 x 6 cm",
+    "weight": "250 g",
+    "condition": "Neuf",
+    "featured": true,
+    "tags": ["Pokémon", "Pikachu", "Ectoplasma", "Manette"]
   },
   {
     "id": 12,
@@ -129,7 +239,17 @@
     "category": "Accessoires",
     "univers": "onePiece",
     "description": "Réplique du célèbre chapeau de paille porté par Luffy, un accessoire incontournable pour les fans de One Piece.",
-    "stock": 11
+    "shortDescription": "Réplique du chapeau de paille de Luffy.",
+    "longDescription": "Une réplique du célèbre chapeau de paille porté par Monkey D. Luffy. Un accessoire emblématique pour les fans de One Piece et les amateurs de cosplay.",
+    "stock": 11,
+    "brand": "One Piece",
+    "collection": "One Piece",
+    "material": "Paille",
+    "dimensions": "Diamètre 30 cm",
+    "weight": "150 g",
+    "condition": "Neuf",
+    "featured": false,
+    "tags": ["One Piece", "Luffy", "Chapeau", "Cosplay"]
   },
   {
     "id": 13,
@@ -140,7 +260,17 @@
     "category": "Figurines",
     "univers": "onePiece",
     "description": "Figurine de Monkey D. Luffy représentant le capitaine de l'équipage au Chapeau de Paille.",
-    "stock": 8
+    "shortDescription": "Figurine de Monkey D. Luffy.",
+    "longDescription": "Cette figurine représente Monkey D. Luffy, capitaine de l'équipage au Chapeau de Paille. Elle constitue une pièce idéale pour une collection dédiée à One Piece.",
+    "stock": 8,
+    "brand": "One Piece",
+    "collection": "One Piece",
+    "material": "PVC",
+    "dimensions": "18 cm",
+    "weight": "300 g",
+    "condition": "Neuf",
+    "featured": true,
+    "tags": ["One Piece", "Luffy", "Figurine", "Chapeau de Paille"]
   },
   {
     "id": 14,
@@ -151,7 +281,17 @@
     "category": "Cartes",
     "univers": "onePiece",
     "description": "Carte de collection représentant Gol D. Roger, le légendaire Roi des Pirates de l'univers One Piece.",
-    "stock": 4
+    "shortDescription": "Carte de collection de Gol D. Roger.",
+    "longDescription": "Une carte représentant Gol D. Roger, le légendaire Roi des Pirates. Cette pièce fictive est destinée aux collectionneurs souhaitant compléter une collection One Piece.",
+    "stock": 4,
+    "brand": "One Piece Card Game",
+    "collection": "OP09",
+    "material": "Carton",
+    "dimensions": "Standard",
+    "weight": "2 g",
+    "condition": "Neuf",
+    "featured": true,
+    "tags": ["One Piece", "Gol D. Roger", "Carte", "Rare"]
   },
   {
     "id": 15,
@@ -162,7 +302,17 @@
     "category": "Accessoires",
     "univers": "Yu-gi-ho",
     "description": "Collier inspiré du Puzzle du Millénium de Yu-Gi-Oh!, idéal pour les fans de la série et les collectionneurs.",
-    "stock": 14
+    "shortDescription": "Collier inspiré du Puzzle du Millénium.",
+    "longDescription": "Ce collier reprend le célèbre Puzzle du Millénium de Yu-Gi-Oh!. Un accessoire idéal pour afficher son univers préféré au quotidien ou compléter une collection.",
+    "stock": 14,
+    "brand": "Yu-Gi-Oh!",
+    "collection": "Millennium",
+    "material": "Alliage métallique",
+    "dimensions": "45 cm",
+    "weight": "80 g",
+    "condition": "Neuf",
+    "featured": false,
+    "tags": ["Yu-Gi-Oh!", "Yugi", "Millénium", "Collier"]
   },
   {
     "id": 16,
@@ -173,6 +323,16 @@
     "category": "Figurines",
     "univers": "Dragonball",
     "description": "Figurine de Vegeta inspirée de l'univers Dragon Ball, parfaite pour accompagner votre collection de figurines Saiyans.",
-    "stock": 6
+    "shortDescription": "Figurine de Vegeta inspirée de Dragon Ball.",
+    "longDescription": "Cette figurine représente Vegeta et complète parfaitement une collection de personnages Saiyans. Une pièce idéale pour les fans de Dragon Ball.",
+    "stock": 6,
+    "brand": "Dragon Ball",
+    "collection": "Dragon Ball",
+    "material": "PVC",
+    "dimensions": "20 cm",
+    "weight": "350 g",
+    "condition": "Neuf",
+    "featured": false,
+    "tags": ["Dragon Ball", "Vegeta", "Saiyan", "Figurine"]
   }
 ]

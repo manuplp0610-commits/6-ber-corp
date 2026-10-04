@@ -12,6 +12,7 @@ import Dashboard from "../pages/dashboard/Dashboard";
 import Contact from "../pages/contact/Contact";
 import ProtectedRoute from "../components/protectedRoute/ProtectedRoute";
 import NoFound from "../pages/noFound/NoFound";
+import ProductDetails from "../pages/productDetails/ProductDetails";
 
 const router = createBrowserRouter(
   [
@@ -26,6 +27,10 @@ const router = createBrowserRouter(
         {
           path: "/shop",
           element: <Shop />,
+        },
+        {
+          path: "/shop/:id",
+          element: <ProductDetails />,
         },
         {
           path: "/bar",
