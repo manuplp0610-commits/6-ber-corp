@@ -33,9 +33,9 @@
   align-items: center;
   gap: 8px;
   max-width: 1100px;
-  margin: 0 auto 20px;
+  margin: 20px auto 20px;
   padding: 8px 13px;
-  color: #b9bbc4;
+  color: var(--color-primary);
   background: #151722;
   border: 1px solid #393c49;
   border-radius: 5px;
@@ -67,8 +67,12 @@
   background: #181a25;
   border: 1px solid #393c49;
   border-radius: 12px;
+  transition: all 0.3s;
 }
-
+.product-details-card:hover {
+  border: 1px solid var(--color-primary);
+  transform: scale(1.02);
+}
 /* =================================
    IMAGE
 ================================= */
@@ -236,8 +240,14 @@
   background: #181a25;
   border: 1px solid #2e303c;
   border-radius: 10px;
+  transition: all 0.3s;
 }
-
+.product-description:hover,
+.product-specifications:hover,
+.product-tags:hover {
+  border: 1px solid var(--color-primary);
+  transform: scale(1.02);
+}
 .product-description h2,
 .product-specifications h2,
 .product-tags h2 {
