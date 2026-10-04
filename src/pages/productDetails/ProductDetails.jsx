@@ -16,6 +16,7 @@ export default function ProductDetails() {
 
   const [product, setProduct] = useState(null);
   const [loading, setLoading] = useState(true);
+  const [isImageOpen, setIsImageOpen] = useState(false);
 
   useEffect(() => {
     fetch(`${import.meta.env.BASE_URL}data/articles.json`)
@@ -75,7 +76,10 @@ export default function ProductDetails() {
       </button>
 
       <section className="product-details-card">
-        <div className="product-details-image">
+        <div
+          className="product-details-image"
+          onClick={() => setIsImageOpen(true)}
+        >
           <img src={product.image} alt={product.name} />
         </div>
 
@@ -140,7 +144,25 @@ export default function ProductDetails() {
           </div>
         </div>
       </section>
+      {isImageOpen && (
+        <div className="image-lightbox" onClick={() => setIsImageOpen(false)}>
+          <button
+            type="button"
+            className="image-lightbox-close"
+            onClick={() => setIsImageOpen(false)}
+            aria-label="Fermer l'image"
+          >
+            ×
+          </button>
 
+          <img
+            src={product.image}
+            alt={product.name}
+            className="image-lightbox-img"
+            onClick={(event) => event.stopPropagation()}
+          />
+        </div>
+      )}
       <section className="product-description">
         <h2>Description</h2>
 
