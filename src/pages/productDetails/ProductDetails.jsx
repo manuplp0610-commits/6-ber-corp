@@ -19,7 +19,7 @@ export default function ProductDetails() {
   const [isImageOpen, setIsImageOpen] = useState(false);
 
   useEffect(() => {
-    fetch(`${import.meta.env.BASE_URL}data/articles.json`)
+    fetch("http://localhost:3000/api/articles")
       .then((response) => {
         if (!response.ok) {
           throw new Error("Erreur lors du chargement des produits");
@@ -152,7 +152,7 @@ export default function ProductDetails() {
       <section className="product-description">
         <h2>Description</h2>
 
-        <p>{product.longDescription}</p>
+        <p>{product.description}</p>
       </section>
 
       <section className="product-specifications">
@@ -185,7 +185,7 @@ export default function ProductDetails() {
         <h2>Tags</h2>
 
         <div className="tags-list">
-          {product.tags.map((tag) => (
+          {product.tags?.map((tag) => (
             <span key={tag}>{tag}</span>
           ))}
         </div>

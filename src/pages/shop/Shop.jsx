@@ -1,70 +1,98 @@
-import { useEffect, useMemo, useState } from "react";
 import "./shop.css";
-import HeaderPages from "../../components/headerPages/HeaderPages";
-import Article from "../../components/article/Article";
-import { Link } from "react-router-dom";
 import { motion, AnimatePresence } from "motion/react";
-import InfoFlashBanner from "../../components/infoFlashBanner/InfoFlashBanner";
+import HeaderPages from "../../components/headerPages/HeaderPages";
+import { Link } from "react-router-dom";
+import { useEffect, useState, useMemo } from "react";
+import Article from "../../components/article/Article";
 
-export default function Shop() {
-  const [articles, setArticles] = useState([]);
+export default function Shopshpp() {
+  // Appel fetch
+
+  const [apiState, setApiState] = useState({
+    loading: false,
+    error: false,
+    data: undefined,
+  });
+
   const [selectedUniverse, setSelectedUniverse] = useState("tout");
   const [selectedCategory, setSelectedCategory] = useState("tout");
   const [sortPrice, setSortPrice] = useState("pertinence");
+
   useEffect(() => {
-    fetch(`${import.meta.env.BASE_URL}data/articles.json`)
-      .then((response) => {
-        return response.json();
+    setApiState((prev) => ({ ...prev, loading: true }));
+
+    fetch("http://localhost:3000/api/articles")
+      .then((res) => {
+        if (!res.ok) throw new Error("Erreur API");
+        return res.json();
       })
-      .then((result) => {
-        setArticles(result);
+      .then((data) => {
+        setApiState({ loading: false, error: false, data });
       })
-      .catch((error) => {
-        console.error(error);
+      .catch(() => {
+        setApiState({ loading: false, error: true, data: undefined });
       });
-  });
+  }, []);
+
+  // Univers
 
   const universes = useMemo(() => {
-    return ["tout", ...new Set(articles.map((article) => article.univers))];
-  }, [articles]);
+    return [
+      "tout",
+      ...new Set((apiState.data ?? []).map((article) => article.brand)),
+    ];
+  }, [apiState.data]);
+
+  // Catégories
 
   const categories = useMemo(() => {
-    return ["tout", ...new Set(articles.map((article) => article.category))];
-  }, [articles]);
+    return [
+      "tout",
+      ...new Set((apiState.data ?? []).map((article) => article.category)),
+    ];
+  }, [apiState.data]);
+
+  // Filtrage et tri des articles
 
   const filteredArticles = useMemo(() => {
-    const filtered = articles.filter((article) => {
-      const matchesUniverse =
-        selectedUniverse === "tout" || article.univers === selectedUniverse;
+    let result = [...(apiState.data ?? [])];
 
-      const matchesCategory =
-        selectedCategory === "tout" || article.category === selectedCategory;
+    if (selectedUniverse !== "tout") {
+      result = result.filter((article) => article.brand === selectedUniverse);
+    }
 
-      return matchesUniverse && matchesCategory;
-    });
+    if (selectedCategory !== "tout") {
+      result = result.filter(
+        (article) => article.category === selectedCategory,
+      );
+    }
 
-    return [...filtered].sort((a, b) => {
-      switch (sortPrice) {
-        case "price-asc":
-          return a.price - b.price;
+    if (sortPrice === "price-asc") {
+      result.sort((a, b) => a.price - b.price);
+    } else if (sortPrice === "price-desc") {
+      result.sort((a, b) => b.price - a.price);
+    }
 
-        case "price-desc":
-          return b.price - a.price;
+    return result;
+  }, [apiState.data, selectedUniverse, selectedCategory, sortPrice]);
 
-        case "popularity":
-          return b.rating - a.rating;
+  // Affichage des articles
 
-        default:
-          return b.id - a.id;
-      }
-    });
-  }, [articles, selectedUniverse, selectedCategory, sortPrice]);
+  let content = "";
 
-  const resetFilters = () => {
-    setSelectedUniverse("tout");
-    setSelectedCategory("tout");
-    setSortPrice("pertinence");
-  };
+  if (apiState.loading) content = "Chargement...";
+  else if (apiState.error) content = "Une erreur est survenue";
+  else if (filteredArticles.length > 0) {
+    content = (
+      <ul>
+        {filteredArticles.map((item) => (
+          <Article key={item.id} article={item} />
+        ))}
+      </ul>
+    );
+  } else if (apiState.data?.length >= 0) {
+    content = "Aucun article disponible";
+  }
 
   return (
     <section className="shop-page">
@@ -72,6 +100,7 @@ export default function Shop() {
         title="La Boutique"
         subTitle="Découvrez une sélection de produits geek et pop culture disponibles directement chez 6 Ber-Corp."
       />
+
       <section className="shop-hero">
         <motion.div
           className="shop-hero-content"
@@ -118,6 +147,7 @@ export default function Shop() {
             </a>
           </motion.div>
         </motion.div>
+
         <div className="shop-hero-decoration" aria-hidden="true">
           <span>✦</span>
           <span>◈</span>
@@ -143,6 +173,7 @@ export default function Shop() {
             notre équipe.
           </p>
         </div>
+
         <Link to="/contact" className="shop-intro-link">
           Nous trouver
           <span>→</span>
@@ -166,161 +197,71 @@ export default function Shop() {
             </h2>
           </div>
 
-          <p>
-            {filteredArticles.length} article
-            {filteredArticles.length > 1 ? "s" : ""} disponible
-            {filteredArticles.length > 1 ? "s" : ""}
-          </p>
+          <p>{filteredArticles.length} articles disponibles</p>
         </motion.div>
-
-        <motion.div
-          className="shop-controls"
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, amount: 0.2 }}
-          transition={{ duration: 0.6, delay: 0.1 }}
-        >
-          <div className="filter-group">
-            <span className="filter-label">Univers</span>
-
-            <div className="filter-buttons">
-              {universes.map((universe) => (
-                <button
-                  type="button"
-                  key={universe}
-                  className={
-                    selectedUniverse === universe
-                      ? "filter-button active"
-                      : "filter-button"
-                  }
-                  onClick={() => setSelectedUniverse(universe)}
-                >
-                  {universe === "tout" ? "Tous les univers" : universe}
-                </button>
-              ))}
-            </div>
-          </div>
-
-          <div className="catalogue-sort">
-            <label htmlFor="shop-sort">Trier par</label>
-
-            <select
-              id="shop-sort"
-              value={sortPrice}
-              onChange={(event) => setSortPrice(event.target.value)}
-            >
-              <option value="pertinence">Pertinence</option>
-              <option value="price-asc">Prix croissant</option>
-              <option value="price-desc">Prix décroissant</option>
-              <option value="popularity">Popularité</option>
-            </select>
-          </div>
-        </motion.div>
-
-        <motion.div
-          className="category-filter"
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, amount: 0.2 }}
-          transition={{ duration: 0.6, delay: 0.2 }}
-        >
-          <span className="filter-label">Catégorie</span>
-
-          <div className="category-buttons">
-            {categories.map((category) => (
-              <button
-                type="button"
-                key={category}
-                className={
-                  selectedCategory === category
-                    ? "category-button active"
-                    : "category-button"
-                }
-                onClick={() => setSelectedCategory(category)}
-              >
-                {category === "tout" ? "Toutes" : category}
-              </button>
-            ))}
-          </div>
-        </motion.div>
-
-        {(selectedUniverse !== "tout" ||
-          selectedCategory !== "tout" ||
-          sortPrice !== "pertinence") && (
-          <button
-            type="button"
-            className="reset-filters"
-            onClick={resetFilters}
-          >
-            Réinitialiser les filtres
-          </button>
-        )}
-        <InfoFlashBanner
-          variant={"shop"}
-          title={"Ouverture prochaine"}
-          info={"Retrouvez bientôt tous nos articles directement en magasin."}
-          link={
-            "Inscrivez-vous à notre newsletter pour ne pas manquer notre ouverture."
-          }
-        />
-        {filteredArticles.length > 0 ? (
-          <AnimatePresence mode="popLayout">
-            <div className="articles-grid">
-              {filteredArticles.map((article, index) => (
-                <motion.div
-                  key={article.id}
-                  initial={{ opacity: 0, y: 25 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  exit={{ opacity: 0, y: -15 }}
-                  transition={{
-                    duration: 0.4,
-                    delay: index * 0.04,
-                  }}
-                >
-                  <Article article={article} />
-                </motion.div>
-              ))}
-            </div>
-          </AnimatePresence>
-        ) : (
-          <div className="empty-catalogue">
-            <span>◌</span>
-            <h3>Aucun article trouvé</h3>
-            <p>
-              Essayez une autre combinaison de filtres pour découvrir notre
-              sélection.
-            </p>
-
-            <button
-              type="button"
-              className="shop-primary-button"
-              onClick={resetFilters}
-            >
-              Afficher tous les articles
-            </button>
-          </div>
-        )}
       </section>
 
-      <section className="shop-bottom-cta">
-        <div>
-          <span className="section-label">Une question sur un article ?</span>
+      {/* Filtres */}
 
-          <h2>
-            Passez nous voir
-            <span> en boutique.</span>
-          </h2>
+      <div className="shop-controls">
+        <div className="filter-group">
+          <label className="filter-label" htmlFor="shop-universe">
+            Univers
+          </label>
 
-          <p>
-            Notre équipe est là pour vous présenter les produits disponibles et
-            vous aider à trouver la pièce parfaite pour votre univers.
-          </p>
+          <select
+            id="shop-universe"
+            value={selectedUniverse}
+            onChange={(e) => setSelectedUniverse(e.target.value)}
+          >
+            {universes.map((item) => (
+              <option key={item} value={item}>
+                {item === "tout" ? "Tous les univers" : item}
+              </option>
+            ))}
+          </select>
         </div>
 
-        <Link to="/contact" className="shop-primary-button">
-          Découvrir 6 Ber-Corp
-        </Link>
-      </section>
+        <div className="catalogue-sort">
+          <label htmlFor="shop-sort">Trier par</label>
+
+          <select
+            id="shop-sort"
+            value={sortPrice}
+            onChange={(e) => setSortPrice(e.target.value)}
+          >
+            <option value="pertinence">Pertinence</option>
+            <option value="price-asc">Prix croissant</option>
+            <option value="price-desc">Prix décroissant</option>
+            <option value="popularity">Popularité</option>
+          </select>
+        </div>
+      </div>
+
+      {/* Catégories */}
+
+      <div className="category-filter">
+        <span className="filter-label">Catégorie</span>
+
+        <div className="category-buttons">
+          {categories.map((item) => (
+            <button
+              key={item}
+              type="button"
+              className={`category-button ${
+                selectedCategory === item ? "active" : ""
+              }`}
+              onClick={() => setSelectedCategory(item)}
+            >
+              {item === "tout" ? "Toutes" : item}
+            </button>
+          ))}
+        </div>
+      </div>
+
+      {/* Articles */}
+
+      <div className="articles-content">{content}</div>
     </section>
   );
 }

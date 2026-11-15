@@ -68,10 +68,6 @@
 ================================= */
 
 .article-badge {
-  position: absolute;
-  z-index: 2;
-  top: 14px;
-  left: 14px;
   padding: 7px 10px;
   color: #171923;
   background: var(--color-primary);
@@ -122,8 +118,9 @@
 ================================= */
 
 .article-name {
-  min-height: 45px;
+  height: 45px;
   margin: 0 0 12px;
+  overflow: hidden;
   color: #ffffff;
   font-size: 1.1rem;
   font-weight: 750;
@@ -149,13 +146,6 @@
   font-weight: 800;
 }
 
-.article-rating {
-  color: #d6d7dc;
-  font-size: 0.75rem;
-  font-weight: 700;
-  white-space: nowrap;
-}
-
 .article-rating::first-letter {
   color: #ff9900;
 }
@@ -166,8 +156,8 @@
 
 .article-description {
   display: -webkit-box;
+  height: 63px;
   overflow: hidden;
-  min-height: 63px;
   margin: 0;
   color: #a9abb5;
   font-size: 0.87rem;
@@ -224,13 +214,6 @@
     padding: 10px;
   }
 
-  .article-badge {
-    top: 8px;
-    left: 8px;
-    padding: 5px 7px;
-    font-size: 0.52rem;
-  }
-
   .article-info {
     padding: 11px;
   }
@@ -246,7 +229,7 @@
   }
 
   .article-name {
-    min-height: 36px;
+    height: 36px;
     margin-bottom: 7px;
     font-size: 0.82rem;
     line-height: 1.25;
@@ -259,10 +242,6 @@
 
   .article-price {
     font-size: 1rem;
-  }
-
-  .article-rating {
-    font-size: 0.6rem;
   }
 
   .article-description {

@@ -13,15 +13,11 @@ export default function Article({ article }) {
             className="article-image"
             loading="lazy"
           />
-
-          {article.rating === 5 && (
-            <span className="article-badge">Incontournable</span>
-          )}
         </div>
 
         <div className="article-info">
           <div className="article-meta">
-            <span>{article.univers}</span>
+            <span>{article.brand}</span>
             <span>{article.category}</span>
           </div>
 
@@ -29,9 +25,8 @@ export default function Article({ article }) {
 
           <div className="article-price-row">
             <p className="article-price">{article.price} €</p>
-
-            {article.rating && (
-              <span className="article-rating">★ {article.rating}/5</span>
+            {article.stock > 0 && (
+              <span className="article-badge">En stock</span>
             )}
           </div>
 

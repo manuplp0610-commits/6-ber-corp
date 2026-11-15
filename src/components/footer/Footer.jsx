@@ -47,7 +47,7 @@ export default function Footer() {
           <input
             type="email"
             id="newsletter-email"
-            placeholder="ton@emial"
+            placeholder="ton@email"
             required
           />
 
