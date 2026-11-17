@@ -19,7 +19,7 @@ export default function ProductDetails() {
   const [isImageOpen, setIsImageOpen] = useState(false);
 
   useEffect(() => {
-    fetch("http://localhost:3000/api/articles")
+    fetch("https://api-hf41.onrender.com/api/article")
       .then((response) => {
         if (!response.ok) {
           throw new Error("Erreur lors du chargement des produits");
