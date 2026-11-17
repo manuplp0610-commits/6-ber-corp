@@ -2,26 +2,46 @@ import { useState, useEffect } from "react";
 import "../info/info.css";
 
 export default function Info() {
-  const [businessInfo, setBusinessInfo] = useState([]);
+  const [apiState, setApiState] = useState({
+    loading: true,
+    error: false,
+    data: undefined,
+  });
 
   useEffect(() => {
-    fetch(`${import.meta.env.BASE_URL}data/businessInfo.json`)
-      .then((response) => {
-        if (!response.ok) {
-          throw new Error("Erreur lors du chargement des informations");
+    fetch("https://api-hf41.onrender.com/api/businessInfo")
+      .then((res) => {
+        if (!res.ok) {
+          throw new Error("Erreur lors du chargement des PC");
         }
-
-        return response.json();
+        return res.json();
       })
-      .then((result) => {
-        setBusinessInfo(result);
+      .then((data) => {
+        setApiState({
+          loading: false,
+          error: false,
+          data,
+        });
       })
       .catch((error) => {
+        setApiState({
+          loading: false,
+          error: true,
+          data: undefined,
+        });
         console.error(error);
       });
   }, []);
 
-  const info = businessInfo[0];
+  let content = null;
+
+  if (apiState.loading) {
+    content = <p>Chargement des PC...</p>;
+  } else if (apiState.error) {
+    content = <p>Une erreur est survenue lors du chargement des PC.</p>;
+  } else if (!apiState.data?.length) {
+    content = <p>Aucun PC disponible pour le moment.</p>;
+  }
 
   return (
     <section className="infos">
@@ -30,7 +50,7 @@ export default function Info() {
           <div className="info-icon">⏰</div>
           <div>
             <div className="info-label">Horaires</div>
-            <div className="info-value">{info?.openHoursCut}</div>
+            <div className="info-value">{apiState.data?.openHoursCut}</div>
           </div>
         </div>
 
@@ -39,9 +59,9 @@ export default function Info() {
           <div>
             <div className="info-label">Adresse</div>
             <div className="info-value">
-              {info?.adress?.rue}, {info?.adress?.numero}
+              {apiState.data?.adress?.rue}, {apiState.data?.adress?.numero}
               <br />
-              {info?.adress?.cp} {info?.adress?.ville}
+              {apiState.data?.adress?.cp} {apiState.data?.adress?.ville}
             </div>
           </div>
         </div>
@@ -50,8 +70,8 @@ export default function Info() {
           <div className="info-icon">☎</div>
           <div>
             <div className="info-label">Contact</div>
-            <a href={`tel:${info?.phone}`} className="info-value">
-              {info?.phone}
+            <a href={`tel:${apiState.data?.phone}`} className="info-value">
+              {apiState.data?.phone}
             </a>
           </div>
         </div>

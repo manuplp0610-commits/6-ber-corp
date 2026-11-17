@@ -12,26 +12,46 @@ const logo = `${import.meta.env.BASE_URL}logoSmall.webp`;
 
 export default function Footer() {
   const [seoOpen, setSeoOpen] = useState(false);
-  const [businessInfo, setBusinessInfo] = useState([]);
+  const [apiState, setApiState] = useState({
+    loading: true,
+    error: false,
+    data: undefined,
+  });
 
   useEffect(() => {
-    fetch(`${import.meta.env.BASE_URL}data/businessInfo.json`)
-      .then((response) => {
-        if (!response.ok) {
-          throw new Error("Erreur lors du chargement des informations");
+    fetch("https://api-hf41.onrender.com/api/businessInfo")
+      .then((res) => {
+        if (!res.ok) {
+          throw new Error("Erreur lors du chargement des PC");
         }
-
-        return response.json();
+        return res.json();
       })
-      .then((result) => {
-        setBusinessInfo(result);
+      .then((data) => {
+        setApiState({
+          loading: false,
+          error: false,
+          data,
+        });
       })
       .catch((error) => {
+        setApiState({
+          loading: false,
+          error: true,
+          data: undefined,
+        });
         console.error(error);
       });
   }, []);
 
-  const info = businessInfo[0];
+  let content = null;
+
+  if (apiState.loading) {
+    content = <p>Chargement des PC...</p>;
+  } else if (apiState.error) {
+    content = <p>Une erreur est survenue lors du chargement des PC.</p>;
+  } else if (!apiState.data?.length) {
+    content = <p>Aucun PC disponible pour le moment.</p>;
+  }
 
   return (
     <footer id="footer">
@@ -141,24 +161,27 @@ export default function Footer() {
 
           <ul>
             <li>Authorisations</li>
-            <li>
+
+            <li className="seo-item">
               <button
                 type="button"
                 onClick={() => setSeoOpen((prev) => !prev)}
                 aria-expanded={seoOpen}
               >
-                SEO partners
+                Nos recommandations
               </button>
 
               {seoOpen && (
-                <a
-                  className="seo-link"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  href="https://www.motcha-barista.be/"
-                >
-                  - Motcha-Barista
-                </a>
+                <div className="seo-links">
+                  <a
+                    className="seo-link"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    href="https://www.motcha-barista.be/"
+                  >
+                    Motcha-Barista
+                  </a>
+                </div>
               )}
             </li>
           </ul>
@@ -168,14 +191,14 @@ export default function Footer() {
           <h4>Pratique</h4>
 
           <ul>
-            <li>{info?.openHoursCut}</li>
+            <li>{apiState.data?.openHoursCut}</li>
             <li>
-              {info?.adress?.rue} {info?.adress?.numero},
+              {apiState.data?.adress?.rue} {apiState.data?.adress?.numero},
               <br />
-              {info?.adress?.cp} {info?.adress?.ville}
+              {apiState.data?.adress?.cp} {apiState.data?.adress?.ville}
             </li>
-            <li>{info?.phone}</li>
-            <li>{info?.mail}</li>
+            <li>{apiState.data?.phone}</li>
+            <li>{apiState.data?.mail}</li>
           </ul>
         </div>
       </div>

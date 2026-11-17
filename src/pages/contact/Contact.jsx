@@ -26,19 +26,46 @@ import {
 import { useEffect, useState } from "react";
 
 export default function Contact() {
-  const [businessInfo, setBusinessInfo] = useState({});
+  const [apiState, setApiState] = useState({
+    loading: true,
+    error: false,
+    data: undefined,
+  });
+
   useEffect(() => {
-    fetch(`${import.meta.env.BASE_URL}data/businessInfo.json`)
-      .then((response) => {
-        return response.json();
+    fetch("https://api-hf41.onrender.com/api/businessInfo")
+      .then((res) => {
+        if (!res.ok) {
+          throw new Error("Erreur lors du chargement des PC");
+        }
+        return res.json();
       })
-      .then((result) => {
-        setBusinessInfo(result);
+      .then((data) => {
+        setApiState({
+          loading: false,
+          error: false,
+          data,
+        });
       })
       .catch((error) => {
+        setApiState({
+          loading: false,
+          error: true,
+          data: undefined,
+        });
         console.error(error);
       });
   }, []);
+
+  let content = null;
+
+  if (apiState.loading) {
+    content = <p>Chargement des PC...</p>;
+  } else if (apiState.error) {
+    content = <p>Une erreur est survenue lors du chargement des PC.</p>;
+  } else if (!apiState.data?.length) {
+    content = <p>Aucun PC disponible pour le moment.</p>;
+  }
 
   return (
     <section className="contact-page">
@@ -83,13 +110,13 @@ export default function Contact() {
                   <div>
                     <h3>Adresse</h3>
                     <p>
-                      {businessInfo[0]?.adress.rue},
-                      {businessInfo[0]?.adress.numero}
+                      {apiState.data?.adress?.rue},
+                      {apiState.data?.adress?.numero}
                       <br />
-                      {businessInfo[0]?.adress.cp}
-                      {businessInfo[0]?.adress.ville}
+                      {apiState.data?.adress?.cp}
+                      {apiState.data?.adress?.ville}
                       <br />
-                      {businessInfo[0]?.adress.pays}
+                      {apiState.data?.adress?.pays}
                     </p>
                   </div>
                 </a>
@@ -103,7 +130,7 @@ export default function Contact() {
                 <div>
                   <h3>Téléphone</h3>
                   <p>
-                    <a href="tel:+32471284870">{businessInfo[0]?.phone}</a>
+                    <a href="tel:+32471284870">{apiState.data?.phone}</a>
                   </p>
                 </div>
               </article>
@@ -121,7 +148,7 @@ export default function Contact() {
                       target="_blank"
                       rel="noopener noreferrer"
                     >
-                      {businessInfo[0]?.mail}
+                      {apiState.data?.mail}
                     </a>
                   </p>
                 </div>
@@ -135,9 +162,9 @@ export default function Contact() {
                 <div>
                   <h3>Horaires</h3>
                   <p>
-                    {businessInfo[0]?.dayOff} : <span>FERMÉ</span>
+                    {apiState.data?.dayOff} : <span>FERMÉ</span>
                     <br />
-                    {businessInfo[0]?.openHours}
+                    {apiState.data?.openHours}
                   </p>
                 </div>
               </article>

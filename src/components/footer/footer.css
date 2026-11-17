@@ -132,9 +132,18 @@ footer {
 .footer-col ul a:hover {
   color: #f2efe8;
 }
-.seo-link {
-  font-weight: bold;
-  color: white;
+.seo-item {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.seo-links {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-top: 8px;
+  padding-left: 12px;
 }
 .footer-col-prat ul li {
   color: white;
