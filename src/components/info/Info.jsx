@@ -2,10 +2,15 @@ import { useState, useEffect } from "react";
 import "../info/info.css";
 
 export default function Info() {
-  const [businessInfo, setBusinessInfo] = useState({});
+  const [businessInfo, setBusinessInfo] = useState([]);
+
   useEffect(() => {
     fetch(`${import.meta.env.BASE_URL}data/businessInfo.json`)
       .then((response) => {
+        if (!response.ok) {
+          throw new Error("Erreur lors du chargement des informations");
+        }
+
         return response.json();
       })
       .then((result) => {
@@ -15,6 +20,9 @@ export default function Info() {
         console.error(error);
       });
   }, []);
+
+  const info = businessInfo[0];
+
   return (
     <section className="infos">
       <div className="wrap infos-grid">
@@ -22,26 +30,28 @@ export default function Info() {
           <div className="info-icon">⏰</div>
           <div>
             <div className="info-label">Horaires</div>
-            <div className="info-value">{businessInfo[0]?.openHoursCut}</div>
+            <div className="info-value">{info?.openHoursCut}</div>
           </div>
         </div>
+
         <div className="info-item">
           <div className="info-icon">📍</div>
           <div>
             <div className="info-label">Adresse</div>
             <div className="info-value">
-              {businessInfo[0]?.adress.rue}, {businessInfo[0]?.adress.numero}
-              <br /> {businessInfo[0]?.adress.cp}{" "}
-              {businessInfo[0]?.adress.ville}
+              {info?.adress?.rue}, {info?.adress?.numero}
+              <br />
+              {info?.adress?.cp} {info?.adress?.ville}
             </div>
           </div>
         </div>
+
         <div className="info-item">
           <div className="info-icon">☎</div>
           <div>
             <div className="info-label">Contact</div>
-            <a href="tel:+32471284870" className="info-value">
-              {businessInfo[0]?.phone}
+            <a href={`tel:${info?.phone}`} className="info-value">
+              {info?.phone}
             </a>
           </div>
         </div>

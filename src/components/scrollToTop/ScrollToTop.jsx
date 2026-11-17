@@ -8,13 +8,13 @@ export default function ScrollToTop() {
     window.history.scrollRestoration = "manual";
 
     if (hash) {
-      const element = document.querySelector(hash);
+      requestAnimationFrame(() => {
+        const element = document.querySelector(hash);
 
-      if (element) {
-        element.scrollIntoView({
+        element?.scrollIntoView({
           behavior: "smooth",
         });
-      }
+      });
 
       return;
     }

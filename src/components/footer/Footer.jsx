@@ -1,5 +1,4 @@
 import { useState, useEffect } from "react";
-import logo from "../../../public/logoSmall.webp";
 import "./footer.css";
 import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -9,12 +8,19 @@ import {
   faDiscord,
 } from "@fortawesome/free-brands-svg-icons";
 
+const logo = `${import.meta.env.BASE_URL}logoSmall.webp`;
+
 export default function Footer() {
   const [seoOpen, setSeoOpen] = useState(false);
-  const [businessInfo, setBusinessInfo] = useState({});
+  const [businessInfo, setBusinessInfo] = useState([]);
+
   useEffect(() => {
     fetch(`${import.meta.env.BASE_URL}data/businessInfo.json`)
       .then((response) => {
+        if (!response.ok) {
+          throw new Error("Erreur lors du chargement des informations");
+        }
+
         return response.json();
       })
       .then((result) => {
@@ -24,6 +30,9 @@ export default function Footer() {
         console.error(error);
       });
   }, []);
+
+  const info = businessInfo[0];
+
   return (
     <footer id="footer">
       <div className="newsletter">
@@ -59,7 +68,7 @@ export default function Footer() {
 
       <div className="footer-grid">
         <div className="footer-col footer-brand">
-          <a href="#" className="nav-logo">
+          <Link to="/" className="nav-logo">
             <img
               className="logo-footer"
               src={logo}
@@ -67,7 +76,8 @@ export default function Footer() {
               width="120"
               height="114"
             />
-          </a>
+          </Link>
+
           <p>
             Le bar TCG où cartes, consoles et PC se retrouvent autour d'un bon
             verre.
@@ -76,6 +86,7 @@ export default function Footer() {
           <div className="footer-social-links">
             <a
               target="_blank"
+              rel="noopener noreferrer"
               href="https://www.instagram.com/6ber.corp/"
               aria-label="Instagram"
             >
@@ -91,6 +102,7 @@ export default function Footer() {
 
             <a
               target="_blank"
+              rel="noopener noreferrer"
               href="https://discord.gg/d2Qqt22ne"
               aria-label="Discord"
             >
@@ -130,16 +142,19 @@ export default function Footer() {
           <ul>
             <li>Authorisations</li>
             <li>
-              <p
-                style={{ cursor: "pointer" }}
-                onClick={() => setSeoOpen(!seoOpen)}
+              <button
+                type="button"
+                onClick={() => setSeoOpen((prev) => !prev)}
+                aria-expanded={seoOpen}
               >
                 SEO partners
-              </p>
+              </button>
+
               {seoOpen && (
                 <a
                   className="seo-link"
                   target="_blank"
+                  rel="noopener noreferrer"
                   href="https://www.motcha-barista.be/"
                 >
                   - Motcha-Barista
@@ -153,21 +168,21 @@ export default function Footer() {
           <h4>Pratique</h4>
 
           <ul>
-            <li>{businessInfo[0]?.openHoursCut}</li>
+            <li>{info?.openHoursCut}</li>
             <li>
-              {businessInfo[0]?.adress.rue} {businessInfo[0]?.adress.numero},
-              <br /> {businessInfo[0]?.adress.cp}{" "}
-              {businessInfo[0]?.adress.ville}
+              {info?.adress?.rue} {info?.adress?.numero},
+              <br />
+              {info?.adress?.cp} {info?.adress?.ville}
             </li>
-            <li>{businessInfo[0]?.phone}</li>
-            <li>{businessInfo[0]?.mail}</li>
+            <li>{info?.phone}</li>
+            <li>{info?.mail}</li>
           </ul>
         </div>
       </div>
 
       <div className="footer-bottom">
-        © 2026 6Ber-Corp. Tous droits réservés. Website create by{" "}
-        <a href="">Nova Dev</a>
+        © 2026 6Ber-Corp. Tous droits réservés. Website created by{" "}
+        <a href="#">Nova Dev</a>
       </div>
     </footer>
   );

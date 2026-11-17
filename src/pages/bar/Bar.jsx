@@ -1,34 +1,50 @@
 import "./bar.css";
-
 import HeaderPages from "../../components/headerPages/HeaderPages";
-
 import { useEffect, useState } from "react";
 import { motion } from "motion/react";
 
 export default function Bar() {
   const [apiState, setApiState] = useState({
-    loading: false,
+    loading: true,
     error: false,
     data: undefined,
   });
 
   useEffect(() => {
-    setApiState({ ...apiState, loading: true });
     fetch("https://api-hf41.onrender.com/api/bar")
-      .then((res) => res.json())
+      .then((res) => {
+        if (!res.ok) {
+          throw new Error("Erreur lors du chargement du menu");
+        }
+        return res.json();
+      })
       .then((data) => {
-        setApiState({ ...apiState, loading: false, data: data });
+        setApiState({
+          loading: false,
+          error: false,
+          data,
+        });
       })
       .catch((error) => {
-        setApiState({ ...apiState, error: true });
+        setApiState({
+          loading: false,
+          error: true,
+          data: undefined,
+        });
         console.error(error);
       });
   }, []);
 
-  let content = "";
-  if (apiState.loading) content = <p>Chargement</p>;
-  else if (apiState.error) content = <p>Une erreur est survenue</p>;
-  else if (apiState.data?.length === 0) content = <p>Aucun article trouvé</p>;
+  let content = null;
+
+  if (apiState.loading) {
+    content = <p>Chargement du menu...</p>;
+  } else if (apiState.error) {
+    content = <p>Une erreur est survenue lors du chargement du menu.</p>;
+  } else if (!apiState.data?.drink?.length && !apiState.data?.food?.length) {
+    content = <p>Aucun article trouvé.</p>;
+  }
+
   return (
     <section className="bar-page">
       <HeaderPages
@@ -65,92 +81,30 @@ export default function Bar() {
         </div>
       </motion.section>
 
-      <section className="bar-menu-section">
-        {/* =========================
-            À BOIRE
-        ========================= */}
+      {content ? (
+        content
+      ) : (
+        <section className="bar-menu-section">
+          {/* =========================
+              À BOIRE
+          ========================= */}
 
-        <div className="bar-category-header">
-          <span className="bar-kicker">À boire</span>
-
-          <h2>Petite soif ?</h2>
-        </div>
-
-        <div className="bar-subcategory">
-          <h3>Sans alcool</h3>
-
-          <div className="bar-items">
-            {apiState.data?.drink
-              .filter((item) => item.alcool === false)
-              .map((item) => (
-                <div className="bar-item" key={item.id}>
-                  <div className="bar-item-info">
-                    <h4>{item.name}</h4>
-
-                    <p>{item.description}</p>
-                  </div>
-
-                  <span className="bar-item-line"></span>
-
-                  <strong className="bar-item-price">{item.price} €</strong>
-                </div>
-              ))}
-          </div>
-        </div>
-
-        <div className="bar-subcategory">
-          <h3>Avec alcool</h3>
-
-          <div className="bar-items">
-            {apiState.data?.drink
-              .filter((item) => item.alcool === true)
-              .map((item) => (
-                <div className="bar-item" key={item.id}>
-                  <div className="bar-item-info">
-                    <h4>{item.name}</h4>
-
-                    <p>{item.description}</p>
-                  </div>
-
-                  <span className="bar-item-line"></span>
-
-                  <strong className="bar-item-price">{item.price} €</strong>
-                </div>
-              ))}
-          </div>
-        </div>
-
-        {/* =========================
-            À MANGER
-        ========================= */}
-
-        <motion.div
-          className="bar-menu-category"
-          initial={{ opacity: 0, y: 35 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, amount: 0.15 }}
-          transition={{
-            duration: 0.65,
-            ease: "easeOut",
-          }}
-        >
           <div className="bar-category-header">
-            <span className="bar-kicker">À manger</span>
+            <span className="bar-kicker">À boire</span>
 
-            <h2>Petite faim ?</h2>
+            <h2>Petite soif ?</h2>
           </div>
 
           <div className="bar-subcategory">
-            <h3>Barres et snacks</h3>
+            <h3>Sans alcool</h3>
 
             <div className="bar-items">
-              {apiState.data?.food
-                .filter((item) => item.category === "snack")
+              {apiState.data?.drink
+                ?.filter((item) => item.alcool === false)
                 .map((item) => (
                   <div className="bar-item" key={item.id}>
                     <div className="bar-item-info">
                       <h4>{item.name}</h4>
-
                       <p>{item.description}</p>
                     </div>
 
@@ -163,16 +117,15 @@ export default function Bar() {
           </div>
 
           <div className="bar-subcategory">
-            <h3>Hot</h3>
+            <h3>Avec alcool</h3>
 
             <div className="bar-items">
-              {apiState.data?.food
-                .filter((item) => item.category === "food")
+              {apiState.data?.drink
+                ?.filter((item) => item.alcool === true)
                 .map((item) => (
                   <div className="bar-item" key={item.id}>
                     <div className="bar-item-info">
                       <h4>{item.name}</h4>
-
                       <p>{item.description}</p>
                     </div>
 
@@ -183,8 +136,71 @@ export default function Bar() {
                 ))}
             </div>
           </div>
-        </motion.div>
-      </section>
+
+          {/* =========================
+              À MANGER
+          ========================= */}
+
+          <motion.div
+            className="bar-menu-category"
+            initial={{ opacity: 0, y: 35 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.15 }}
+            transition={{
+              duration: 0.65,
+              ease: "easeOut",
+            }}
+          >
+            <div className="bar-category-header">
+              <span className="bar-kicker">À manger</span>
+
+              <h2>Petite faim ?</h2>
+            </div>
+
+            <div className="bar-subcategory">
+              <h3>Barres et snacks</h3>
+
+              <div className="bar-items">
+                {apiState.data?.food
+                  ?.filter((item) => item.category === "snack")
+                  .map((item) => (
+                    <div className="bar-item" key={item.id}>
+                      <div className="bar-item-info">
+                        <h4>{item.name}</h4>
+                        <p>{item.description}</p>
+                      </div>
+
+                      <span className="bar-item-line"></span>
+
+                      <strong className="bar-item-price">{item.price} €</strong>
+                    </div>
+                  ))}
+              </div>
+            </div>
+
+            <div className="bar-subcategory">
+              <h3>Hot</h3>
+
+              <div className="bar-items">
+                {apiState.data?.food
+                  ?.filter((item) => item.category === "food")
+                  .map((item) => (
+                    <div className="bar-item" key={item.id}>
+                      <div className="bar-item-info">
+                        <h4>{item.name}</h4>
+                        <p>{item.description}</p>
+                      </div>
+
+                      <span className="bar-item-line"></span>
+
+                      <strong className="bar-item-price">{item.price} €</strong>
+                    </div>
+                  ))}
+              </div>
+            </div>
+          </motion.div>
+        </section>
+      )}
     </section>
   );
 }

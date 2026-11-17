@@ -20,7 +20,11 @@ export default function ZoneCard({
         <h3>{title}</h3>
         <p>{description}</p>
 
-        <Link to={`/${path}`} className="btn btn-ghost">
+        <Link
+          to={`/${path}`}
+          className="btn btn-ghost"
+          aria-label={`${button} : ${title}`}
+        >
           {button}
         </Link>
       </div>

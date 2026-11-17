@@ -2,9 +2,13 @@ import "./article.css";
 
 import { Link } from "react-router-dom";
 
-export default function Article({ article }) {
+export default function Article({ article = {} }) {
   return (
-    <Link to={`/shop/${article.id}`} className="article-link">
+    <Link
+      to={`/shop/${article.id}`}
+      className="article-link"
+      aria-label={`Voir les détails de ${article.name}`}
+    >
       <article className="article-card">
         <div className="article-image-container">
           <img

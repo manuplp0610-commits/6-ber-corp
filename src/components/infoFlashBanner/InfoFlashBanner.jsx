@@ -1,4 +1,3 @@
-import { a } from "motion/react-client";
 import "./infoFlashBanner.css";
 
 export default function InfoFlashBanner({ variant, title, info, link }) {
@@ -13,12 +12,11 @@ export default function InfoFlashBanner({ variant, title, info, link }) {
 
           <span className="opening-banner__text">
             {info}
-            <p
-              href="#footer"
+            <span
               className={`opening-banner__link opening-banner__link--${variant}`}
             >
               {link}
-            </p>
+            </span>
           </span>
         </div>
         <span className="opening-banner__dot"></span>

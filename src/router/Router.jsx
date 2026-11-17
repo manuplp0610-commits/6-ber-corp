@@ -72,7 +72,7 @@ const router = createBrowserRouter(
     },
   ],
   {
-    basename: "/6-ber-corp",
+    basename: "/6-ber-corp/",
   },
 );
 

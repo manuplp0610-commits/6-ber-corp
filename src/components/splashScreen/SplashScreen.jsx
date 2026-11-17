@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 
 import "./splashScreen.css";
 
-import logo from "../../../public/logoLarg.webp";
+const logo = `${import.meta.env.BASE_URL}logoLarg.webp`;
 
 export default function SplashScreen() {
   const [splashScreenState, setSplashScreenState] = useState(
@@ -12,11 +12,10 @@ export default function SplashScreen() {
   useEffect(() => {
     if (window.splashShown) return;
 
-    window.splashShown = true;
-
     const timer = setTimeout(() => {
+      window.splashShown = true;
       setSplashScreenState(false);
-    }, 2000);
+    }, 2500);
 
     return () => clearTimeout(timer);
   }, []);

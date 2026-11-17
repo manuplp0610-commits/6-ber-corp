@@ -5,24 +5,46 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faComputer } from "@fortawesome/free-solid-svg-icons";
 
 export default function Computer() {
-  const [dataComputer, setDataComputer] = useState([]);
   const [apiState, setApiState] = useState({
-    loading: false,
+    loading: true,
     error: false,
     data: undefined,
   });
+
   useEffect(() => {
-    setApiState({ ...apiState, loading: true });
     fetch("https://api-hf41.onrender.com/api/computer")
-      .then((res) => res.json())
+      .then((res) => {
+        if (!res.ok) {
+          throw new Error("Erreur lors du chargement des PC");
+        }
+        return res.json();
+      })
       .then((data) => {
-        setApiState({ ...apiState, loading: false, data: data });
+        setApiState({
+          loading: false,
+          error: false,
+          data,
+        });
       })
       .catch((error) => {
-        setApiState({ ...apiState, error: true });
+        setApiState({
+          loading: false,
+          error: true,
+          data: undefined,
+        });
         console.error(error);
       });
   }, []);
+
+  let content = null;
+
+  if (apiState.loading) {
+    content = <p>Chargement des PC...</p>;
+  } else if (apiState.error) {
+    content = <p>Une erreur est survenue lors du chargement des PC.</p>;
+  } else if (!apiState.data?.length) {
+    content = <p>Aucun PC disponible pour le moment.</p>;
+  }
 
   return (
     <section className="pc-page">
@@ -58,58 +80,61 @@ export default function Computer() {
           </span>
         </div>
 
-        <div className="pc-list">
-          {apiState.data?.map((pc) => (
-            <article className="pc-card" key={pc.name}>
-              <div className="pc-card-header">
-                <div className="pc-card-title">
-                  <div className="pc-card-icon">
-                    {" "}
-                    <FontAwesomeIcon icon={faComputer} />
+        {content ? (
+          content
+        ) : (
+          <div className="pc-list">
+            {apiState.data?.map((pc) => (
+              <article className="pc-card" key={pc.name}>
+                <div className="pc-card-header">
+                  <div className="pc-card-title">
+                    <div className="pc-card-icon">
+                      <FontAwesomeIcon icon={faComputer} />
+                    </div>
+
+                    <div>
+                      <h3>{pc.name}</h3>
+                      <p>{pc.description}</p>
+                    </div>
                   </div>
 
-                  <div>
-                    <h3>{pc.name}</h3>
-                    <p>{pc.description}</p>
+                  <div className="pc-price">
+                    <strong>{pc.price}</strong>
+                    <span>/ heure</span>
                   </div>
                 </div>
 
-                <div className="pc-price">
-                  <strong>{pc.price}</strong>
-                  <span>/ heure</span>
-                </div>
-              </div>
-
-              <div className="pc-specs">
-                {pc.specs.map(([label, value]) => (
-                  <div className="pc-spec" key={label}>
-                    <span>{label}</span>
-                    <strong>{value}</strong>
-                  </div>
-                ))}
-              </div>
-
-              <div className="games-section">
-                <div className="games-heading">
-                  <h4>Jeux disponibles</h4>
-                  <span>{pc.games.length} jeux proposés</span>
-                </div>
-
-                <div className="games-grid">
-                  {pc.games.map((game) => (
-                    <div className="game-card" key={game.name}>
-                      <img src={game.image} alt={game.name} loading="lazy" />
-
-                      <div className="game-overlay">
-                        <span>{game.name}</span>
-                      </div>
+                <div className="pc-specs">
+                  {pc.specs?.map(([label, value]) => (
+                    <div className="pc-spec" key={label}>
+                      <span>{label}</span>
+                      <strong>{value}</strong>
                     </div>
                   ))}
                 </div>
-              </div>
-            </article>
-          ))}
-        </div>
+
+                <div className="games-section">
+                  <div className="games-heading">
+                    <h4>Jeux disponibles</h4>
+                    <span>{pc.games?.length ?? 0} jeux proposés</span>
+                  </div>
+
+                  <div className="games-grid">
+                    {pc.games?.map((game) => (
+                      <div className="game-card" key={game.name}>
+                        <img src={game.image} alt={game.name} loading="lazy" />
+
+                        <div className="game-overlay">
+                          <span>{game.name}</span>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </article>
+            ))}
+          </div>
+        )}
       </section>
 
       <section className="pc-steps">

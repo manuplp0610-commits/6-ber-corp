@@ -1,12 +1,11 @@
 import "./shop.css";
-import { motion, AnimatePresence } from "motion/react";
+import { motion } from "motion/react";
 import HeaderPages from "../../components/headerPages/HeaderPages";
 import { Link } from "react-router-dom";
 import { useEffect, useState, useMemo } from "react";
 import Article from "../../components/article/Article";
-import Fetchdata from "../../components/fetch/Fetchdata";
 
-export default function Shopshpp() {
+export default function Shop() {
   // Appel fetch
 
   const [apiState, setApiState] = useState({
@@ -87,7 +86,9 @@ export default function Shopshpp() {
     content = (
       <ul>
         {filteredArticles.map((item) => (
-          <Article key={item.id} article={item} />
+          <li key={item.id}>
+            <Article article={item} />
+          </li>
         ))}
       </ul>
     );

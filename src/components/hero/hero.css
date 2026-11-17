@@ -1,9 +1,6 @@
 /* ============================================
    HERO
    ============================================ */
-html {
-  scroll-behavior: smooth;
-}
 .hero {
   position: relative;
   display: flex;
@@ -52,24 +49,6 @@ html {
     linear-gradient(to right, rgba(0, 0, 0, 0.7), transparent 25%),
     linear-gradient(to left, rgba(0, 0, 0, 0.7), transparent 25%),
     linear-gradient(to top, rgba(0, 0, 0, 0.7), transparent 45%);
-}
-
-/* ============================================
-   BOUTON ONLINE
-   ============================================ */
-
-.btn-online {
-  position: relative;
-
-  z-index: 2;
-
-  display: block;
-
-  width: 100%;
-
-  color: #ffffff;
-
-  text-align: right;
 }
 
 /* ============================================

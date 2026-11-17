@@ -6,22 +6,45 @@ import { faGamepad } from "@fortawesome/free-solid-svg-icons";
 
 export default function Console() {
   const [apiState, setApiState] = useState({
-    loading: false,
+    loading: true,
     error: false,
     data: undefined,
   });
+
   useEffect(() => {
-    setApiState({ ...apiState, loading: true });
     fetch("https://api-hf41.onrender.com/api/console")
-      .then((res) => res.json())
+      .then((res) => {
+        if (!res.ok) {
+          throw new Error("Erreur lors du chargement du menu");
+        }
+        return res.json();
+      })
       .then((data) => {
-        setApiState({ ...apiState, loading: false, data: data });
+        setApiState({
+          loading: false,
+          error: false,
+          data,
+        });
       })
       .catch((error) => {
-        setApiState({ ...apiState, error: true });
+        setApiState({
+          loading: false,
+          error: true,
+          data: undefined,
+        });
         console.error(error);
       });
   }, []);
+
+  let content = null;
+
+  if (apiState.loading) {
+    content = <p>Chargement du menu...</p>;
+  } else if (apiState.error) {
+    content = <p>Une erreur est survenue lors du chargement du menu.</p>;
+  } else if (!apiState.data?.length) {
+    content = <p>Aucune console disponible pour le moment.</p>;
+  }
 
   return (
     <section className="console-page">
@@ -51,54 +74,58 @@ export default function Console() {
           </div>
 
           <p>
-            {apiState.data?.length} plateforme
+            {apiState.data?.length ?? 0} plateforme
             {apiState.data?.length > 1 ? "s" : ""} disponible
             {apiState.data?.length > 1 ? "s" : ""}
           </p>
         </div>
 
-        <div className="console-list">
-          {apiState.data?.map((consoleItem) => (
-            <article className="console-card" key={consoleItem.name}>
-              <div className="console-card-top">
-                <div className="console-icon">
-                  <FontAwesomeIcon icon={faGamepad} />
+        {content ? (
+          content
+        ) : (
+          <div className="console-list">
+            {apiState.data?.map((consoleItem) => (
+              <article className="console-card" key={consoleItem.name}>
+                <div className="console-card-top">
+                  <div className="console-icon">
+                    <FontAwesomeIcon icon={faGamepad} />
+                  </div>
+
+                  <div className="console-card-title">
+                    <h3>{consoleItem.name}</h3>
+                    <p>{consoleItem.description}</p>
+                  </div>
+
+                  <div className="console-price">
+                    <strong>{consoleItem.price} €</strong>
+                    <span>par heure</span>
+                  </div>
                 </div>
 
-                <div className="console-card-title">
-                  <h3>{consoleItem.name}</h3>
-                  <p>{consoleItem.description}</p>
-                </div>
+                <div className="console-card-divider"></div>
 
-                <div className="console-price">
-                  <strong>{consoleItem.price} €</strong>
-                  <span>par heure</span>
-                </div>
-              </div>
+                <div className="games-section">
+                  <div className="games-heading">
+                    <h4>Jeux disponibles</h4>
+                    <span>{consoleItem.games?.length ?? 0} jeux</span>
+                  </div>
 
-              <div className="console-card-divider"></div>
+                  <div className="games-grid">
+                    {consoleItem.games?.map((game) => (
+                      <div className="game-card" key={game.name}>
+                        <img src={game.image} alt={game.name} loading="lazy" />
 
-              <div className="games-section">
-                <div className="games-heading">
-                  <h4>Jeux disponibles</h4>
-                  <span>{consoleItem.games.length} jeux</span>
-                </div>
-
-                <div className="games-grid">
-                  {consoleItem.games.map((game) => (
-                    <div className="game-card" key={game.name}>
-                      <img src={game.image} alt={game.name} loading="lazy" />
-
-                      <div className="game-overlay">
-                        <span>{game.name}</span>
+                        <div className="game-overlay">
+                          <span>{game.name}</span>
+                        </div>
                       </div>
-                    </div>
-                  ))}
+                    ))}
+                  </div>
                 </div>
-              </div>
-            </article>
-          ))}
-        </div>
+              </article>
+            ))}
+          </div>
+        )}
       </section>
 
       <section className="console-how">
