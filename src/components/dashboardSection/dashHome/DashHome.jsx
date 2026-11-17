@@ -1,7 +1,3 @@
-import articles from "../../../../public/data/articles.json";
-import consoles from "../../../../public/data/consoles.json";
-import computer from "../../../../public/data/computers.json";
-import events from "../../../../public/data/events.json";
 import "./dashHome.css";
 
 export default function DashHome() {

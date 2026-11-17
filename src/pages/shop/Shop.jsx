@@ -21,7 +21,7 @@ export default function Shopshpp() {
   useEffect(() => {
     setApiState((prev) => ({ ...prev, loading: true }));
 
-    fetch("http://localhost:3000/api/articles")
+    fetch("https://api-hf41.onrender.com/api/article")
       .then((res) => {
         if (!res.ok) throw new Error("Erreur API");
         return res.json();

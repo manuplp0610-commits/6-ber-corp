@@ -16,15 +16,25 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 
 export default function Event() {
-  const [dataEvent, setDataEvent] = useState([]);
+  const [apiState, setApiState] = useState({
+    loading: false,
+    error: false,
+    data: undefined,
+  });
 
   useEffect(() => {
-    fetch(`${import.meta.env.BASE_URL}data/events.json`)
-      .then((reponse) => {
-        return reponse.json();
+    setApiState((prev) => ({ ...prev, loading: true }));
+
+    fetch("https://api-hf41.onrender.com/api/event")
+      .then((res) => {
+        if (!res.ok) throw new Error("Erreur API");
+        return res.json();
       })
-      .then((result) => {
-        setDataEvent(result);
+      .then((data) => {
+        setApiState({ loading: false, error: false, data });
+      })
+      .catch(() => {
+        setApiState({ loading: false, error: true, data: undefined });
       });
   }, []);
 
@@ -49,7 +59,7 @@ export default function Event() {
     eventCards.forEach((card) => observer.observe(card));
 
     return () => observer.disconnect();
-  }, [dataEvent]);
+  }, [apiState.data]);
 
   return (
     <section className="event-page">
@@ -83,12 +93,12 @@ export default function Event() {
           </div>
 
           <span className="event-count">
-            {dataEvent.length} événements programmés
+            {apiState.data?.length} événements programmés
           </span>
         </div>
 
         <div className="event-list">
-          {dataEvent.map((event, index) => (
+          {apiState.data?.map((event, index) => (
             <article
               className={`event-card ${index === 0 ? "is-next" : ""}`}
               key={`${event.date}-${event.title}`}

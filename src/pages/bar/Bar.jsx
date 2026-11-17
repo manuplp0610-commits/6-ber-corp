@@ -6,22 +6,29 @@ import { useEffect, useState } from "react";
 import { motion } from "motion/react";
 
 export default function Bar() {
-  const [dataBar, setDataBar] = useState({
-    boissons: [],
-    manger: [],
+  const [apiState, setApiState] = useState({
+    loading: false,
+    error: false,
+    data: undefined,
   });
 
   useEffect(() => {
-    fetch(`${import.meta.env.BASE_URL}data/bar.json`)
-      .then((response) => response.json())
-      .then((result) => {
-        setDataBar(result);
+    setApiState({ ...apiState, loading: true });
+    fetch("https://api-hf41.onrender.com/api/bar")
+      .then((res) => res.json())
+      .then((data) => {
+        setApiState({ ...apiState, loading: false, data: data });
       })
       .catch((error) => {
+        setApiState({ ...apiState, error: true });
         console.error(error);
       });
   }, []);
 
+  let content = "";
+  if (apiState.loading) content = <p>Chargement</p>;
+  else if (apiState.error) content = <p>Une erreur est survenue</p>;
+  else if (apiState.data?.length === 0) content = <p>Aucun article trouvé</p>;
   return (
     <section className="bar-page">
       <HeaderPages
@@ -63,66 +70,55 @@ export default function Bar() {
             À BOIRE
         ========================= */}
 
-        <motion.div
-          className="bar-menu-category"
-          initial={{ opacity: 0, y: 35 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, amount: 0.15 }}
-          transition={{
-            duration: 0.65,
-            ease: "easeOut",
-          }}
-        >
-          <div className="bar-category-header">
-            <span className="bar-kicker">À boire</span>
+        <div className="bar-category-header">
+          <span className="bar-kicker">À boire</span>
 
-            <h2>Petite soif ?</h2>
-          </div>
+          <h2>Petite soif ?</h2>
+        </div>
 
-          <div className="bar-subcategory">
-            <h3>Sans alcool</h3>
+        <div className="bar-subcategory">
+          <h3>Sans alcool</h3>
 
-            <div className="bar-items">
-              {dataBar.boissons
-                .filter((item) => item.alcool === false)
-                .map((item) => (
-                  <div className="bar-item" key={item.id}>
-                    <div className="bar-item-info">
-                      <h4>{item.name}</h4>
+          <div className="bar-items">
+            {apiState.data?.drink
+              .filter((item) => item.alcool === false)
+              .map((item) => (
+                <div className="bar-item" key={item.id}>
+                  <div className="bar-item-info">
+                    <h4>{item.name}</h4>
 
-                      <p>{item.description}</p>
-                    </div>
-
-                    <span className="bar-item-line"></span>
-
-                    <strong className="bar-item-price">{item.price} €</strong>
+                    <p>{item.description}</p>
                   </div>
-                ))}
-            </div>
+
+                  <span className="bar-item-line"></span>
+
+                  <strong className="bar-item-price">{item.price} €</strong>
+                </div>
+              ))}
           </div>
+        </div>
 
-          <div className="bar-subcategory">
-            <h3>Avec alcool</h3>
+        <div className="bar-subcategory">
+          <h3>Avec alcool</h3>
 
-            <div className="bar-items">
-              {dataBar.boissons
-                .filter((item) => item.alcool === true)
-                .map((item) => (
-                  <div className="bar-item" key={item.id}>
-                    <div className="bar-item-info">
-                      <h4>{item.name}</h4>
+          <div className="bar-items">
+            {apiState.data?.drink
+              .filter((item) => item.alcool === true)
+              .map((item) => (
+                <div className="bar-item" key={item.id}>
+                  <div className="bar-item-info">
+                    <h4>{item.name}</h4>
 
-                      <p>{item.description}</p>
-                    </div>
-
-                    <span className="bar-item-line"></span>
-
-                    <strong className="bar-item-price">{item.price} €</strong>
+                    <p>{item.description}</p>
                   </div>
-                ))}
-            </div>
+
+                  <span className="bar-item-line"></span>
+
+                  <strong className="bar-item-price">{item.price} €</strong>
+                </div>
+              ))}
           </div>
-        </motion.div>
+        </div>
 
         {/* =========================
             À MANGER
@@ -148,7 +144,7 @@ export default function Bar() {
             <h3>Barres et snacks</h3>
 
             <div className="bar-items">
-              {dataBar.manger
+              {apiState.data?.food
                 .filter((item) => item.category === "snack")
                 .map((item) => (
                   <div className="bar-item" key={item.id}>
@@ -170,7 +166,7 @@ export default function Bar() {
             <h3>Hot</h3>
 
             <div className="bar-items">
-              {dataBar.manger
+              {apiState.data?.food
                 .filter((item) => item.category === "food")
                 .map((item) => (
                   <div className="bar-item" key={item.id}>

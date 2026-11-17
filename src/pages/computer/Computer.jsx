@@ -6,16 +6,20 @@ import { faComputer } from "@fortawesome/free-solid-svg-icons";
 
 export default function Computer() {
   const [dataComputer, setDataComputer] = useState([]);
-
+  const [apiState, setApiState] = useState({
+    loading: false,
+    error: false,
+    data: undefined,
+  });
   useEffect(() => {
-    fetch(`${import.meta.env.BASE_URL}data/computers.json`)
-      .then((reponse) => {
-        return reponse.json();
-      })
-      .then((result) => {
-        setDataComputer(result);
+    setApiState({ ...apiState, loading: true });
+    fetch("https://api-hf41.onrender.com/api/computer")
+      .then((res) => res.json())
+      .then((data) => {
+        setApiState({ ...apiState, loading: false, data: data });
       })
       .catch((error) => {
+        setApiState({ ...apiState, error: true });
         console.error(error);
       });
   }, []);
@@ -49,13 +53,13 @@ export default function Computer() {
           </div>
 
           <span className="pc-status">
-            {dataComputer.length > 0 && dataComputer[0].numbers} PC Disponible
-            sur place
+            {apiState.data?.length > 0 && apiState.data[0]?.numbers} PC
+            Disponible sur place
           </span>
         </div>
 
         <div className="pc-list">
-          {dataComputer.map((pc) => (
+          {apiState.data?.map((pc) => (
             <article className="pc-card" key={pc.name}>
               <div className="pc-card-header">
                 <div className="pc-card-title">

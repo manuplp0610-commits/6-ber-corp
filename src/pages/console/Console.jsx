@@ -5,16 +5,20 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGamepad } from "@fortawesome/free-solid-svg-icons";
 
 export default function Console() {
-  const [consoles, setConsoles] = useState([]);
+  const [apiState, setApiState] = useState({
+    loading: false,
+    error: false,
+    data: undefined,
+  });
   useEffect(() => {
-    fetch(`${import.meta.env.BASE_URL}data/consoles.json`)
-      .then((reponse) => {
-        return reponse.json();
-      })
-      .then((result) => {
-        setConsoles(result);
+    setApiState({ ...apiState, loading: true });
+    fetch("https://api-hf41.onrender.com/api/console")
+      .then((res) => res.json())
+      .then((data) => {
+        setApiState({ ...apiState, loading: false, data: data });
       })
       .catch((error) => {
+        setApiState({ ...apiState, error: true });
         console.error(error);
       });
   }, []);
@@ -47,14 +51,14 @@ export default function Console() {
           </div>
 
           <p>
-            {consoles.length} plateforme{consoles.length > 1 ? "s" : ""}{" "}
-            disponible
-            {consoles.length > 1 ? "s" : ""}
+            {apiState.data?.length} plateforme
+            {apiState.data?.length > 1 ? "s" : ""} disponible
+            {apiState.data?.length > 1 ? "s" : ""}
           </p>
         </div>
 
         <div className="console-list">
-          {consoles.map((consoleItem) => (
+          {apiState.data?.map((consoleItem) => (
             <article className="console-card" key={consoleItem.name}>
               <div className="console-card-top">
                 <div className="console-icon">
