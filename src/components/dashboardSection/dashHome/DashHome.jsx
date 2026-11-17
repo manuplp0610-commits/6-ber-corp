@@ -10,7 +10,7 @@ export default function DashHome() {
           <div>
             <span className="dashHome-stat-label">Articles en boutique</span>
 
-            <strong>{articles.length}</strong>
+            <strong></strong>
 
             <p>Articles disponibles</p>
           </div>
@@ -22,7 +22,7 @@ export default function DashHome() {
           <div>
             <span className="dashHome-stat-label">Consoles</span>
 
-            <strong>{consoles[0].numbers}</strong>
+            <strong></strong>
 
             <p>Postes disponibles</p>
           </div>
@@ -33,7 +33,7 @@ export default function DashHome() {
           <div>
             <span className="dashHome-stat-label">Ordinateur</span>
 
-            <strong>{computer[0].numbers}</strong>
+            <strong></strong>
 
             <p>PC disponible</p>
           </div>
@@ -44,7 +44,7 @@ export default function DashHome() {
           <div>
             <span className="dashHome-stat-label">Événements à venir</span>
 
-            <strong>{events.length}</strong>
+            <strong></strong>
 
             <p>Événements programmés</p>
           </div>

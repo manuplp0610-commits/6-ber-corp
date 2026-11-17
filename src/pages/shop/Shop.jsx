@@ -4,6 +4,7 @@ import HeaderPages from "../../components/headerPages/HeaderPages";
 import { Link } from "react-router-dom";
 import { useEffect, useState, useMemo } from "react";
 import Article from "../../components/article/Article";
+import Fetchdata from "../../components/fetch/Fetchdata";
 
 export default function Shopshpp() {
   // Appel fetch
